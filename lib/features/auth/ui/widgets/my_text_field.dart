@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatefulWidget {
   final GlobalKey<FormState> fieldKey;
   IconData preIcon;
-  bool Function(String) validator;
+  String? Function(String) validator;
   String hintText;
   bool isPassword;
 
