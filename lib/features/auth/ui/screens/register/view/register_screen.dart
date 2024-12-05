@@ -81,9 +81,9 @@ class RegisterScreen extends StatelessWidget {
             height: 15,
           ),
           _buildLoginText(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 140),
-            child: const CountrySwitch(),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 140),
+            child: CountrySwitch(),
           ),
         ],
       ),
