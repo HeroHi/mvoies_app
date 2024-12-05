@@ -6,6 +6,7 @@ class MyTextField extends StatefulWidget {
   String? Function(String) validator;
   String hintText;
   bool isPassword;
+  TextEditingController controller;
 
   MyTextField(
       {super.key,
@@ -13,7 +14,8 @@ class MyTextField extends StatefulWidget {
       required this.validator,
       required this.hintText,
       required this.isPassword,
-      required this.fieldKey});
+      required this.fieldKey,
+      required this.controller});
 
   @override
   State<MyTextField> createState() => _MyTextFieldState();
@@ -52,14 +54,14 @@ class _MyTextFieldState extends State<MyTextField> {
             child: Form(
               key: widget.fieldKey,
               child: TextFormField(
+                controller: widget.controller,
                 style: TextStyle(color: Colors.white),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return emptyFieldMessage;
                   }
-                  widget.validator(value);
-                  return null;
+                  return widget.validator  (value);
                 },
                 decoration: InputDecoration(
                     border: InputBorder.none,

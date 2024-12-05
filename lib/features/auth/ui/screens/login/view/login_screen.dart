@@ -1,50 +1,89 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
+import 'package:movies_app/features/auth/ui/screens/login/cubit/login_cubit.dart';
+import 'package:movies_app/features/auth/ui/screens/login/cubit/login_state.dart';
 import 'package:movies_app/features/auth/ui/widgets/country_switch.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
 import '../../../../../../generated/assets.dart';
+import '../../../widgets/show_toast.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const String routeName = "login";
   LoginScreen({super.key});
-  GlobalKey<FormState> _fieldKey = GlobalKey();
-  GlobalKey<FormState> _secFieldKey = GlobalKey();
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final GlobalKey<FormState> _emailKey = GlobalKey();
+
+  final GlobalKey<FormState> _passwordKey = GlobalKey();
+
+  final TextEditingController _emailController = TextEditingController();
+
+  final TextEditingController _passwordController = TextEditingController();
+
+  final LoginCubit loginCubit = LoginCubit();
+
   late ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
-    return Scaffold(
+    return BlocProvider(
+  create: (context) => loginCubit,
+  child: BlocListener<LoginCubit, LoginState>(
+  listener: (context, state) {
+    state.when(initial: (){}, loading: (){
+      showDialog(context: context,
+        builder: (context) => const Center(child: CircularProgressIndicator()),);
+    }, success: () {
+      Navigator.pop(context);
+      showToast(
+          msg: "signed in successfully",
+          color: Colors.green);
+    }, failure: (message) {
+      Navigator.pop(context);
+      showToast(msg: message, color: Colors.red);
+    },);
+  },
+  child: Scaffold(
       backgroundColor: AppColors.backgroundDark,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: Image.asset(Assets.imagesLogo),
           ),
           MyTextField(
+              controller: _emailController,
               preIcon: Icons.email,
-              validator: (String h) {
-                return h;
+              validator: (String value) {
+                return _validateEmail(value);
               },
-              hintText: "hintText",
-              isPassword: true,
-              fieldKey: _fieldKey),
+              hintText: "Email",
+              isPassword: false,
+              fieldKey: _emailKey),
           MyTextField(
-              preIcon: Icons.email,
-              validator: (String h) {
-                return h;
+            controller: _passwordController,
+              preIcon: FontAwesomeIcons.lock,
+              validator: (value) {
+                if (value.length < 8) {
+                  return "Password should be at least 8 characters";
+                }
+                return null;
               },
-              hintText: "hintText",
+              hintText: "password",
               isPassword: true,
-              fieldKey: _secFieldKey),
+              fieldKey: _passwordKey),
           buildForgotPassword(),
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 18, bottom: 18, left: 14, right: 14),
-            child: ElevatedButton(onPressed: () {}, child: const Text("login")),
-          ),
+          _buildLoginButton(),
           buildCreateAccount(),
           buildOR(),
           Padding(
@@ -60,12 +99,26 @@ class LoginScreen extends StatelessWidget {
                   ],
                 )),
           ),
-  Padding(
+  const Padding(
       padding: EdgeInsets.symmetric(vertical: 18,horizontal: 140),
-      child: const CountrySwitch())
+      child: CountrySwitch())
         ],
       ),
-    );
+    ),
+),
+);
+  }
+
+  Padding _buildLoginButton() {
+    return Padding(
+          padding:
+              const EdgeInsets.symmetric(vertical: 18, horizontal: 14),
+          child: ElevatedButton(onPressed: () {
+            if(_passwordKey.currentState!.validate()&&_emailKey.currentState!.validate()){
+              loginCubit.login(_emailController.text, _passwordController.text);
+            }
+          }, child: const Text("login")),
+        );
   }
 
   Row buildOR() {
@@ -128,5 +181,13 @@ class LoginScreen extends StatelessWidget {
             )
           ],
         );
+  }
+  String? _validateEmail(String value) {
+    String emailPattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
+    RegExp regExp = RegExp(emailPattern);
+    if (!regExp.hasMatch(value)) {
+      return 'Enter a valid email address';
+    }
+    return null;
   }
 }
