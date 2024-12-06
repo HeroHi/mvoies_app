@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/constants/app_theme.dart';
+import 'package:movies_app/core/networking/supabase_helper.dart';
+import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/screens/register/view/register_screen.dart';
-
+import 'package:supabase_flutter/supabase_flutter.dart';
 void main() async{
-  await ScreenUtil.ensureScreenSize();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: SupabaseHelper.url,
+    anonKey: SupabaseHelper.anonKey,
+  );
   runApp(const MyApp());
 }
 
@@ -18,7 +23,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
       routes: {
-        RegisterScreen.routeName:(_)=>RegisterScreen()
+        RegisterScreen.routeName:(_)=>RegisterScreen(),
+        LoginScreen.routeName:(_)=>LoginScreen()
       },
       initialRoute: RegisterScreen.routeName,
     );
