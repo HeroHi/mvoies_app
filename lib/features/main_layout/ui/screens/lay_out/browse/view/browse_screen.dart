@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/custom_choice_chip.dart';
-import '../../../widgets/movie_card.dart';
+import '../../../../widgets/custom_choice_chip.dart';
+import '../../../../widgets/movie_card.dart';
 
 class BrowseScreen extends StatefulWidget {
   static const routeName = "Browse";
@@ -27,7 +27,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10),
                 itemCount: 20,
-                itemBuilder: (context, index) => const MovieCard(),
+                itemBuilder: (context, index) => const MovieCard(posterPath: "",rating: 7.7,),
               ),
             )
           ],

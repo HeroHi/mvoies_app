@@ -2,13 +2,11 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesAvailableNow = 'assets/images/AvailableNow.png';
-  static const String assetsImagesEmpty = 'assets/images/Empty.png';
-  static const String assetsImagesTest = 'assets/images/test.png';
-  static const String assetsImagesWatcNow = 'assets/images/WatcNow.png';
+  static const String assetsImagesTeeest = 'assets/images/teeest.jpg';
   static const String imagesAvailableNow = 'assets/images/AvailableNow.png';
   static const String imagesEmpty = 'assets/images/Empty.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesTeeest = 'assets/images/teeest.jpg';
   static const String imagesTest = 'assets/images/test.png';
   static const String imagesWatcNow = 'assets/images/WatcNow.png';
 
