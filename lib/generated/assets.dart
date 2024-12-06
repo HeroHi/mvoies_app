@@ -2,10 +2,10 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesAvailableNow = 'assets/images/AvailableNow.png';
-  static const String assetsImagesEmpty = 'assets/images/Empty.png';
-  static const String assetsImagesTest = 'assets/images/test.png';
-  static const String assetsImagesWatcNow = 'assets/images/WatcNow.png';
+  static const String animationForgotPassword = 'assets/animation/forgotPassword.json';
+  static const String assetsAnimationForgotPassword = 'assets/animation/forgotPassword.json';
+  static const String assetsImagesActor = 'assets/images/actor.png';
+  static const String imagesActor = 'assets/images/actor.png';
   static const String imagesAvailableNow = 'assets/images/AvailableNow.png';
   static const String imagesEmpty = 'assets/images/Empty.png';
   static const String imagesLogo = 'assets/images/logo.png';

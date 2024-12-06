@@ -31,7 +31,7 @@ class _LayOutState extends State<LayOut> {
     return Container(
       margin: EdgeInsets.all(8),
       decoration: BoxDecoration(
-          color: AppColors.bottomNavColor,
+          color: AppColors.bottomNav,
           borderRadius: BorderRadius.circular(8)),
       child: BottomNavigationBar(
         iconSize: 25,
