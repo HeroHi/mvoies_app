@@ -24,4 +24,7 @@ abstract class AppColors {
   // Icons Colors
   static const Color iconYellow = Color(0xFFF6BD00); // Yellow Border
   static const Color iconWhite = Color(0xFFFFFFFF); // White Circle
+  
+  //bottom navigation bar color
+  static const Color bottomNavColor=Color(0xff282A28);
 }
