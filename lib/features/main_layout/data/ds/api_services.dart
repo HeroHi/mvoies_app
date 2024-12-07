@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'package:movies_app/features/main_layout/data/model/genre_dm.dart';
+import 'package:movies_app/features/main_layout/data/model/genre_response.dart';
 import 'package:movies_app/features/main_layout/data/model/movies_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -19,7 +18,7 @@ abstract class ApiServices {
   Future<MoviesResponse> getMoviesByCategory(@Query('with_genres') String categoryId);
 
   @GET(ApiConstants.genresEndPoint)
-  Future<List<GenreDM>> getGenres();
+  Future<GenresResponse> getGenres();
   
 
 }

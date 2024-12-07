@@ -5,6 +5,7 @@ import 'package:movies_app/features/main_layout/data/ds/api_services.dart';
 import 'package:movies_app/features/main_layout/domain/entities/movie_entity.dart';
 
 import '../../domain/repos/layout_repo.dart';
+import '../model/genre_response.dart';
 @Singleton(as: LayoutRepo)
 class LayoutRepoImpl extends LayoutRepo{
   final ApiServices _apiServices;
@@ -38,5 +39,13 @@ class LayoutRepoImpl extends LayoutRepo{
       return ApiResult.failure(ApiErrorHandler.handleError(error));
     }
   }
-
+  @override
+  Future<ApiResult<List<Genre>>> getGenres() async{
+    try {
+      var response = await _apiServices.getGenres();
+      return ApiResult.success(response.genres);
+    }catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handleError(error));
+    }
+  }
 }

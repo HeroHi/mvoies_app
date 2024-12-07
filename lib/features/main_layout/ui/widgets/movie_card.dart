@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/generated/assets.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class MovieCard extends StatelessWidget {
   final String posterPath;
@@ -18,7 +19,9 @@ class MovieCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             child: CachedNetworkImage(
               imageUrl: posterPath,
-              placeholder: (context, url) => Image.asset(Assets.imagesLogo),
+              placeholder: (context, url) => Skeletonizer(
+                enabled: true,
+                  child: Image.asset(Assets.imagesTeeest)),
             ),
           ),
           _buildRating(context),
@@ -39,7 +42,7 @@ class MovieCard extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "${rating.toStringAsFixed(1)}",
+            rating.toStringAsFixed(1),
             style: Theme.of(context).textTheme.displayMedium,
           ),
           const Spacer(),
@@ -51,5 +54,8 @@ class MovieCard extends StatelessWidget {
         ],
       ),
     );
+  }
+  static Widget get skeleton{
+    return const MovieCard(rating: 7.7, posterPath: Assets.imagesTeeest);
   }
 }
