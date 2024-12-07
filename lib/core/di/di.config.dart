@@ -37,9 +37,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i835.ApiServices>(() => _i835.ApiServices(gh<_i361.Dio>()));
     gh.singleton<_i349.LayoutRepo>(
         () => _i251.LayoutRepoImpl(gh<_i835.ApiServices>()));
-    gh.factory<_i217.HomeCubit>(() => _i217.HomeCubit(gh<_i349.LayoutRepo>()));
     gh.factory<_i146.BrowseCubit>(
         () => _i146.BrowseCubit(gh<_i349.LayoutRepo>()));
+    gh.factory<_i217.HomeCubit>(() => _i217.HomeCubit(gh<_i349.LayoutRepo>()));
     return this;
   }
 }

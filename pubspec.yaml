@@ -50,6 +50,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
+    - assets/images/actor.png
     - assets/images/teeest.jpg
   uses-material-design: true
 
