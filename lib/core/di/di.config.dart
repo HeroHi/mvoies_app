@@ -19,6 +19,8 @@ import '../../features/main_layout/ui/screens/lay_out/browse/cubit/browse_cubit.
     as _i146;
 import '../../features/main_layout/ui/screens/lay_out/home/cubit/home_cubit.dart'
     as _i217;
+import '../../features/main_layout/ui/screens/lay_out/search/cubit/search_cubit.dart'
+    as _i41;
 import 'dio_module.dart' as _i1045;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -37,9 +39,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i835.ApiServices>(() => _i835.ApiServices(gh<_i361.Dio>()));
     gh.singleton<_i349.LayoutRepo>(
         () => _i251.LayoutRepoImpl(gh<_i835.ApiServices>()));
-    gh.factory<_i217.HomeCubit>(() => _i217.HomeCubit(gh<_i349.LayoutRepo>()));
     gh.factory<_i146.BrowseCubit>(
         () => _i146.BrowseCubit(gh<_i349.LayoutRepo>()));
+    gh.factory<_i217.HomeCubit>(() => _i217.HomeCubit(gh<_i349.LayoutRepo>()));
+    gh.factory<_i41.SearchCubit>(
+        () => _i41.SearchCubit(gh<_i349.LayoutRepo>()));
     return this;
   }
 }

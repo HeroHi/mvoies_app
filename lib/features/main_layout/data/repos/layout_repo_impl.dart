@@ -31,9 +31,9 @@ class LayoutRepoImpl extends LayoutRepo{
   }
 
   @override
-  Future<ApiResult<List<MovieEntity>>> search(String q) async{
+  Future<ApiResult<List<MovieEntity>>> search({required String q,required int page}) async{
     try {
-      var response =  await _apiServices.getPopularMovies();
+      var response =  await _apiServices.search(q: q, page: page);
       return ApiResult.success((response.results.map((e) => e.toEntity(),)).toList());
     }  catch (error) {
       return ApiResult.failure(ApiErrorHandler.handleError(error));

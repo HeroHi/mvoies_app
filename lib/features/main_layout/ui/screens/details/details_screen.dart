@@ -113,7 +113,7 @@ class DetailsScreen extends StatelessWidget {
             mainAxisSpacing: 10,
             crossAxisSpacing: 10),
         itemCount: 4,
-        itemBuilder: (context, index) => const MovieCard(),
+        itemBuilder: (context, index) => const MovieCard(rating: 7.7,posterPath: '',),
       ),
     );
   }

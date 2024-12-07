@@ -19,6 +19,7 @@ abstract class ApiServices {
 
   @GET(ApiConstants.genresEndPoint)
   Future<GenresResponse> getGenres();
-  
-
+  @GET(ApiConstants.searchEndPoint)
+  Future<MoviesResponse> search(
+      {@Query('query') required String q, @Query('page') required int page});
 }

@@ -53,7 +53,7 @@ class MovieDM {
   MovieEntity toEntity() {
     return MovieEntity(
       rating: voteAverage,
-      posterPath: ApiConstants.imagesBaseUrl+posterPath!,
+      posterPath: ApiConstants.imagesBaseUrl+(posterPath??"/yh64qw9mgXBvlaWDi7Q9tpUBAvH.jpg"),
     );
   }
 }

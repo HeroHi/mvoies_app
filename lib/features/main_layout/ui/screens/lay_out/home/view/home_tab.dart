@@ -41,6 +41,7 @@ class _HomeTabState extends State<HomeTab> {
                 height: MediaQuery.of(context).size.height,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
+                      opacity: 0.4,
                         fit: BoxFit.cover,
                         image: AssetImage(Assets.imagesTest))),
                 child: Column(
