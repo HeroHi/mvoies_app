@@ -4,7 +4,7 @@ abstract class AppColors {
   // Background Colors
   static const Color backgroundDark = Color(0xFF000000); // Black
   static const Color primaryYellow = Color(0xFFFFC107);
-  static const Color transparent = Color(0x00000000);// Yellow
+  static const Color transparent = Color(0x00000000); // Yellow
 
   // Text Colors
   static const Color textLight = Color(0xFFFFFFFF); // White
@@ -24,7 +24,9 @@ abstract class AppColors {
   // Icons Colors
   static const Color iconYellow = Color(0xFFF6BD00); // Yellow Border
   static const Color iconWhite = Color(0xFFFFFFFF); // White Circle
-  
+
   //bottom navigation bar color
-  static const Color bottomNavColor=Color(0xff282A28);
+  static const Color bottomNav = Color(0xff282A28);
+  //Elevated button color
+  static const Color redButton = Color(0xffE82626);
 }

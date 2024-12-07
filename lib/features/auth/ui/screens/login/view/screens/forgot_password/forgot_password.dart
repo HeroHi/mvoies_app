@@ -2,36 +2,57 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 
+import '../../../../../../../../generated/assets.dart';
+import '../../../../../widgets/my_text_field.dart';
+
 class ForgotPassword extends StatelessWidget {
-  static const routeName="forgotPassword";
-  const ForgotPassword({super.key});
+  static const routeName = "forgotPassword";
+  final GlobalKey<FormState> _emailKey = GlobalKey();
+  final TextEditingController _emailController = TextEditingController();
+
+  ForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: Column(children: [
-        ListView(
-          children: [
-            // Load a Lottie file from your assets
-            Lottie.asset('assets/LottieLogo1.json'),
-
-            // Load a Lottie file from a remote url
-            Lottie.network(
-                'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json'),
-
-            // Load an animation and its images from a zip file
-            Lottie.asset('assets/lottiefiles/angel.zip'),
-          ],
-        ),      ],),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              children: [
+                Lottie.asset(Assets.assetsAnimationForgotPassword),
+                const SizedBox(
+                  height: 50,
+                ),
+                MyTextField(
+                    controller: _emailController,
+                    preIcon: Icons.email,
+                    validator: (String value) {
+                      return null;
+                    },
+                    hintText: "Email",
+                    isPassword: false,
+                    fieldKey: _emailKey),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: ElevatedButton(
+                      onPressed: () {}, child:const Text("Verify Email")),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
   _buildAppBar() {
     return AppBar(
-      // leading: IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.arrowLeft)),
-      iconTheme: IconThemeData(color: AppColors.iconYellow),
-      title: Center(child: Text("Forgot password "),),
+      iconTheme: const IconThemeData(color: AppColors.iconYellow),
+      title: const Center(
+        child: Text("Forgot password "),
+      ),
     );
   }
 }
