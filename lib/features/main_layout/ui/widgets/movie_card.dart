@@ -1,19 +1,32 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/generated/assets.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class MovieCard extends StatelessWidget {
-  const MovieCard({super.key});
+  final String posterPath;
+  final double rating;
+  const MovieCard({super.key, required this.rating, required this.posterPath});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        ClipRRect(
+    return SizedBox(
+      height: 350,
+      child: Stack(
+        children: [
+          ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            child: Image.asset(Assets.imagesTest,fit: BoxFit.fill,width: double.infinity,)),
-        _buildRating(context),
-      ],
+            child: CachedNetworkImage(
+              imageUrl: posterPath,
+              placeholder: (context, url) => Skeletonizer(
+                enabled: true,
+                  child: Image.asset(Assets.imagesTeeest)),
+            ),
+          ),
+          _buildRating(context),
+        ],
+      ),
     );
   }
 
@@ -29,7 +42,7 @@ class MovieCard extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "7.7",
+            rating.toStringAsFixed(1),
             style: Theme.of(context).textTheme.displayMedium,
           ),
           const Spacer(),
@@ -42,5 +55,7 @@ class MovieCard extends StatelessWidget {
       ),
     );
   }
-
+  static Widget get skeleton{
+    return const MovieCard(rating: 7.7, posterPath: Assets.imagesTeeest);
+  }
 }

@@ -24,15 +24,16 @@ class CustomChoiceChip extends StatelessWidget {
         label: Text(label),
         selected: isSelected,
         showCheckmark: false,
-        selectedColor: theme.primaryColor,
+        selectedColor: AppColors.primaryYellow,
+        backgroundColor: Colors.black,
         labelStyle: isSelected
             ? theme.textTheme.displayMedium!
-            .copyWith(color: AppColors.textLight)
+            .copyWith(color: AppColors.backgroundDark)
             : theme.textTheme.displayMedium!
             .copyWith(color: AppColors.primaryYellow),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-            side: BorderSide(color: theme.primaryColor)),
+            borderRadius: BorderRadius.circular(16),
+            side: const BorderSide(color: AppColors.primaryYellow)),
       ),
     );
   }

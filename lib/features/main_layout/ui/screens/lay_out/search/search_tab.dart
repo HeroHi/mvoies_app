@@ -43,7 +43,7 @@ class _SearchTabState extends State<SearchTab> {
             mainAxisSpacing: 10,
             crossAxisSpacing: 10),
         itemCount: 20,
-        itemBuilder: (context, index) => const MovieCard(),
+        itemBuilder: (context, index) => Text("data"),
       ),
     );
   }
