@@ -5,5 +5,8 @@ abstract class ApiConstants{
   static const String moviesByCategoryEndPoint = "discover/movie";
   static const String imagesBaseUrl="https://image.tmdb.org/t/p/w500";
   static const String searchEndPoint = 'search/movie';
+  static const String similarMoviesEndPoint = 'movie/{movieId}/similar';
+  static const String movieEndPoint = 'movie/{movieId}';
+  static const String creditsEndPoint = 'movie/{movieId}/credits';
 
 }
