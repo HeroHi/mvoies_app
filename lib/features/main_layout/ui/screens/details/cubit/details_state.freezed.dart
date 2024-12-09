@@ -22,9 +22,9 @@ mixin _$DetailsState<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -39,9 +39,9 @@ mixin _$DetailsState<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -56,9 +56,9 @@ mixin _$DetailsState<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -74,9 +74,9 @@ mixin _$DetailsState<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -91,9 +91,9 @@ mixin _$DetailsState<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -108,9 +108,9 @@ mixin _$DetailsState<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -188,9 +188,9 @@ class _$InitialImpl<T> implements Initial<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -208,9 +208,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -228,9 +228,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -252,9 +252,9 @@ class _$InitialImpl<T> implements Initial<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -272,9 +272,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -292,9 +292,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -359,9 +359,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -379,9 +379,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -399,9 +399,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -423,9 +423,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -443,9 +443,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -463,9 +463,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -559,9 +559,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -579,9 +579,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -599,9 +599,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -623,9 +623,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -643,9 +643,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -663,9 +663,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -766,9 +766,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -786,9 +786,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -806,9 +806,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -830,9 +830,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -850,9 +850,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -870,9 +870,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -901,18 +901,18 @@ abstract class MovieFailure<T> implements DetailsState<T> {
 }
 
 /// @nodoc
-abstract class _$$GenreLoadingImplCopyWith<T, $Res> {
-  factory _$$GenreLoadingImplCopyWith(_$GenreLoadingImpl<T> value,
-          $Res Function(_$GenreLoadingImpl<T>) then) =
-      __$$GenreLoadingImplCopyWithImpl<T, $Res>;
+abstract class _$$ImagesLoadingImplCopyWith<T, $Res> {
+  factory _$$ImagesLoadingImplCopyWith(_$ImagesLoadingImpl<T> value,
+          $Res Function(_$ImagesLoadingImpl<T>) then) =
+      __$$ImagesLoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$GenreLoadingImplCopyWithImpl<T, $Res>
-    extends _$DetailsStateCopyWithImpl<T, $Res, _$GenreLoadingImpl<T>>
-    implements _$$GenreLoadingImplCopyWith<T, $Res> {
-  __$$GenreLoadingImplCopyWithImpl(
-      _$GenreLoadingImpl<T> _value, $Res Function(_$GenreLoadingImpl<T>) _then)
+class __$$ImagesLoadingImplCopyWithImpl<T, $Res>
+    extends _$DetailsStateCopyWithImpl<T, $Res, _$ImagesLoadingImpl<T>>
+    implements _$$ImagesLoadingImplCopyWith<T, $Res> {
+  __$$ImagesLoadingImplCopyWithImpl(_$ImagesLoadingImpl<T> _value,
+      $Res Function(_$ImagesLoadingImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailsState
@@ -921,18 +921,18 @@ class __$$GenreLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GenreLoadingImpl<T> implements GenreLoading<T> {
-  const _$GenreLoadingImpl();
+class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
+  const _$ImagesLoadingImpl();
 
   @override
   String toString() {
-    return 'DetailsState<$T>.genreLoading()';
+    return 'DetailsState<$T>.imagesLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GenreLoadingImpl<T>);
+        (other.runtimeType == runtimeType && other is _$ImagesLoadingImpl<T>);
   }
 
   @override
@@ -945,9 +945,9 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -955,7 +955,7 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
   }) {
-    return genreLoading();
+    return imagesLoading();
   }
 
   @override
@@ -965,9 +965,9 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -975,7 +975,7 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
   }) {
-    return genreLoading?.call();
+    return imagesLoading?.call();
   }
 
   @override
@@ -985,9 +985,9 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -996,8 +996,8 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult Function(ApiErrorModel error)? castFailure,
     required TResult orElse(),
   }) {
-    if (genreLoading != null) {
-      return genreLoading();
+    if (imagesLoading != null) {
+      return imagesLoading();
     }
     return orElse();
   }
@@ -1009,9 +1009,9 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -1019,7 +1019,7 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
   }) {
-    return genreLoading(this);
+    return imagesLoading(this);
   }
 
   @override
@@ -1029,9 +1029,9 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -1039,7 +1039,7 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
   }) {
-    return genreLoading?.call(this);
+    return imagesLoading?.call(this);
   }
 
   @override
@@ -1049,9 +1049,9 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -1060,32 +1060,32 @@ class _$GenreLoadingImpl<T> implements GenreLoading<T> {
     TResult Function(CastFailure<T> value)? castFailure,
     required TResult orElse(),
   }) {
-    if (genreLoading != null) {
-      return genreLoading(this);
+    if (imagesLoading != null) {
+      return imagesLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class GenreLoading<T> implements DetailsState<T> {
-  const factory GenreLoading() = _$GenreLoadingImpl<T>;
+abstract class ImagesLoading<T> implements DetailsState<T> {
+  const factory ImagesLoading() = _$ImagesLoadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$GenreSuccessImplCopyWith<T, $Res> {
-  factory _$$GenreSuccessImplCopyWith(_$GenreSuccessImpl<T> value,
-          $Res Function(_$GenreSuccessImpl<T>) then) =
-      __$$GenreSuccessImplCopyWithImpl<T, $Res>;
+abstract class _$$ImagesSuccessImplCopyWith<T, $Res> {
+  factory _$$ImagesSuccessImplCopyWith(_$ImagesSuccessImpl<T> value,
+          $Res Function(_$ImagesSuccessImpl<T>) then) =
+      __$$ImagesSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$GenreSuccessImplCopyWithImpl<T, $Res>
-    extends _$DetailsStateCopyWithImpl<T, $Res, _$GenreSuccessImpl<T>>
-    implements _$$GenreSuccessImplCopyWith<T, $Res> {
-  __$$GenreSuccessImplCopyWithImpl(
-      _$GenreSuccessImpl<T> _value, $Res Function(_$GenreSuccessImpl<T>) _then)
+class __$$ImagesSuccessImplCopyWithImpl<T, $Res>
+    extends _$DetailsStateCopyWithImpl<T, $Res, _$ImagesSuccessImpl<T>>
+    implements _$$ImagesSuccessImplCopyWith<T, $Res> {
+  __$$ImagesSuccessImplCopyWithImpl(_$ImagesSuccessImpl<T> _value,
+      $Res Function(_$ImagesSuccessImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailsState
@@ -1095,7 +1095,7 @@ class __$$GenreSuccessImplCopyWithImpl<T, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$GenreSuccessImpl<T>(
+    return _then(_$ImagesSuccessImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1106,22 +1106,22 @@ class __$$GenreSuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
-  const _$GenreSuccessImpl(this.data);
+class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
+  const _$ImagesSuccessImpl(this.data);
 
   @override
   final T data;
 
   @override
   String toString() {
-    return 'DetailsState<$T>.genreSuccess(data: $data)';
+    return 'DetailsState<$T>.imagesSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GenreSuccessImpl<T> &&
+            other is _$ImagesSuccessImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -1134,8 +1134,8 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GenreSuccessImplCopyWith<T, _$GenreSuccessImpl<T>> get copyWith =>
-      __$$GenreSuccessImplCopyWithImpl<T, _$GenreSuccessImpl<T>>(
+  _$$ImagesSuccessImplCopyWith<T, _$ImagesSuccessImpl<T>> get copyWith =>
+      __$$ImagesSuccessImplCopyWithImpl<T, _$ImagesSuccessImpl<T>>(
           this, _$identity);
 
   @override
@@ -1145,9 +1145,9 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -1155,7 +1155,7 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
   }) {
-    return genreSuccess(data);
+    return imagesSuccess(data);
   }
 
   @override
@@ -1165,9 +1165,9 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -1175,7 +1175,7 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
   }) {
-    return genreSuccess?.call(data);
+    return imagesSuccess?.call(data);
   }
 
   @override
@@ -1185,9 +1185,9 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -1196,8 +1196,8 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult Function(ApiErrorModel error)? castFailure,
     required TResult orElse(),
   }) {
-    if (genreSuccess != null) {
-      return genreSuccess(data);
+    if (imagesSuccess != null) {
+      return imagesSuccess(data);
     }
     return orElse();
   }
@@ -1209,9 +1209,9 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -1219,7 +1219,7 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
   }) {
-    return genreSuccess(this);
+    return imagesSuccess(this);
   }
 
   @override
@@ -1229,9 +1229,9 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -1239,7 +1239,7 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
   }) {
-    return genreSuccess?.call(this);
+    return imagesSuccess?.call(this);
   }
 
   @override
@@ -1249,9 +1249,9 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -1260,40 +1260,40 @@ class _$GenreSuccessImpl<T> implements GenreSuccess<T> {
     TResult Function(CastFailure<T> value)? castFailure,
     required TResult orElse(),
   }) {
-    if (genreSuccess != null) {
-      return genreSuccess(this);
+    if (imagesSuccess != null) {
+      return imagesSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class GenreSuccess<T> implements DetailsState<T> {
-  const factory GenreSuccess(final T data) = _$GenreSuccessImpl<T>;
+abstract class ImagesSuccess<T> implements DetailsState<T> {
+  const factory ImagesSuccess(final T data) = _$ImagesSuccessImpl<T>;
 
   T get data;
 
   /// Create a copy of DetailsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GenreSuccessImplCopyWith<T, _$GenreSuccessImpl<T>> get copyWith =>
+  _$$ImagesSuccessImplCopyWith<T, _$ImagesSuccessImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GenreFailureImplCopyWith<T, $Res> {
-  factory _$$GenreFailureImplCopyWith(_$GenreFailureImpl<T> value,
-          $Res Function(_$GenreFailureImpl<T>) then) =
-      __$$GenreFailureImplCopyWithImpl<T, $Res>;
+abstract class _$$ImagesFailureImplCopyWith<T, $Res> {
+  factory _$$ImagesFailureImplCopyWith(_$ImagesFailureImpl<T> value,
+          $Res Function(_$ImagesFailureImpl<T>) then) =
+      __$$ImagesFailureImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ApiErrorModel error});
 }
 
 /// @nodoc
-class __$$GenreFailureImplCopyWithImpl<T, $Res>
-    extends _$DetailsStateCopyWithImpl<T, $Res, _$GenreFailureImpl<T>>
-    implements _$$GenreFailureImplCopyWith<T, $Res> {
-  __$$GenreFailureImplCopyWithImpl(
-      _$GenreFailureImpl<T> _value, $Res Function(_$GenreFailureImpl<T>) _then)
+class __$$ImagesFailureImplCopyWithImpl<T, $Res>
+    extends _$DetailsStateCopyWithImpl<T, $Res, _$ImagesFailureImpl<T>>
+    implements _$$ImagesFailureImplCopyWith<T, $Res> {
+  __$$ImagesFailureImplCopyWithImpl(_$ImagesFailureImpl<T> _value,
+      $Res Function(_$ImagesFailureImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of DetailsState
@@ -1303,7 +1303,7 @@ class __$$GenreFailureImplCopyWithImpl<T, $Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$GenreFailureImpl<T>(
+    return _then(_$ImagesFailureImpl<T>(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1314,22 +1314,22 @@ class __$$GenreFailureImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GenreFailureImpl<T> implements GenreFailure<T> {
-  const _$GenreFailureImpl(this.error);
+class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
+  const _$ImagesFailureImpl(this.error);
 
   @override
   final ApiErrorModel error;
 
   @override
   String toString() {
-    return 'DetailsState<$T>.genreFailure(error: $error)';
+    return 'DetailsState<$T>.imagesFailure(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GenreFailureImpl<T> &&
+            other is _$ImagesFailureImpl<T> &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -1341,8 +1341,8 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GenreFailureImplCopyWith<T, _$GenreFailureImpl<T>> get copyWith =>
-      __$$GenreFailureImplCopyWithImpl<T, _$GenreFailureImpl<T>>(
+  _$$ImagesFailureImplCopyWith<T, _$ImagesFailureImpl<T>> get copyWith =>
+      __$$ImagesFailureImplCopyWithImpl<T, _$ImagesFailureImpl<T>>(
           this, _$identity);
 
   @override
@@ -1352,9 +1352,9 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -1362,7 +1362,7 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
   }) {
-    return genreFailure(error);
+    return imagesFailure(error);
   }
 
   @override
@@ -1372,9 +1372,9 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -1382,7 +1382,7 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
   }) {
-    return genreFailure?.call(error);
+    return imagesFailure?.call(error);
   }
 
   @override
@@ -1392,9 +1392,9 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -1403,8 +1403,8 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult Function(ApiErrorModel error)? castFailure,
     required TResult orElse(),
   }) {
-    if (genreFailure != null) {
-      return genreFailure(error);
+    if (imagesFailure != null) {
+      return imagesFailure(error);
     }
     return orElse();
   }
@@ -1416,9 +1416,9 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -1426,7 +1426,7 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
   }) {
-    return genreFailure(this);
+    return imagesFailure(this);
   }
 
   @override
@@ -1436,9 +1436,9 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -1446,7 +1446,7 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
   }) {
-    return genreFailure?.call(this);
+    return imagesFailure?.call(this);
   }
 
   @override
@@ -1456,9 +1456,9 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -1467,22 +1467,23 @@ class _$GenreFailureImpl<T> implements GenreFailure<T> {
     TResult Function(CastFailure<T> value)? castFailure,
     required TResult orElse(),
   }) {
-    if (genreFailure != null) {
-      return genreFailure(this);
+    if (imagesFailure != null) {
+      return imagesFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class GenreFailure<T> implements DetailsState<T> {
-  const factory GenreFailure(final ApiErrorModel error) = _$GenreFailureImpl<T>;
+abstract class ImagesFailure<T> implements DetailsState<T> {
+  const factory ImagesFailure(final ApiErrorModel error) =
+      _$ImagesFailureImpl<T>;
 
   ApiErrorModel get error;
 
   /// Create a copy of DetailsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GenreFailureImplCopyWith<T, _$GenreFailureImpl<T>> get copyWith =>
+  _$$ImagesFailureImplCopyWith<T, _$ImagesFailureImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1531,9 +1532,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -1551,9 +1552,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -1571,9 +1572,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -1595,9 +1596,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -1615,9 +1616,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -1635,9 +1636,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -1731,9 +1732,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -1751,9 +1752,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -1771,9 +1772,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -1795,9 +1796,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -1815,9 +1816,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -1835,9 +1836,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -1938,9 +1939,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -1958,9 +1959,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -1978,9 +1979,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -2002,9 +2003,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -2022,9 +2023,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -2042,9 +2043,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -2118,9 +2119,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -2138,9 +2139,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -2158,9 +2159,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -2182,9 +2183,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -2202,9 +2203,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -2222,9 +2223,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -2318,9 +2319,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -2338,9 +2339,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -2358,9 +2359,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -2382,9 +2383,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -2402,9 +2403,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -2422,9 +2423,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,
@@ -2525,9 +2526,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     required TResult Function() movieLoading,
     required TResult Function(T data) movieSuccess,
     required TResult Function(ApiErrorModel error) movieFailure,
-    required TResult Function() genreLoading,
-    required TResult Function(T data) genreSuccess,
-    required TResult Function(ApiErrorModel error) genreFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
     required TResult Function() similarLoading,
     required TResult Function(T data) similarSuccess,
     required TResult Function(ApiErrorModel error) similarFailure,
@@ -2545,9 +2546,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult? Function()? movieLoading,
     TResult? Function(T data)? movieSuccess,
     TResult? Function(ApiErrorModel error)? movieFailure,
-    TResult? Function()? genreLoading,
-    TResult? Function(T data)? genreSuccess,
-    TResult? Function(ApiErrorModel error)? genreFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
     TResult? Function()? similarLoading,
     TResult? Function(T data)? similarSuccess,
     TResult? Function(ApiErrorModel error)? similarFailure,
@@ -2565,9 +2566,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult Function()? movieLoading,
     TResult Function(T data)? movieSuccess,
     TResult Function(ApiErrorModel error)? movieFailure,
-    TResult Function()? genreLoading,
-    TResult Function(T data)? genreSuccess,
-    TResult Function(ApiErrorModel error)? genreFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
     TResult Function()? similarLoading,
     TResult Function(T data)? similarSuccess,
     TResult Function(ApiErrorModel error)? similarFailure,
@@ -2589,9 +2590,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     required TResult Function(MovieLoading<T> value) movieLoading,
     required TResult Function(MovieSuccess<T> value) movieSuccess,
     required TResult Function(MovieFailure<T> value) movieFailure,
-    required TResult Function(GenreLoading<T> value) genreLoading,
-    required TResult Function(GenreSuccess<T> value) genreSuccess,
-    required TResult Function(GenreFailure<T> value) genreFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
     required TResult Function(SimilarLoading<T> value) similarLoading,
     required TResult Function(SimilarSuccess<T> value) similarSuccess,
     required TResult Function(SimilarFailure<T> value) similarFailure,
@@ -2609,9 +2610,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult? Function(MovieLoading<T> value)? movieLoading,
     TResult? Function(MovieSuccess<T> value)? movieSuccess,
     TResult? Function(MovieFailure<T> value)? movieFailure,
-    TResult? Function(GenreLoading<T> value)? genreLoading,
-    TResult? Function(GenreSuccess<T> value)? genreSuccess,
-    TResult? Function(GenreFailure<T> value)? genreFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
     TResult? Function(SimilarLoading<T> value)? similarLoading,
     TResult? Function(SimilarSuccess<T> value)? similarSuccess,
     TResult? Function(SimilarFailure<T> value)? similarFailure,
@@ -2629,9 +2630,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult Function(MovieLoading<T> value)? movieLoading,
     TResult Function(MovieSuccess<T> value)? movieSuccess,
     TResult Function(MovieFailure<T> value)? movieFailure,
-    TResult Function(GenreLoading<T> value)? genreLoading,
-    TResult Function(GenreSuccess<T> value)? genreSuccess,
-    TResult Function(GenreFailure<T> value)? genreFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
     TResult Function(SimilarLoading<T> value)? similarLoading,
     TResult Function(SimilarSuccess<T> value)? similarSuccess,
     TResult Function(SimilarFailure<T> value)? similarFailure,

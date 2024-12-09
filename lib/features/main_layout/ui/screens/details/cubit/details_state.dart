@@ -14,9 +14,9 @@ class DetailsState<T> with _$DetailsState<T>{
   const factory DetailsState.movieFailure(ApiErrorModel error) = MovieFailure;
 
   //Genres
-  const factory DetailsState.genreLoading() = GenreLoading;
-  const factory DetailsState.genreSuccess(T data) = GenreSuccess<T>;
-  const factory DetailsState.genreFailure(ApiErrorModel error) = GenreFailure;
+  const factory DetailsState.imagesLoading() = ImagesLoading;
+  const factory DetailsState.imagesSuccess(T data) = ImagesSuccess<T>;
+  const factory DetailsState.imagesFailure(ApiErrorModel error) = ImagesFailure;
 
   //Similar Movies
   const factory DetailsState.similarLoading() = SimilarLoading;
@@ -37,9 +37,9 @@ extension DetailsStateExtensions<T> on DetailsState<T> {
   bool get isSimilarState =>
       this is SimilarLoading || this is SimilarSuccess<T> || this is SimilarFailure;
 
-  /// Checks if the current state is related to genre operations
-  bool get isGenreState =>
-      this is GenreLoading || this is GenreSuccess<T> || this is GenreFailure;
+  /// Checks if the current state is related to images operations
+  bool get isImagesState =>
+      this is ImagesLoading || this is ImagesSuccess<T> || this is ImagesFailure;
 
   /// Checks if the current state is related to movie operations
   bool get isMovieState =>

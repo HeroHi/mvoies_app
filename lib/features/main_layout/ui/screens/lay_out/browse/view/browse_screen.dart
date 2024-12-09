@@ -73,6 +73,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
         gridDelegate: _gridDelegate(),
         itemCount: movies.length,
         itemBuilder: (context, index) =>  MovieCard(
+          movieId: movies[index].id,
           posterPath: movies[index].posterPath!,
           rating: movies[index].rating,
         ),

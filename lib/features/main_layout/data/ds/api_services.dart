@@ -8,6 +8,7 @@ import 'package:movies_app/features/main_layout/data/model/movies_response.dart'
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/networking/api_constants.dart';
+import '../model/images_response.dart';
 part 'api_services.g.dart';
 @singleton
 @RestApi(baseUrl: ApiConstants.baseUrl)
@@ -35,6 +36,9 @@ abstract class ApiServices {
 
   @GET(ApiConstants.creditsEndPoint)
   Future<CreditsResponse> getMovieCredits(@Path() int movieId);
+
+  @GET(ApiConstants.imagesEndPoint)
+  Future<Images> getMovieImages(@Path() int movieId,);
 
 
 }

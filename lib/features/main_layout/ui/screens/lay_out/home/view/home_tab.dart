@@ -112,6 +112,7 @@ class _HomeTabState extends State<HomeTab> {
             itemBuilder: (context, index, realIndex) {
               final MovieEntity movie = movies[index];
               return MovieCard(
+                movieId: movie.id,
                   rating: movie.rating, posterPath: movie.posterPath!);
             },
             options: CarouselOptions(
@@ -150,6 +151,7 @@ class _HomeTabState extends State<HomeTab> {
               itemBuilder: (context, index, realIndex) {
                 final MovieEntity movie = movies[index];
                 return MovieCard(
+                  movieId: movie.id,
                     rating: movie.rating, posterPath: movie.posterPath!);
               },
               options: CarouselOptions(

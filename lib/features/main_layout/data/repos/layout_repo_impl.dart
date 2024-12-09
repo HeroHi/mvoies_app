@@ -2,6 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:movies_app/core/networking/api_error_handler.dart';
 import 'package:movies_app/core/networking/api_result.dart';
 import 'package:movies_app/features/main_layout/data/ds/api_services.dart';
+import 'package:movies_app/features/main_layout/domain/entities/backdrop_entity.dart';
 import 'package:movies_app/features/main_layout/domain/entities/cast_entity.dart';
 import 'package:movies_app/features/main_layout/domain/entities/movie_details_entity.dart';
 import 'package:movies_app/features/main_layout/domain/entities/movie_entity.dart';
@@ -58,6 +59,7 @@ class LayoutRepoImpl extends LayoutRepo{
       var response = await _apiServices.getMovie(movieId);
       return ApiResult.success(response.toEntity());
     }catch (error) {
+      print(error.toString());
       return ApiResult.failure(ApiErrorHandler.handleError(error));
     }
   }
@@ -77,6 +79,15 @@ class LayoutRepoImpl extends LayoutRepo{
     try {
       var response = await _apiServices.getSimilerMovies(movieId);
       return ApiResult.success(response.results.map((e) => e.toEntity(),).toList());
+    }catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handleError(error));
+    }
+  }
+  @override
+  Future<ApiResult<List<BackdropEntity>>> getScreenshots(int movieId) async{
+    try {
+      var response = await _apiServices.getMovieImages(movieId);
+      return ApiResult.success(response.backdrops!.map((e) => e.toEntity(),).toList());
     }catch (error) {
       return ApiResult.failure(ApiErrorHandler.handleError(error));
     }

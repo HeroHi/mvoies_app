@@ -1,49 +1,51 @@
+
 import 'package:json_annotation/json_annotation.dart';
+import 'package:movies_app/core/networking/api_constants.dart';
+
 import '../../domain/entities/movie_details_entity.dart';
-import '../../domain/entities/movie_entity.dart';
 import 'genre_response.dart';
 
 part 'movie_details_dm.g.dart';
 
 @JsonSerializable()
 class MovieDetailsDM {
-  final bool adult;
+  final bool? adult;
   @JsonKey(name: 'backdrop_path')
   final String? backdropPath;
   @JsonKey(name: 'belongs_to_collection')
-  final dynamic belongsToCollection;
-  final int budget;
+  final dynamic belongsToCollection; // Can be replaced with a specific model if needed
+  final int? budget;
   final List<Genre> genres;
   final String? homepage;
-  final int id;
+  final int? id;
   @JsonKey(name: 'imdb_id')
   final String? imdbId;
   @JsonKey(name: 'origin_country')
-  final List<String> originCountry;
+  final List<String>? originCountry;
   @JsonKey(name: 'original_language')
-  final String originalLanguage;
+  final String? originalLanguage;
   @JsonKey(name: 'original_title')
-  final String originalTitle;
-  final String overview;
-  final double popularity;
+  final String? originalTitle;
+  final String? overview;
+  final double? popularity;
   @JsonKey(name: 'poster_path')
   final String? posterPath;
-  final List<dynamic> productionCompanies;
-  final List<dynamic> productionCountries;
+  final List<ProductionCompanyDM>? productionCompanies;
+  final List<ProductionCountryDM>? productionCountries;
   @JsonKey(name: 'release_date')
-  final String releaseDate;
-  final int revenue;
-  final int runtime;
+  final String? releaseDate;
+  final int? revenue;
+  final int? runtime;
   @JsonKey(name: 'spoken_languages')
-  final List<dynamic> spokenLanguages;
-  final String status;
-  final String tagline;
-  final String title;
-  final bool video;
+  final List<SpokenLanguageDM>? spokenLanguages;
+  final String? status;
+  final String? tagline;
+  final String? title;
+  final bool? video;
   @JsonKey(name: 'vote_average')
-  final double voteAverage;
+  final double? voteAverage;
   @JsonKey(name: 'vote_count')
-  final int voteCount;
+  final int? voteCount;
 
   MovieDetailsDM({
     required this.adult,
@@ -78,18 +80,75 @@ class MovieDetailsDM {
       _$MovieDetailsDMFromJson(json);
 
   Map<String, dynamic> toJson() => _$MovieDetailsDMToJson(this);
-
-  /// Converts the data model to a domain entity with required fields.
   MovieDetailsEntity toEntity() {
     return MovieDetailsEntity(
-      id: id,
-      title: title,
-      overview: overview,
-      posterPath: posterPath ?? "",
-      releaseDate: releaseDate,
-      popularity: popularity,
-      voteAverage: voteAverage,
+      id: id!,
+      title: title!,
+      overview: overview!,
+      posterPath:ApiConstants.imagesBaseUrl+ (posterPath ?? ""),
+      releaseDate: releaseDate!,
+      popularity: voteCount!,
+      voteAverage: voteAverage!,
       genres: genres,
     );
   }
 }
+
+
+
+@JsonSerializable()
+class ProductionCompanyDM {
+  final int id;
+  @JsonKey(name: 'logo_path')
+  final String? logoPath;
+  final String name;
+  @JsonKey(name: 'origin_country')
+  final String originCountry;
+
+  ProductionCompanyDM({
+    required this.id,
+    this.logoPath,
+    required this.name,
+    required this.originCountry,
+  });
+
+  factory ProductionCompanyDM.fromJson(Map<String, dynamic> json) =>
+      _$ProductionCompanyDMFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProductionCompanyDMToJson(this);
+}
+
+@JsonSerializable()
+class ProductionCountryDM {
+  @JsonKey(name: 'iso_3166_1')
+  final String isoCode;
+  final String name;
+
+  ProductionCountryDM({required this.isoCode, required this.name});
+
+  factory ProductionCountryDM.fromJson(Map<String, dynamic> json) =>
+      _$ProductionCountryDMFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProductionCountryDMToJson(this);
+}
+
+@JsonSerializable()
+class SpokenLanguageDM {
+  @JsonKey(name: 'english_name')
+  final String englishName;
+  @JsonKey(name: 'iso_639_1')
+  final String isoCode;
+  final String name;
+
+  SpokenLanguageDM({
+    required this.englishName,
+    required this.isoCode,
+    required this.name,
+  });
+
+  factory SpokenLanguageDM.fromJson(Map<String, dynamic> json) =>
+      _$SpokenLanguageDMFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SpokenLanguageDMToJson(this);
+}
+

@@ -64,7 +64,7 @@ class Cast {
     return CastEntity(
       character: character,
       name: name,
-      profilePath: ApiConstants.imagesBaseUrl+profilePath!,
+      profilePath: ApiConstants.imagesBaseUrl+(profilePath??""),
     );
   }
 }

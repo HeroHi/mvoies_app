@@ -6,7 +6,7 @@ class MovieDetailsEntity {
   final String overview;
   final String posterPath;
   final String releaseDate;
-  final double popularity;
+  final int popularity;
   final double voteAverage;
   final List<Genre> genres;
 

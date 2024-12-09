@@ -57,6 +57,7 @@ class _SearchTabState extends State<SearchTab> {
                 gridDelegate: _gridDelegate(),
                 itemCount: movies.length,
                 itemBuilder: (context, index) => MovieCard(
+                  movieId: movies[index].id,
                     rating: movies[index].rating,
                     posterPath: movies[index].posterPath!),
               ),

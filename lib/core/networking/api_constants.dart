@@ -8,5 +8,6 @@ abstract class ApiConstants{
   static const String similarMoviesEndPoint = 'movie/{movieId}/similar';
   static const String movieEndPoint = 'movie/{movieId}';
   static const String creditsEndPoint = 'movie/{movieId}/credits';
+  static const String imagesEndPoint = 'movie/{movieId}/images';
 
 }

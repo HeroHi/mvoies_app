@@ -52,6 +52,7 @@ class MovieDM {
   Map<String, dynamic> toJson() => _$MovieDMToJson(this);
   MovieEntity toEntity() {
     return MovieEntity(
+      id: id,
       rating: voteAverage,
       posterPath: ApiConstants.imagesBaseUrl+(posterPath??"/yh64qw9mgXBvlaWDi7Q9tpUBAvH.jpg"),
     );
