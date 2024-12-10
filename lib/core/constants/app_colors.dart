@@ -29,4 +29,10 @@ abstract class AppColors {
   static const Color bottomNav = Color(0xff282A28);
   //Elevated button color
   static const Color redButton = Color(0xffE82626);
+  //Edit profile BG
+  static const Color updateProfileBg = Color(0xff212121);
+  //Avatar container color
+  static const Color avatarBg = Color(0x8FF6BD00); // Yellow Border
+
+
 }
