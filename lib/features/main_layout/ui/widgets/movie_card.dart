@@ -1,31 +1,41 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
+import 'package:movies_app/features/main_layout/ui/screens/details/view/details_screen.dart';
 import 'package:movies_app/generated/assets.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class MovieCard extends StatelessWidget {
   final String posterPath;
   final double rating;
-  const MovieCard({super.key, required this.rating, required this.posterPath});
+  final int movieId;
+  const MovieCard({super.key,required this.movieId, required this.rating, required this.posterPath});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 350,
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: CachedNetworkImage(
-              imageUrl: posterPath,
-              placeholder: (context, url) => Skeletonizer(
-                enabled: true,
-                  child: Image.asset(Assets.imagesTeeest)),
+    return InkWell(
+      onTap: () {
+        if(rating == 0.0){
+          return;
+        }
+        Navigator.pushNamed(context, DetailsScreen.routeName,arguments: movieId);
+      },
+      child: SizedBox(
+        height: 350,
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: CachedNetworkImage(
+                imageUrl: posterPath,
+                placeholder: (context, url) => Skeletonizer(
+                  enabled: true,
+                    child: Image.asset(Assets.imagesTeeest)),
+              ),
             ),
-          ),
-          _buildRating(context),
-        ],
+            _buildRating(context),
+          ],
+        ),
       ),
     );
   }
@@ -56,6 +66,6 @@ class MovieCard extends StatelessWidget {
     );
   }
   static Widget get skeleton{
-    return const MovieCard(rating: 7.7, posterPath: Assets.imagesTeeest);
+    return const MovieCard(movieId:22,rating: 7.7, posterPath: Assets.imagesTeeest);
   }
 }

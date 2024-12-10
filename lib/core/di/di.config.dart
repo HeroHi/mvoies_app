@@ -15,10 +15,14 @@ import 'package:injectable/injectable.dart' as _i526;
 import '../../features/main_layout/data/ds/api_services.dart' as _i835;
 import '../../features/main_layout/data/repos/layout_repo_impl.dart' as _i251;
 import '../../features/main_layout/domain/repos/layout_repo.dart' as _i349;
+import '../../features/main_layout/ui/screens/details/cubit/details_cubit.dart'
+    as _i548;
 import '../../features/main_layout/ui/screens/lay_out/browse/cubit/browse_cubit.dart'
     as _i146;
 import '../../features/main_layout/ui/screens/lay_out/home/cubit/home_cubit.dart'
     as _i217;
+import '../../features/main_layout/ui/screens/lay_out/search/cubit/search_cubit.dart'
+    as _i41;
 import 'dio_module.dart' as _i1045;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -40,6 +44,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i146.BrowseCubit>(
         () => _i146.BrowseCubit(gh<_i349.LayoutRepo>()));
     gh.factory<_i217.HomeCubit>(() => _i217.HomeCubit(gh<_i349.LayoutRepo>()));
+    gh.factory<_i41.SearchCubit>(
+        () => _i41.SearchCubit(gh<_i349.LayoutRepo>()));
+    gh.factory<_i548.DetailsCubit>(
+        () => _i548.DetailsCubit(gh<_i349.LayoutRepo>()));
     return this;
   }
 }

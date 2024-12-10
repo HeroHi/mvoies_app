@@ -41,6 +41,7 @@ class _HomeTabState extends State<HomeTab> {
                 height: MediaQuery.of(context).size.height,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
+                      opacity: 0.4,
                         fit: BoxFit.cover,
                         image: AssetImage(Assets.imagesTest))),
                 child: Column(
@@ -111,6 +112,7 @@ class _HomeTabState extends State<HomeTab> {
             itemBuilder: (context, index, realIndex) {
               final MovieEntity movie = movies[index];
               return MovieCard(
+                movieId: movie.id,
                   rating: movie.rating, posterPath: movie.posterPath!);
             },
             options: CarouselOptions(
@@ -149,6 +151,7 @@ class _HomeTabState extends State<HomeTab> {
               itemBuilder: (context, index, realIndex) {
                 final MovieEntity movie = movies[index];
                 return MovieCard(
+                  movieId: movie.id,
                     rating: movie.rating, posterPath: movie.posterPath!);
               },
               options: CarouselOptions(

@@ -30,8 +30,8 @@ class ApiErrorHandler {
 
   static ApiErrorModel _handleErrorResponse(response) {
     return ApiErrorModel(
-        message: response['message'] ?? _defaultErrorMsg,
-        code: response['code'],
+        message: response['status_message'] ?? _defaultErrorMsg,
+        code: response['status_code'],
         success: response['success']);
   }
 }

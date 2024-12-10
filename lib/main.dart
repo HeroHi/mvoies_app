@@ -3,6 +3,7 @@ import 'package:movies_app/core/constants/app_theme.dart';
 import 'package:movies_app/core/networking/supabase_helper.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/screens/register/view/register_screen.dart';
+import 'package:movies_app/features/main_layout/ui/screens/details/view/details_screen.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/lay_out.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       routes: {
         RegisterScreen.routeName:(_)=>RegisterScreen(),
         LoginScreen.routeName:(_)=>LoginScreen(),
-        LayOut.routeName:(_)=>LayOut()
+        LayOut.routeName:(_)=>LayOut(),
+        DetailsScreen.routeName:(_)=>DetailsScreen(),
       },
       initialRoute: LayOut.routeName,
     );
