@@ -1,5 +1,7 @@
-import 'package:movies_app/features/auth/ui/model/user_data.dart';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../../../features/auth/data/model/user_data.dart';
 abstract class SupabaseHelper {
   static const String url = "https://zqkqodednvzxnqqjmvay.supabase.co";
   static const String anonKey =
@@ -11,5 +13,12 @@ abstract class SupabaseHelper {
   static Future<void> register(
       {required UserData user,required String password}) async {
     await _supabase.auth.signUp(password: password,email: user.email,data:user.toJson() );
+  }
+  static Future<void> update(
+      {required UserData user,required String password}) async {
+    await _supabase.auth.updateUser(UserAttributes(data: user.toJson(),phone: user.phoneNumber));
+  }
+  static Future<void> delete() async {
+    await _supabase.auth.admin.deleteUser(_supabase.auth.currentUser!.id);
   }
 }

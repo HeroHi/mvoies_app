@@ -1,7 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
-import 'package:movies_app/core/networking/supabase_helper.dart';
+import 'package:movies_app/core/services/supabase/supabase_helper.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'login_state.dart';

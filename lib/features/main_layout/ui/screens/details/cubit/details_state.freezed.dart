@@ -31,6 +31,9 @@ mixin _$DetailsState<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +51,9 @@ mixin _$DetailsState<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +71,9 @@ mixin _$DetailsState<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,6 +92,9 @@ mixin _$DetailsState<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,6 +112,9 @@ mixin _$DetailsState<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -117,6 +132,9 @@ mixin _$DetailsState<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,6 +215,9 @@ class _$InitialImpl<T> implements Initial<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return initial();
   }
@@ -217,6 +238,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return initial?.call();
   }
@@ -237,6 +261,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -261,6 +288,9 @@ class _$InitialImpl<T> implements Initial<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return initial(this);
   }
@@ -281,6 +311,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return initial?.call(this);
   }
@@ -301,6 +334,9 @@ class _$InitialImpl<T> implements Initial<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -368,6 +404,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return movieLoading();
   }
@@ -388,6 +427,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return movieLoading?.call();
   }
@@ -408,6 +450,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (movieLoading != null) {
@@ -432,6 +477,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return movieLoading(this);
   }
@@ -452,6 +500,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return movieLoading?.call(this);
   }
@@ -472,6 +523,9 @@ class _$MovieLoadingImpl<T> implements MovieLoading<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (movieLoading != null) {
@@ -568,6 +622,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return movieSuccess(data);
   }
@@ -588,6 +645,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return movieSuccess?.call(data);
   }
@@ -608,6 +668,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (movieSuccess != null) {
@@ -632,6 +695,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return movieSuccess(this);
   }
@@ -652,6 +718,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return movieSuccess?.call(this);
   }
@@ -672,6 +741,9 @@ class _$MovieSuccessImpl<T> implements MovieSuccess<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (movieSuccess != null) {
@@ -775,6 +847,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return movieFailure(error);
   }
@@ -795,6 +870,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return movieFailure?.call(error);
   }
@@ -815,6 +893,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (movieFailure != null) {
@@ -839,6 +920,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return movieFailure(this);
   }
@@ -859,6 +943,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return movieFailure?.call(this);
   }
@@ -879,6 +966,9 @@ class _$MovieFailureImpl<T> implements MovieFailure<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (movieFailure != null) {
@@ -954,6 +1044,9 @@ class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return imagesLoading();
   }
@@ -974,6 +1067,9 @@ class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return imagesLoading?.call();
   }
@@ -994,6 +1090,9 @@ class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (imagesLoading != null) {
@@ -1018,6 +1117,9 @@ class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return imagesLoading(this);
   }
@@ -1038,6 +1140,9 @@ class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return imagesLoading?.call(this);
   }
@@ -1058,6 +1163,9 @@ class _$ImagesLoadingImpl<T> implements ImagesLoading<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (imagesLoading != null) {
@@ -1154,6 +1262,9 @@ class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return imagesSuccess(data);
   }
@@ -1174,6 +1285,9 @@ class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return imagesSuccess?.call(data);
   }
@@ -1194,6 +1308,9 @@ class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (imagesSuccess != null) {
@@ -1218,6 +1335,9 @@ class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return imagesSuccess(this);
   }
@@ -1238,6 +1358,9 @@ class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return imagesSuccess?.call(this);
   }
@@ -1258,6 +1381,9 @@ class _$ImagesSuccessImpl<T> implements ImagesSuccess<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (imagesSuccess != null) {
@@ -1361,6 +1487,9 @@ class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return imagesFailure(error);
   }
@@ -1381,6 +1510,9 @@ class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return imagesFailure?.call(error);
   }
@@ -1401,6 +1533,9 @@ class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (imagesFailure != null) {
@@ -1425,6 +1560,9 @@ class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return imagesFailure(this);
   }
@@ -1445,6 +1583,9 @@ class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return imagesFailure?.call(this);
   }
@@ -1465,6 +1606,9 @@ class _$ImagesFailureImpl<T> implements ImagesFailure<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (imagesFailure != null) {
@@ -1541,6 +1685,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return similarLoading();
   }
@@ -1561,6 +1708,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return similarLoading?.call();
   }
@@ -1581,6 +1731,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (similarLoading != null) {
@@ -1605,6 +1758,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return similarLoading(this);
   }
@@ -1625,6 +1781,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return similarLoading?.call(this);
   }
@@ -1645,6 +1804,9 @@ class _$SimilarLoadingImpl<T> implements SimilarLoading<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (similarLoading != null) {
@@ -1741,6 +1903,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return similarSuccess(data);
   }
@@ -1761,6 +1926,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return similarSuccess?.call(data);
   }
@@ -1781,6 +1949,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (similarSuccess != null) {
@@ -1805,6 +1976,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return similarSuccess(this);
   }
@@ -1825,6 +1999,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return similarSuccess?.call(this);
   }
@@ -1845,6 +2022,9 @@ class _$SimilarSuccessImpl<T> implements SimilarSuccess<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (similarSuccess != null) {
@@ -1948,6 +2128,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return similarFailure(error);
   }
@@ -1968,6 +2151,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return similarFailure?.call(error);
   }
@@ -1988,6 +2174,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (similarFailure != null) {
@@ -2012,6 +2201,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return similarFailure(this);
   }
@@ -2032,6 +2224,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return similarFailure?.call(this);
   }
@@ -2052,6 +2247,9 @@ class _$SimilarFailureImpl<T> implements SimilarFailure<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (similarFailure != null) {
@@ -2128,6 +2326,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return castLoading();
   }
@@ -2148,6 +2349,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return castLoading?.call();
   }
@@ -2168,6 +2372,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (castLoading != null) {
@@ -2192,6 +2399,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return castLoading(this);
   }
@@ -2212,6 +2422,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return castLoading?.call(this);
   }
@@ -2232,6 +2445,9 @@ class _$CastLoadingImpl<T> implements CastLoading<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (castLoading != null) {
@@ -2328,6 +2544,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return castSuccess(data);
   }
@@ -2348,6 +2567,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return castSuccess?.call(data);
   }
@@ -2368,6 +2590,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (castSuccess != null) {
@@ -2392,6 +2617,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return castSuccess(this);
   }
@@ -2412,6 +2640,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return castSuccess?.call(this);
   }
@@ -2432,6 +2663,9 @@ class _$CastSuccessImpl<T> implements CastSuccess<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (castSuccess != null) {
@@ -2535,6 +2769,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     required TResult Function() castLoading,
     required TResult Function(T data) castSuccess,
     required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
   }) {
     return castFailure(error);
   }
@@ -2555,6 +2792,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult? Function()? castLoading,
     TResult? Function(T data)? castSuccess,
     TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
   }) {
     return castFailure?.call(error);
   }
@@ -2575,6 +2815,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult Function()? castLoading,
     TResult Function(T data)? castSuccess,
     TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (castFailure != null) {
@@ -2599,6 +2842,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     required TResult Function(CastLoading<T> value) castLoading,
     required TResult Function(CastSuccess<T> value) castSuccess,
     required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
   }) {
     return castFailure(this);
   }
@@ -2619,6 +2865,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult? Function(CastLoading<T> value)? castLoading,
     TResult? Function(CastSuccess<T> value)? castSuccess,
     TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
   }) {
     return castFailure?.call(this);
   }
@@ -2639,6 +2888,9 @@ class _$CastFailureImpl<T> implements CastFailure<T> {
     TResult Function(CastLoading<T> value)? castLoading,
     TResult Function(CastSuccess<T> value)? castSuccess,
     TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
     required TResult orElse(),
   }) {
     if (castFailure != null) {
@@ -2657,5 +2909,612 @@ abstract class CastFailure<T> implements DetailsState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CastFailureImplCopyWith<T, _$CastFailureImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveMovieLoadingImplCopyWith<T, $Res> {
+  factory _$$SaveMovieLoadingImplCopyWith(_$SaveMovieLoadingImpl<T> value,
+          $Res Function(_$SaveMovieLoadingImpl<T>) then) =
+      __$$SaveMovieLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SaveMovieLoadingImplCopyWithImpl<T, $Res>
+    extends _$DetailsStateCopyWithImpl<T, $Res, _$SaveMovieLoadingImpl<T>>
+    implements _$$SaveMovieLoadingImplCopyWith<T, $Res> {
+  __$$SaveMovieLoadingImplCopyWithImpl(_$SaveMovieLoadingImpl<T> _value,
+      $Res Function(_$SaveMovieLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SaveMovieLoadingImpl<T> implements SaveMovieLoading<T> {
+  const _$SaveMovieLoadingImpl();
+
+  @override
+  String toString() {
+    return 'DetailsState<$T>.saveMovieLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveMovieLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() movieLoading,
+    required TResult Function(T data) movieSuccess,
+    required TResult Function(ApiErrorModel error) movieFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
+    required TResult Function() similarLoading,
+    required TResult Function(T data) similarSuccess,
+    required TResult Function(ApiErrorModel error) similarFailure,
+    required TResult Function() castLoading,
+    required TResult Function(T data) castSuccess,
+    required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
+  }) {
+    return saveMovieLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? movieLoading,
+    TResult? Function(T data)? movieSuccess,
+    TResult? Function(ApiErrorModel error)? movieFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
+    TResult? Function()? similarLoading,
+    TResult? Function(T data)? similarSuccess,
+    TResult? Function(ApiErrorModel error)? similarFailure,
+    TResult? Function()? castLoading,
+    TResult? Function(T data)? castSuccess,
+    TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
+  }) {
+    return saveMovieLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? movieLoading,
+    TResult Function(T data)? movieSuccess,
+    TResult Function(ApiErrorModel error)? movieFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
+    TResult Function()? similarLoading,
+    TResult Function(T data)? similarSuccess,
+    TResult Function(ApiErrorModel error)? similarFailure,
+    TResult Function()? castLoading,
+    TResult Function(T data)? castSuccess,
+    TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
+    required TResult orElse(),
+  }) {
+    if (saveMovieLoading != null) {
+      return saveMovieLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(MovieLoading<T> value) movieLoading,
+    required TResult Function(MovieSuccess<T> value) movieSuccess,
+    required TResult Function(MovieFailure<T> value) movieFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
+    required TResult Function(SimilarLoading<T> value) similarLoading,
+    required TResult Function(SimilarSuccess<T> value) similarSuccess,
+    required TResult Function(SimilarFailure<T> value) similarFailure,
+    required TResult Function(CastLoading<T> value) castLoading,
+    required TResult Function(CastSuccess<T> value) castSuccess,
+    required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
+  }) {
+    return saveMovieLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(MovieLoading<T> value)? movieLoading,
+    TResult? Function(MovieSuccess<T> value)? movieSuccess,
+    TResult? Function(MovieFailure<T> value)? movieFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
+    TResult? Function(SimilarLoading<T> value)? similarLoading,
+    TResult? Function(SimilarSuccess<T> value)? similarSuccess,
+    TResult? Function(SimilarFailure<T> value)? similarFailure,
+    TResult? Function(CastLoading<T> value)? castLoading,
+    TResult? Function(CastSuccess<T> value)? castSuccess,
+    TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
+  }) {
+    return saveMovieLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(MovieLoading<T> value)? movieLoading,
+    TResult Function(MovieSuccess<T> value)? movieSuccess,
+    TResult Function(MovieFailure<T> value)? movieFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
+    TResult Function(SimilarLoading<T> value)? similarLoading,
+    TResult Function(SimilarSuccess<T> value)? similarSuccess,
+    TResult Function(SimilarFailure<T> value)? similarFailure,
+    TResult Function(CastLoading<T> value)? castLoading,
+    TResult Function(CastSuccess<T> value)? castSuccess,
+    TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
+    required TResult orElse(),
+  }) {
+    if (saveMovieLoading != null) {
+      return saveMovieLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveMovieLoading<T> implements DetailsState<T> {
+  const factory SaveMovieLoading() = _$SaveMovieLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SaveMovieSuccessImplCopyWith<T, $Res> {
+  factory _$$SaveMovieSuccessImplCopyWith(_$SaveMovieSuccessImpl<T> value,
+          $Res Function(_$SaveMovieSuccessImpl<T>) then) =
+      __$$SaveMovieSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SaveMovieSuccessImplCopyWithImpl<T, $Res>
+    extends _$DetailsStateCopyWithImpl<T, $Res, _$SaveMovieSuccessImpl<T>>
+    implements _$$SaveMovieSuccessImplCopyWith<T, $Res> {
+  __$$SaveMovieSuccessImplCopyWithImpl(_$SaveMovieSuccessImpl<T> _value,
+      $Res Function(_$SaveMovieSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SaveMovieSuccessImpl<T> implements SaveMovieSuccess<T> {
+  const _$SaveMovieSuccessImpl();
+
+  @override
+  String toString() {
+    return 'DetailsState<$T>.saveMovieSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveMovieSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() movieLoading,
+    required TResult Function(T data) movieSuccess,
+    required TResult Function(ApiErrorModel error) movieFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
+    required TResult Function() similarLoading,
+    required TResult Function(T data) similarSuccess,
+    required TResult Function(ApiErrorModel error) similarFailure,
+    required TResult Function() castLoading,
+    required TResult Function(T data) castSuccess,
+    required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
+  }) {
+    return saveMovieSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? movieLoading,
+    TResult? Function(T data)? movieSuccess,
+    TResult? Function(ApiErrorModel error)? movieFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
+    TResult? Function()? similarLoading,
+    TResult? Function(T data)? similarSuccess,
+    TResult? Function(ApiErrorModel error)? similarFailure,
+    TResult? Function()? castLoading,
+    TResult? Function(T data)? castSuccess,
+    TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
+  }) {
+    return saveMovieSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? movieLoading,
+    TResult Function(T data)? movieSuccess,
+    TResult Function(ApiErrorModel error)? movieFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
+    TResult Function()? similarLoading,
+    TResult Function(T data)? similarSuccess,
+    TResult Function(ApiErrorModel error)? similarFailure,
+    TResult Function()? castLoading,
+    TResult Function(T data)? castSuccess,
+    TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
+    required TResult orElse(),
+  }) {
+    if (saveMovieSuccess != null) {
+      return saveMovieSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(MovieLoading<T> value) movieLoading,
+    required TResult Function(MovieSuccess<T> value) movieSuccess,
+    required TResult Function(MovieFailure<T> value) movieFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
+    required TResult Function(SimilarLoading<T> value) similarLoading,
+    required TResult Function(SimilarSuccess<T> value) similarSuccess,
+    required TResult Function(SimilarFailure<T> value) similarFailure,
+    required TResult Function(CastLoading<T> value) castLoading,
+    required TResult Function(CastSuccess<T> value) castSuccess,
+    required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
+  }) {
+    return saveMovieSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(MovieLoading<T> value)? movieLoading,
+    TResult? Function(MovieSuccess<T> value)? movieSuccess,
+    TResult? Function(MovieFailure<T> value)? movieFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
+    TResult? Function(SimilarLoading<T> value)? similarLoading,
+    TResult? Function(SimilarSuccess<T> value)? similarSuccess,
+    TResult? Function(SimilarFailure<T> value)? similarFailure,
+    TResult? Function(CastLoading<T> value)? castLoading,
+    TResult? Function(CastSuccess<T> value)? castSuccess,
+    TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
+  }) {
+    return saveMovieSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(MovieLoading<T> value)? movieLoading,
+    TResult Function(MovieSuccess<T> value)? movieSuccess,
+    TResult Function(MovieFailure<T> value)? movieFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
+    TResult Function(SimilarLoading<T> value)? similarLoading,
+    TResult Function(SimilarSuccess<T> value)? similarSuccess,
+    TResult Function(SimilarFailure<T> value)? similarFailure,
+    TResult Function(CastLoading<T> value)? castLoading,
+    TResult Function(CastSuccess<T> value)? castSuccess,
+    TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
+    required TResult orElse(),
+  }) {
+    if (saveMovieSuccess != null) {
+      return saveMovieSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveMovieSuccess<T> implements DetailsState<T> {
+  const factory SaveMovieSuccess() = _$SaveMovieSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SaveMovieFailureImplCopyWith<T, $Res> {
+  factory _$$SaveMovieFailureImplCopyWith(_$SaveMovieFailureImpl<T> value,
+          $Res Function(_$SaveMovieFailureImpl<T>) then) =
+      __$$SaveMovieFailureImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String errorMsg});
+}
+
+/// @nodoc
+class __$$SaveMovieFailureImplCopyWithImpl<T, $Res>
+    extends _$DetailsStateCopyWithImpl<T, $Res, _$SaveMovieFailureImpl<T>>
+    implements _$$SaveMovieFailureImplCopyWith<T, $Res> {
+  __$$SaveMovieFailureImplCopyWithImpl(_$SaveMovieFailureImpl<T> _value,
+      $Res Function(_$SaveMovieFailureImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMsg = null,
+  }) {
+    return _then(_$SaveMovieFailureImpl<T>(
+      null == errorMsg
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveMovieFailureImpl<T> implements SaveMovieFailure<T> {
+  const _$SaveMovieFailureImpl(this.errorMsg);
+
+  @override
+  final String errorMsg;
+
+  @override
+  String toString() {
+    return 'DetailsState<$T>.saveMovieFailure(errorMsg: $errorMsg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveMovieFailureImpl<T> &&
+            (identical(other.errorMsg, errorMsg) ||
+                other.errorMsg == errorMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMsg);
+
+  /// Create a copy of DetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveMovieFailureImplCopyWith<T, _$SaveMovieFailureImpl<T>> get copyWith =>
+      __$$SaveMovieFailureImplCopyWithImpl<T, _$SaveMovieFailureImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() movieLoading,
+    required TResult Function(T data) movieSuccess,
+    required TResult Function(ApiErrorModel error) movieFailure,
+    required TResult Function() imagesLoading,
+    required TResult Function(T data) imagesSuccess,
+    required TResult Function(ApiErrorModel error) imagesFailure,
+    required TResult Function() similarLoading,
+    required TResult Function(T data) similarSuccess,
+    required TResult Function(ApiErrorModel error) similarFailure,
+    required TResult Function() castLoading,
+    required TResult Function(T data) castSuccess,
+    required TResult Function(ApiErrorModel error) castFailure,
+    required TResult Function() saveMovieLoading,
+    required TResult Function() saveMovieSuccess,
+    required TResult Function(String errorMsg) saveMovieFailure,
+  }) {
+    return saveMovieFailure(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? movieLoading,
+    TResult? Function(T data)? movieSuccess,
+    TResult? Function(ApiErrorModel error)? movieFailure,
+    TResult? Function()? imagesLoading,
+    TResult? Function(T data)? imagesSuccess,
+    TResult? Function(ApiErrorModel error)? imagesFailure,
+    TResult? Function()? similarLoading,
+    TResult? Function(T data)? similarSuccess,
+    TResult? Function(ApiErrorModel error)? similarFailure,
+    TResult? Function()? castLoading,
+    TResult? Function(T data)? castSuccess,
+    TResult? Function(ApiErrorModel error)? castFailure,
+    TResult? Function()? saveMovieLoading,
+    TResult? Function()? saveMovieSuccess,
+    TResult? Function(String errorMsg)? saveMovieFailure,
+  }) {
+    return saveMovieFailure?.call(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? movieLoading,
+    TResult Function(T data)? movieSuccess,
+    TResult Function(ApiErrorModel error)? movieFailure,
+    TResult Function()? imagesLoading,
+    TResult Function(T data)? imagesSuccess,
+    TResult Function(ApiErrorModel error)? imagesFailure,
+    TResult Function()? similarLoading,
+    TResult Function(T data)? similarSuccess,
+    TResult Function(ApiErrorModel error)? similarFailure,
+    TResult Function()? castLoading,
+    TResult Function(T data)? castSuccess,
+    TResult Function(ApiErrorModel error)? castFailure,
+    TResult Function()? saveMovieLoading,
+    TResult Function()? saveMovieSuccess,
+    TResult Function(String errorMsg)? saveMovieFailure,
+    required TResult orElse(),
+  }) {
+    if (saveMovieFailure != null) {
+      return saveMovieFailure(errorMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial<T> value) initial,
+    required TResult Function(MovieLoading<T> value) movieLoading,
+    required TResult Function(MovieSuccess<T> value) movieSuccess,
+    required TResult Function(MovieFailure<T> value) movieFailure,
+    required TResult Function(ImagesLoading<T> value) imagesLoading,
+    required TResult Function(ImagesSuccess<T> value) imagesSuccess,
+    required TResult Function(ImagesFailure<T> value) imagesFailure,
+    required TResult Function(SimilarLoading<T> value) similarLoading,
+    required TResult Function(SimilarSuccess<T> value) similarSuccess,
+    required TResult Function(SimilarFailure<T> value) similarFailure,
+    required TResult Function(CastLoading<T> value) castLoading,
+    required TResult Function(CastSuccess<T> value) castSuccess,
+    required TResult Function(CastFailure<T> value) castFailure,
+    required TResult Function(SaveMovieLoading<T> value) saveMovieLoading,
+    required TResult Function(SaveMovieSuccess<T> value) saveMovieSuccess,
+    required TResult Function(SaveMovieFailure<T> value) saveMovieFailure,
+  }) {
+    return saveMovieFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial<T> value)? initial,
+    TResult? Function(MovieLoading<T> value)? movieLoading,
+    TResult? Function(MovieSuccess<T> value)? movieSuccess,
+    TResult? Function(MovieFailure<T> value)? movieFailure,
+    TResult? Function(ImagesLoading<T> value)? imagesLoading,
+    TResult? Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult? Function(ImagesFailure<T> value)? imagesFailure,
+    TResult? Function(SimilarLoading<T> value)? similarLoading,
+    TResult? Function(SimilarSuccess<T> value)? similarSuccess,
+    TResult? Function(SimilarFailure<T> value)? similarFailure,
+    TResult? Function(CastLoading<T> value)? castLoading,
+    TResult? Function(CastSuccess<T> value)? castSuccess,
+    TResult? Function(CastFailure<T> value)? castFailure,
+    TResult? Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult? Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult? Function(SaveMovieFailure<T> value)? saveMovieFailure,
+  }) {
+    return saveMovieFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial<T> value)? initial,
+    TResult Function(MovieLoading<T> value)? movieLoading,
+    TResult Function(MovieSuccess<T> value)? movieSuccess,
+    TResult Function(MovieFailure<T> value)? movieFailure,
+    TResult Function(ImagesLoading<T> value)? imagesLoading,
+    TResult Function(ImagesSuccess<T> value)? imagesSuccess,
+    TResult Function(ImagesFailure<T> value)? imagesFailure,
+    TResult Function(SimilarLoading<T> value)? similarLoading,
+    TResult Function(SimilarSuccess<T> value)? similarSuccess,
+    TResult Function(SimilarFailure<T> value)? similarFailure,
+    TResult Function(CastLoading<T> value)? castLoading,
+    TResult Function(CastSuccess<T> value)? castSuccess,
+    TResult Function(CastFailure<T> value)? castFailure,
+    TResult Function(SaveMovieLoading<T> value)? saveMovieLoading,
+    TResult Function(SaveMovieSuccess<T> value)? saveMovieSuccess,
+    TResult Function(SaveMovieFailure<T> value)? saveMovieFailure,
+    required TResult orElse(),
+  }) {
+    if (saveMovieFailure != null) {
+      return saveMovieFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveMovieFailure<T> implements DetailsState<T> {
+  const factory SaveMovieFailure(final String errorMsg) =
+      _$SaveMovieFailureImpl<T>;
+
+  String get errorMsg;
+
+  /// Create a copy of DetailsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SaveMovieFailureImplCopyWith<T, _$SaveMovieFailureImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

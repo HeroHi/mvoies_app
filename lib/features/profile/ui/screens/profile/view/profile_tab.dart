@@ -1,15 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies_app/core/di/di.dart';
+import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
+import 'package:movies_app/features/main_layout/domain/entities/movie_entity.dart';
+import 'package:movies_app/features/main_layout/ui/widgets/loading.dart';
 import 'package:movies_app/features/main_layout/ui/widgets/movie_card.dart';
+import 'package:movies_app/features/profile/domain/entities/user_entity.dart';
+import 'package:movies_app/features/profile/ui/screens/profile/cubit/profile_cubit.dart';
+import 'package:movies_app/features/profile/ui/screens/profile/cubit/profile_state.dart';
 import 'package:random_avatar/random_avatar.dart';
-import '../../../../../core/constants/app_colors.dart';
-import '../../../../../generated/assets.dart';
+import '../../../../../../core/constants/app_colors.dart';
+import '../../../../../../generated/assets.dart';
 
-class ProfileTab extends StatelessWidget {
+class ProfileTab extends StatefulWidget {
   static const String routeName = "profile";
-  late ThemeData theme;
-  bool isEmptyWatchList = false;
+
   ProfileTab({super.key});
 
+  @override
+  State<ProfileTab> createState() => _ProfileTabState();
+}
+
+class _ProfileTabState extends State<ProfileTab> {
+  late ThemeData theme;
+  late UserEntity user;
+  bool isEmptyWatchList = false;
+  final ProfileCubit _profileCubit = getIt();
+  @override
+  void initState() {
+    user = _profileCubit.currentUserData;
+    _profileCubit.getWatchList();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
@@ -23,8 +45,8 @@ class ProfileTab extends StatelessWidget {
               Row(
                 children: [
                   _buildAvatarAndName(),
-                  _buildWishListAndHistory(num: "num", string: "string"),
-                  _buildWishListAndHistory(num: "num", string: "string"),
+                  _buildWishListAndHistory(num: "num", string: "Watch List"),
+                  _buildWishListAndHistory(num: "num", string: "History"),
                 ],
               ),
               const SizedBox(height: 20),
@@ -90,10 +112,10 @@ class ProfileTab extends StatelessWidget {
           margin: const EdgeInsets.only(top: 56, left: 24, bottom: 14),
           width: 118,
           height: 118,
-          child: RandomAvatar("john_doe"),
+          child: RandomAvatar(user.avatarCode),
         ),
         Text(
-          " john_doe",
+          user.name,
           style: theme.textTheme.displayMedium,
         )
       ],
@@ -127,13 +149,18 @@ class ProfileTab extends StatelessWidget {
         children: [
           Container(
             color: AppColors.updateProfileBg,
-            child: const TabBar(
+            child:  TabBar(
+              onTap: (value) {
+                if(value == 1){
+                  _profileCubit.getHistory();
+                }
+              },
               dividerColor: AppColors.transparent,
               indicatorColor: AppColors.textYellow,
               labelColor: AppColors.textYellow,
               unselectedLabelColor: Colors.grey,
               indicatorSize: TabBarIndicatorSize.tab,
-              tabs: [
+              tabs: const [
                 Tab(
                   icon: Icon(
                     Icons.list,
@@ -154,13 +181,40 @@ class ProfileTab extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: TabBarView(
-              children: [
-                isEmptyWatchList
-                    ? Image.asset(Assets.imagesEmpty)
-                    : _buildTabsCards(),
-                _buildTabsCards(),
-              ],
+            child: BlocProvider(
+              create: (context) => _profileCubit,
+              child: BlocBuilder<ProfileCubit, ProfileState>(
+                builder: (context, state) {
+                  return TabBarView(
+                    children: [
+                      state.when(
+                          initial: () => loading(),
+                          loading: () => loading(),
+                          success: (data) {
+                            List<MovieEntity> movies = data;
+                            isEmptyWatchList = movies.isEmpty;
+                            return isEmptyWatchList? Image.asset(Assets.imagesEmpty):_buildTabsCards(movies);
+                          },
+                          failure: (errorMsg) {
+                            showToast(msg: errorMsg, color: Colors.red);
+                            return const SizedBox.shrink();
+                          },),
+                      state.when(
+                        initial: () => loading(),
+                        loading: () => loading(),
+                        success: (data) {
+                          List<MovieEntity> movies = data;
+                          isEmptyWatchList = movies.isEmpty;
+                          return isEmptyWatchList? Image.asset(Assets.imagesEmpty):_buildTabsCards(movies);
+                        },
+                        failure: (errorMsg) {
+                          showToast(msg: errorMsg, color: Colors.red);
+                          return const SizedBox.shrink();
+                        },),
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ],
@@ -168,7 +222,7 @@ class ProfileTab extends StatelessWidget {
     );
   }
 
-  Padding _buildTabsCards() {
+  Padding _buildTabsCards(List<MovieEntity> movies) {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10),
       child: GridView.builder(
@@ -177,11 +231,11 @@ class ProfileTab extends StatelessWidget {
             childAspectRatio: .6,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10),
-        itemCount: 20,
-        itemBuilder: (context, index) => const MovieCard(
-            rating: 9.9,
-            posterPath:
-                "https://www.whatspaper.com/wp-content/uploads/2023/07/hd-killua-zoldyck-wallpaper-whatspaper-5.jpg"),
+        itemCount: movies.length,
+        itemBuilder: (context, index) => MovieCard(
+            movieId: movies[index].id,
+            rating: movies[index].rating,
+            posterPath: movies[index].posterPath!),
       ),
     );
   }

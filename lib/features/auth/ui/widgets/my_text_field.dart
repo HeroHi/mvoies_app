@@ -54,6 +54,7 @@ class _MyTextFieldState extends State<MyTextField> {
             child: Form(
               key: widget.fieldKey,
               child: TextFormField(
+
                 controller: widget.controller,
                 style: TextStyle(color: Colors.white),
                 autovalidateMode: AutovalidateMode.onUserInteraction,

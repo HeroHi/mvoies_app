@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
+import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
+import 'package:movies_app/features/profile/ui/screens/update_profile/cubit/update_profile_cubit.dart';
 import 'package:random_avatar/random_avatar.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   static const String routeName = "updateProfile";
-  final GlobalKey<FormState> _userNameKey = GlobalKey();
-  final TextEditingController _userNameController = TextEditingController();
-  final GlobalKey<FormState> _phoneKey = GlobalKey();
-  final TextEditingController _phoneController = TextEditingController();
-  String selectedAvatar = "john_doe";
-  UpdateProfileScreen({super.key});
 
+  UpdateProfileScreen({super.key});
   @override
   State<UpdateProfileScreen> createState() => _UpdateProfileScreenState();
 }
 
 class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
+  String selectedAvatar = "john_doe";
+  final UpdateProfileCubit _updateProfileCubit = getIt();
+  final GlobalKey<FormState> _userNameKey = GlobalKey();
+  final TextEditingController _userNameController = TextEditingController();
+  final GlobalKey<FormState> _phoneKey = GlobalKey();
+  final TextEditingController _phoneController = TextEditingController();
   late ThemeData theme;
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {
-    widget._userNameController.text = "charName";
-    widget._phoneController.text = "01063777113";
+    _userNameController.text = _updateProfileCubit.currentUserData.name;
+    _phoneController.text = _updateProfileCubit.currentUserData.phone;
     theme = Theme.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -47,7 +50,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                           return showBottomSheet(context);
                         });
                   },
-                  child: RandomAvatar(widget.selectedAvatar)),
+                  child: RandomAvatar(selectedAvatar)),
             ),
             const SizedBox(
               height: 30,
@@ -59,8 +62,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 },
                 hintText: "",
                 isPassword: false,
-                fieldKey: widget._userNameKey,
-                controller: widget._userNameController),
+                fieldKey: _userNameKey,
+                controller: _userNameController),
             MyTextField(
                 preIcon: Icons.phone,
                 validator: (string) {
@@ -68,8 +71,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 },
                 hintText: "",
                 isPassword: false,
-                fieldKey: widget._phoneKey,
-                controller: widget._phoneController),
+                fieldKey: _phoneKey,
+                controller: _phoneController),
             SizedBox(
               height: MediaQuery.of(context).size.height * .24,
             ),
@@ -77,7 +80,9 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 style: const ButtonStyle(
                     backgroundColor:
                         WidgetStatePropertyAll(AppColors.redButton)),
-                onPressed: () {},
+                onPressed: () {
+                  _updateProfileCubit.deleteAcc();
+                },
                 child: Text(
                   "Delete Account",
                   style: theme.textTheme.displayMedium!
@@ -86,12 +91,18 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 18.0, bottom: 18),
               child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Update data",
-                    style: theme.textTheme.displayMedium!
-                        .copyWith(color: AppColors.iconWhite),
-                  )),
+                onPressed: () {
+                  _updateProfileCubit.updateAcc(
+                      name: _userNameController.text,
+                      phoneNumber: _phoneController.text,
+                      avatarCode: selectedAvatar);
+                },
+                child: Text(
+                  "Update data",
+                  style: theme.textTheme.displayMedium!
+                      .copyWith(color: AppColors.iconWhite),
+                ),
+              ),
             ),
           ],
         ),
@@ -149,13 +160,13 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
           return InkWell(
             onTap: () {
               setState(() {
-                widget.selectedAvatar = avatarName;
+                selectedAvatar = avatarName;
               });
               Navigator.pop(context);
             },
             child: _buildAvatarContainer(
               RandomAvatar(avatarName),
-              isSelected: avatarName == widget.selectedAvatar,
+              isSelected: avatarName == selectedAvatar,
             ),
           );
         },

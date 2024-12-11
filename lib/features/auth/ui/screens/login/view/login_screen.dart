@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +7,7 @@ import 'package:movies_app/features/auth/ui/screens/login/cubit/login_cubit.dart
 import 'package:movies_app/features/auth/ui/screens/login/cubit/login_state.dart';
 import 'package:movies_app/features/auth/ui/widgets/country_switch.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
+import 'package:movies_app/features/main_layout/ui/screens/lay_out/lay_out.dart';
 import '../../../../../../generated/assets.dart';
 import '../../../widgets/show_toast.dart';
 
@@ -47,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
       showToast(
           msg: "signed in successfully",
           color: Colors.green);
+      Navigator.pushReplacementNamed(context, LayOut.routeName);
     }, failure: (message) {
       Navigator.pop(context);
       showToast(msg: message, color: Colors.red);

@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/core/networking/supabase_helper.dart';
+import 'package:movies_app/core/services/supabase/supabase_helper.dart';
 import 'package:movies_app/features/auth/ui/screens/register/cubit/register_state.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../../../model/user_data.dart';
+import '../../../../data/model/user_data.dart';
 
 
 

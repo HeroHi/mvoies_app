@@ -1,6 +1,5 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movies_app/features/main_layout/domain/entities/backdrop_entity.dart';
 import 'package:movies_app/features/main_layout/domain/entities/cast_entity.dart';
@@ -56,5 +55,18 @@ class DetailsCubit extends Cubit<DetailsState> {
       emit(DetailsState.similarSuccess(error));
     },);
   }
+  void addToWatchList(MovieEntity movie){
+      emit(const DetailsState.saveMovieLoading());
+    try {
+      _layoutRepo.addToWatchList(movie: movie);
+      emit(const DetailsState.saveMovieSuccess());
+    } catch(e) {
+      emit(DetailsState.saveMovieFailure(e.toString()));
+    }
+}
+
+  void addToHistory(MovieEntity movie){
+     _layoutRepo.addToHistory(movie: movie);
+}
 
 }

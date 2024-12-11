@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/browse/view/browse_screen.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/home/view/home_tab.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/search/view/search_tab.dart';
+import 'package:movies_app/features/profile/ui/screens/profile/view/profile_tab.dart';
 import '../../../../../core/constants/app_colors.dart';
 
 class LayOut extends StatefulWidget {
@@ -17,7 +18,7 @@ class LayOut extends StatefulWidget {
 class _LayOutState extends State<LayOut> {
   int currentIndex = 0;
 
-  List<Widget> tabs = [HomeTab(),SearchTab(),BrowseScreen()];
+  List<Widget> tabs = [HomeTab(),SearchTab(),BrowseScreen(),ProfileTab()];
 
   @override
   Widget build(BuildContext context) {

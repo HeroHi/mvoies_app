@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
-import 'package:movies_app/features/auth/ui/model/user_data.dart';
 import 'package:movies_app/features/auth/ui/screens/register/cubit/register_cubit.dart';
 import 'package:movies_app/features/auth/ui/screens/register/cubit/register_state.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
 import 'package:random_avatar/random_avatar.dart';
 
+import '../../../../data/model/user_data.dart';
 import '../../../widgets/country_switch.dart';
 
 class RegisterScreen extends StatefulWidget {
