@@ -15,7 +15,7 @@ abstract class ProfileRepo {
 
 
   Future<void> logout();
-  UserEntity get currentUserData;
+  Future<UserEntity> get currentUserData;
 }
 
 

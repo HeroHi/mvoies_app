@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
+import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
 import 'package:movies_app/features/profile/ui/screens/update_profile/cubit/update_profile_cubit.dart';
 import 'package:random_avatar/random_avatar.dart';
@@ -17,15 +18,28 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   String selectedAvatar = "john_doe";
   final UpdateProfileCubit _updateProfileCubit = getIt();
   final GlobalKey<FormState> _userNameKey = GlobalKey();
-  final TextEditingController _userNameController = TextEditingController();
   final GlobalKey<FormState> _phoneKey = GlobalKey();
-  final TextEditingController _phoneController = TextEditingController();
+   TextEditingController _userNameController = TextEditingController();
+   TextEditingController _phoneController = TextEditingController();
+
   late ThemeData theme;
   bool isSelected = false;
   @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
+      var userData = await _updateProfileCubit.currentUserData;
+       _phoneController = TextEditingController(text: userData.phone);
+       _userNameController = TextEditingController(text: userData.name);
+       selectedAvatar = userData.avatarCode;
+       setState(() {
+
+       });
+    },);
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    _userNameController.text = _updateProfileCubit.currentUserData.name;
-    _phoneController.text = _updateProfileCubit.currentUserData.phone;
+
     theme = Theme.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -82,6 +96,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                         WidgetStatePropertyAll(AppColors.redButton)),
                 onPressed: () {
                   _updateProfileCubit.deleteAcc();
+                  Navigator.pushReplacementNamed(context, LoginScreen.routeName);
                 },
                 child: Text(
                   "Delete Account",

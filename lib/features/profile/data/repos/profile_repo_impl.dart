@@ -1,10 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movies_app/core/services/auth_service.dart';
 import 'package:movies_app/core/services/database_service.dart';
-import 'package:movies_app/features/main_layout/data/model/movie_dm.dart';
 import 'package:movies_app/features/profile/domain/entities/user_entity.dart';
 import 'package:movies_app/features/profile/domain/repos/profile_repo.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../auth/data/model/user_data.dart';
 import '../../../main_layout/domain/entities/movie_entity.dart';
@@ -45,9 +44,9 @@ class ProfileRepoImpl extends ProfileRepo {
 
   @override
 
-  UserEntity get currentUserData {
+  Future<UserEntity> get currentUserData async {
     var currentUser = _authService.currentUser as User;
-    var userData = UserData.fromJson(currentUser.userMetadata!);
-    return userData.toEntity();
+    String phone = await _databaseService.getPhone();
+    return UserEntity(avatarCode: currentUser.photoURL!, name: currentUser.displayName??"No", email: currentUser.email!, phone: phone);
   }
 }

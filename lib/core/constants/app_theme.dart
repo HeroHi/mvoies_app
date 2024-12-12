@@ -8,7 +8,7 @@ abstract class AppTheme {
       scaffoldBackgroundColor: AppColors.backgroundDark,
       appBarTheme:  AppBarTheme(
         iconTheme: const IconThemeData(
-          color: AppColors.primaryYellow,
+          color: AppColors.iconWhite,
           size: 30,
         ),
         centerTitle: true,

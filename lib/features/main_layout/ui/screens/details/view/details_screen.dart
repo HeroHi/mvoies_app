@@ -51,8 +51,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
     return BlocProvider(
   create: (context) => _detailsCubit,
   child: Scaffold(
+    extendBodyBehindAppBar: true,
       appBar:_buildAppBar(),
-      body: BlocBuilder<DetailsCubit, DetailsState>(
+      body: BlocConsumer<DetailsCubit, DetailsState>(
         buildWhen: (previous, current) => current.isMovieState,
         builder: (context, state) {
           return state.maybeWhen(
@@ -140,7 +141,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
               );
             },
           );
-        },
+        }, listener: (BuildContext context, DetailsState<dynamic> state) {
+          state.maybeWhen(orElse: (){},saveMovieFailure: (errorMsg) {
+            showToast(msg: errorMsg, color: Colors.red);
+          },saveMovieSuccess: () {
+            showToast(msg: "Movie saved successfully", color: Colors.green);
+          },);
+      },
       ),
     ),
 );
@@ -152,7 +159,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       actions: [
         IconButton(onPressed: () {
           _detailsCubit.addToWatchList(currentMovie);
-        }, icon: const Icon(Icons.bookmark))
+        }, icon: const Icon(Icons.bookmark,color: AppColors.iconWhite,))
       ]
       ,);
   }

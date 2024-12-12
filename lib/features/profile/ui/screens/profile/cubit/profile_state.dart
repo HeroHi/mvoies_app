@@ -14,6 +14,10 @@ class ProfileState<T> with _$ProfileState<T>{
   const factory ProfileState.loading() = Loading;
   const factory ProfileState.success(T data) = Success<T>;
   const factory ProfileState.failure(String errorMsg) = Failure;
+
+  const factory ProfileState.historyLoading() = HistoryLoading;
+  const factory ProfileState.historySuccess(T data) = HistorySuccess<T>;
+  const factory ProfileState.historyFailure(String errorMsg) = HistoryFailure;
 }
 
 

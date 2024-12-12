@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/di/di.dart';
+import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
 import 'package:movies_app/features/main_layout/domain/entities/movie_entity.dart';
 import 'package:movies_app/features/main_layout/ui/widgets/loading.dart';
@@ -8,6 +9,7 @@ import 'package:movies_app/features/main_layout/ui/widgets/movie_card.dart';
 import 'package:movies_app/features/profile/domain/entities/user_entity.dart';
 import 'package:movies_app/features/profile/ui/screens/profile/cubit/profile_cubit.dart';
 import 'package:movies_app/features/profile/ui/screens/profile/cubit/profile_state.dart';
+import 'package:movies_app/features/profile/ui/screens/update_profile/view/update_profile_screen.dart';
 import 'package:random_avatar/random_avatar.dart';
 import '../../../../../../core/constants/app_colors.dart';
 import '../../../../../../generated/assets.dart';
@@ -15,7 +17,7 @@ import '../../../../../../generated/assets.dart';
 class ProfileTab extends StatefulWidget {
   static const String routeName = "profile";
 
-  ProfileTab({super.key});
+  const ProfileTab({super.key});
 
   @override
   State<ProfileTab> createState() => _ProfileTabState();
@@ -26,46 +28,95 @@ class _ProfileTabState extends State<ProfileTab> {
   late UserEntity user;
   bool isEmptyWatchList = false;
   final ProfileCubit _profileCubit = getIt();
+  List<MovieEntity> history = [];
+  List<MovieEntity> watchList = [];
   @override
   void initState() {
-    user = _profileCubit.currentUserData;
+    user = UserEntity(avatarCode: "avatarCode", name: "name", email: "email", phone: "phone");
+    _fetchUserData();
     _profileCubit.getWatchList();
+    _profileCubit.getHistory();
+
+
     super.initState();
   }
+  void _fetchUserData() async {
+    user = await _profileCubit.currentUserData;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
-    return Column(
-      children: [
-        Container(
-          color: AppColors.updateProfileBg, // Background color
-          child: Column(
-            children: [
-              const SizedBox(height: 40), // Top padding
-              Row(
-                children: [
-                  _buildAvatarAndName(),
-                  _buildWishListAndHistory(num: "num", string: "Watch List"),
-                  _buildWishListAndHistory(num: "num", string: "History"),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  _buildEditProfileButton(context),
-                  _buildExitButton(context)
-                ],
-              )
-            ],
+    return BlocProvider(
+      create: (context) => _profileCubit,
+      child: BlocListener<ProfileCubit, ProfileState>(
+  listener: (context, state) {
+    {
+      state.when(
+        initial: () {
+        },
+        loading: () {
+
+        },
+        success: (data) {
+            watchList = data;
+        },
+        failure: (errorMsg) {
+          _dismissDialog();
+          showToast(msg: errorMsg, color: Colors.red);
+        },
+        historyLoading: () async{
+        },
+        historySuccess: (data) {
+          _dismissDialog();
+          setState(() {
+            history = data;
+          });
+        },
+        historyFailure: (errorMsg) {
+          _dismissDialog();
+          showToast(msg: errorMsg, color: Colors.red);
+
+        },
+      );
+    }
+  },
+  child: Column(
+        children: [
+          Container(
+            color: AppColors.updateProfileBg, // Background color
+            child: Column(
+              children: [
+                const SizedBox(height: 40), // Top padding
+                Row(
+                  children: [
+                    _buildAvatarAndName(),
+                    _buildWishListAndHistory(
+                        num: "${watchList.length}", string: "Watch List"),
+                    _buildWishListAndHistory(
+                        num: "${history.length}", string: "History"),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    _buildEditProfileButton(context),
+                    _buildExitButton(context)
+                  ],
+                )
+              ],
+            ),
           ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.black, // Background color
-            child: _buildTabs(),
+          Expanded(
+            child: Container(
+              color: Colors.black, // Background color
+              child: _buildTabs(),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
+),
     );
   }
 
@@ -76,7 +127,10 @@ class _ProfileTabState extends State<ProfileTab> {
         child: ElevatedButton(
             style: const ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(AppColors.redButton)),
-            onPressed: () {},
+            onPressed: () {
+              _profileCubit.logout();
+              Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -97,7 +151,9 @@ class _ProfileTabState extends State<ProfileTab> {
     return SizedBox(
         width: MediaQuery.of(context).size.width * .62,
         child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, UpdateProfileScreen.routeName);
+            },
             child: Text(
               "Edit profile",
               style: theme.textTheme.displayMedium!
@@ -125,7 +181,7 @@ class _ProfileTabState extends State<ProfileTab> {
   Widget _buildWishListAndHistory(
       {required String num, required String string}) {
     return Padding(
-      padding: const EdgeInsets.only(left: 55, top: 50.0),
+      padding: const EdgeInsets.only(left: 10, top: 50.0),
       child: Column(
         children: [
           Text(
@@ -149,18 +205,13 @@ class _ProfileTabState extends State<ProfileTab> {
         children: [
           Container(
             color: AppColors.updateProfileBg,
-            child:  TabBar(
-              onTap: (value) {
-                if(value == 1){
-                  _profileCubit.getHistory();
-                }
-              },
+            child: const TabBar(
               dividerColor: AppColors.transparent,
               indicatorColor: AppColors.textYellow,
               labelColor: AppColors.textYellow,
               unselectedLabelColor: Colors.grey,
               indicatorSize: TabBarIndicatorSize.tab,
-              tabs: const [
+              tabs: [
                 Tab(
                   icon: Icon(
                     Icons.list,
@@ -181,40 +232,11 @@ class _ProfileTabState extends State<ProfileTab> {
             ),
           ),
           Expanded(
-            child: BlocProvider(
-              create: (context) => _profileCubit,
-              child: BlocBuilder<ProfileCubit, ProfileState>(
-                builder: (context, state) {
-                  return TabBarView(
-                    children: [
-                      state.when(
-                          initial: () => loading(),
-                          loading: () => loading(),
-                          success: (data) {
-                            List<MovieEntity> movies = data;
-                            isEmptyWatchList = movies.isEmpty;
-                            return isEmptyWatchList? Image.asset(Assets.imagesEmpty):_buildTabsCards(movies);
-                          },
-                          failure: (errorMsg) {
-                            showToast(msg: errorMsg, color: Colors.red);
-                            return const SizedBox.shrink();
-                          },),
-                      state.when(
-                        initial: () => loading(),
-                        loading: () => loading(),
-                        success: (data) {
-                          List<MovieEntity> movies = data;
-                          isEmptyWatchList = movies.isEmpty;
-                          return isEmptyWatchList? Image.asset(Assets.imagesEmpty):_buildTabsCards(movies);
-                        },
-                        failure: (errorMsg) {
-                          showToast(msg: errorMsg, color: Colors.red);
-                          return const SizedBox.shrink();
-                        },),
-                    ],
-                  );
-                },
-              ),
+            child: TabBarView(
+              children: [
+                _buildTabsCards(watchList),
+                _buildTabsCards(history)
+              ],
             ),
           ),
         ],
@@ -222,21 +244,51 @@ class _ProfileTabState extends State<ProfileTab> {
     );
   }
 
-  Padding _buildTabsCards(List<MovieEntity> movies) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            childAspectRatio: .6,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10),
-        itemCount: movies.length,
-        itemBuilder: (context, index) => MovieCard(
-            movieId: movies[index].id,
-            rating: movies[index].rating,
-            posterPath: movies[index].posterPath!),
-      ),
-    );
+  Future<void> _showLoading() async{
+        if (context.mounted) {
+          await showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => const Center(
+            child: CircularProgressIndicator(
+              color: AppColors.primaryYellow,
+            ),
+          ),
+             );
+        }
+
+  }
+
+  Widget _buildTabsCards(List<MovieEntity> movies) {
+    return movies.isEmpty
+        ? _buildEmptyImage()
+        : Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: GridView.builder(
+              gridDelegate: _gridDelegate(),
+              itemCount: movies.length,
+              itemBuilder: (context, index) => MovieCard(
+                  movieId: movies[index].id,
+                  rating: movies[index].rating,
+                  posterPath: movies[index].posterPath!),
+            ),
+          );
+  }
+
+  SliverGridDelegateWithFixedCrossAxisCount _gridDelegate() {
+    return const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        childAspectRatio: .6,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10);
+  }
+
+  _buildEmptyImage() {
+    return Image.asset(Assets.imagesEmpty);
+  }
+  void _dismissDialog() {
+    if (Navigator.canPop(context)) {
+      Navigator.pop(context);
+    }
   }
 }

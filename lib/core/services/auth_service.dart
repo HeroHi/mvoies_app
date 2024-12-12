@@ -10,5 +10,8 @@ abstract class AuthService{
       {required UserData user});
   Future<void> delete();
   Future<void> logout();
+  Future<void> resetPassword(String email);
+  Future<void> signInWithGoogle();
+  bool get isVerified;
   dynamic get currentUser;
 }
