@@ -61,9 +61,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               Expanded(
                 child: ListView(
                   children: [
-                    Lottie.asset(Assets.animationForgotPassword),
+                    Image.asset(Assets.imagesForgot2),
                     const SizedBox(
-                      height: 50,
+                      height: 20,
                     ),
                     MyTextField(
                         controller: _emailController,

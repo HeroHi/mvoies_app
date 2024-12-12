@@ -48,4 +48,6 @@ class ProfileCubit extends Cubit<ProfileState> {
       emit(ProfileState.failure(e.toString()));
     }
   }
+
+
 }

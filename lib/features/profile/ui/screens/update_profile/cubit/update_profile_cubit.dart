@@ -35,4 +35,15 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
       emit(UpdateProfileState.failure(e.toString()));
     }
   }
+  void updatePassword(String password) async {
+    emit(const UpdateProfileState.loading());
+    try {
+      await _profileRepo.updatePassword(password);
+      emit(const UpdateProfileState.success());
+    } on FirebaseAuthException catch (e) {
+      emit(UpdateProfileState.failure(e.message!));
+    } catch (e) {
+      emit(UpdateProfileState.failure(e.toString()));
+    }
+  }
 }

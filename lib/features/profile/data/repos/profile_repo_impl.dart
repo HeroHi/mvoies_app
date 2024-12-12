@@ -49,4 +49,9 @@ class ProfileRepoImpl extends ProfileRepo {
     String phone = await _databaseService.getPhone();
     return UserEntity(avatarCode: currentUser.photoURL!, name: currentUser.displayName??"No", email: currentUser.email!, phone: phone);
   }
+
+  @override
+  Future<void> updatePassword(String password) async{
+    await _authService.updatePassword(password);
+  }
 }

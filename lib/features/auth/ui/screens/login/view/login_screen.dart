@@ -62,58 +62,60 @@ class _LoginScreenState extends State<LoginScreen> {
         },
         child: Scaffold(
           backgroundColor: AppColors.backgroundDark,
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .3,
-                child: Image.asset(Assets.imagesLogo),
-              ),
-              MyTextField(
-                  controller: _emailController,
-                  preIcon: Icons.email,
-                  validator: (String value) {
-                    return _validateEmail(value);
-                  },
-                  hintText: "Email",
-                  isPassword: false,
-                  fieldKey: _emailKey),
-              MyTextField(
-                  controller: _passwordController,
-                  preIcon: FontAwesomeIcons.lock,
-                  validator: (value) {
-                    if (value.length < 8) {
-                      return "Password should be at least 8 characters";
-                    }
-                    return null;
-                  },
-                  hintText: "password",
-                  isPassword: true,
-                  fieldKey: _passwordKey),
-              buildForgotPassword(),
-              _buildLoginButton(),
-              buildCreateAccount(),
-              buildOR(),
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 18, bottom: 18, left: 14, right: 14),
-                child: ElevatedButton(
-                  onPressed: () {
-                    _loginCubit.loginWithGoogle();
-                  },
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.g_mobiledata_outlined),
-                      Text("login with google")
-                    ],
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .3,
+                  child: Image.asset(Assets.imagesLogo),
+                ),
+                MyTextField(
+                    controller: _emailController,
+                    preIcon: Icons.email,
+                    validator: (String value) {
+                      return _validateEmail(value);
+                    },
+                    hintText: "Email",
+                    isPassword: false,
+                    fieldKey: _emailKey),
+                MyTextField(
+                    controller: _passwordController,
+                    preIcon: FontAwesomeIcons.lock,
+                    validator: (value) {
+                      if (value.length < 8) {
+                        return "Password should be at least 8 characters";
+                      }
+                      return null;
+                    },
+                    hintText: "password",
+                    isPassword: true,
+                    fieldKey: _passwordKey),
+                buildForgotPassword(),
+                _buildLoginButton(),
+                buildCreateAccount(),
+                buildOR(),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 18, bottom: 18, left: 14, right: 14),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _loginCubit.loginWithGoogle();
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.g_mobiledata_outlined),
+                        Text("login with google")
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 18, horizontal: 140),
-                  child: CountrySwitch())
-            ],
+                const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 18, horizontal: 140),
+                    child: CountrySwitch())
+              ],
+            ),
           ),
         ),
       ),

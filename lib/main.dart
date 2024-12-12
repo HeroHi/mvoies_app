@@ -7,6 +7,7 @@ import 'package:movies_app/features/auth/ui/screens/login/view/screens/forgot_pa
 import 'package:movies_app/features/auth/ui/screens/register/view/register_screen.dart';
 import 'package:movies_app/features/main_layout/ui/screens/details/view/details_screen.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/lay_out.dart';
+import 'package:movies_app/features/profile/ui/screens/reset_password/reset_password.dart';
 import 'package:movies_app/features/profile/ui/screens/update_profile/view/update_profile_screen.dart';
 import 'core/di/di.dart';
 import 'firebase_options.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         LayOut.routeName:(_)=>LayOut(),
         DetailsScreen.routeName:(_)=>DetailsScreen(),
         ForgotPassword.routeName:(_)=>ForgotPassword(),
-        UpdateProfileScreen.routeName:(_)=>UpdateProfileScreen()
+        UpdateProfileScreen.routeName:(_)=>UpdateProfileScreen(),
+        ResetPassword.routeName:(_)=>ResetPassword()
       },
       initialRoute: (FirebaseAuth.instance.currentUser != null &&
           FirebaseAuth.instance.currentUser!.emailVerified)

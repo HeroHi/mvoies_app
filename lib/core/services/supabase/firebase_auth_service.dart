@@ -101,4 +101,9 @@ class FirebaseAuthService extends AuthService {
 
   @override
   bool get isVerified => _firebaseAuth.currentUser!.emailVerified;
+
+  @override
+  Future<void> updatePassword(String password) async{
+    await currentUser.updatePassword(password);
+  }
 }

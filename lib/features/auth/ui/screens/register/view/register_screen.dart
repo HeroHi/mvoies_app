@@ -73,70 +73,72 @@ class _RegisterScreenState extends State<RegisterScreen> {
           },);
         },
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
           appBar: AppBar(
+            iconTheme: const IconThemeData(color: AppColors.primaryYellow),
             automaticallyImplyLeading: true,
             title: const Text("Register"),
           ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              _buildAvatarSelector(),
-              MyTextField(
-                controller: _nameController,
-                  preIcon: FontAwesomeIcons.idCard,
-                  validator: (value) {
-                    if (value.length < 4) {
-                      return "At least 4 characters";
-                    }
-                    return null;
-                  },
-                  hintText: "Name",
-                  isPassword: false,
-                  fieldKey: _nameKey),
-              MyTextField(
-                controller: _emailController,
-                  preIcon: FontAwesomeIcons.envelope,
-                  validator: _validateEmail,
-                  hintText: "Email",
-                  isPassword: false,
-                  fieldKey: _emailKey),
-              MyTextField(
-                controller: _passwordController,
-                  preIcon: FontAwesomeIcons.lock,
-                  validator: (value) {
-                    if (value.length < 8) {
-                      return "Password should be at least 8 characters";
-                    }
-                    return null;
-                  },
-                  hintText: "Password",
-                  isPassword: true,
-                  fieldKey: _passwordKey),
-              MyTextField(
-                controller: _passwordConfirmController,
-                  preIcon: FontAwesomeIcons.lock,
-                  validator: _validatePassConfirm,
-                  hintText: "Confirm Password",
-                  isPassword: true,
-                  fieldKey: _passwordConfirmKey),
-              MyTextField(
-                controller: _phoneController,
-                  preIcon: FontAwesomeIcons.phone,
-                  validator: _validatePhone,
-                  hintText: "Phone Number",
-                  isPassword: false,
-                  fieldKey: _phoneKey),
-              _buildRegisterButton(),
-              const SizedBox(
-                height: 15,
-              ),
-              _buildLoginText(),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 140),
-                child: CountrySwitch(),
-              ),
-            ],
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _buildAvatarSelector(),
+                MyTextField(
+                  controller: _nameController,
+                    preIcon: FontAwesomeIcons.idCard,
+                    validator: (value) {
+                      if (value.length < 4) {
+                        return "At least 4 characters";
+                      }
+                      return null;
+                    },
+                    hintText: "Name",
+                    isPassword: false,
+                    fieldKey: _nameKey),
+                MyTextField(
+                  controller: _emailController,
+                    preIcon: FontAwesomeIcons.envelope,
+                    validator: _validateEmail,
+                    hintText: "Email",
+                    isPassword: false,
+                    fieldKey: _emailKey),
+                MyTextField(
+                  controller: _passwordController,
+                    preIcon: FontAwesomeIcons.lock,
+                    validator: (value) {
+                      if (value.length < 8) {
+                        return "Password should be at least 8 characters";
+                      }
+                      return null;
+                    },
+                    hintText: "Password",
+                    isPassword: true,
+                    fieldKey: _passwordKey),
+                MyTextField(
+                  controller: _passwordConfirmController,
+                    preIcon: FontAwesomeIcons.lock,
+                    validator: _validatePassConfirm,
+                    hintText: "Confirm Password",
+                    isPassword: true,
+                    fieldKey: _passwordConfirmKey),
+                MyTextField(
+                  controller: _phoneController,
+                    preIcon: FontAwesomeIcons.phone,
+                    validator: _validatePhone,
+                    hintText: "Phone Number",
+                    isPassword: false,
+                    fieldKey: _phoneKey),
+                _buildRegisterButton(),
+                const SizedBox(
+                  height: 15,
+                ),
+                _buildLoginText(),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 140),
+                  child: CountrySwitch(),
+                ),
+              ],
+            ),
           ),
         ),
       ),

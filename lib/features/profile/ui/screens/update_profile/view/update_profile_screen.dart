@@ -3,6 +3,7 @@ import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
+import 'package:movies_app/features/profile/ui/screens/reset_password/reset_password.dart';
 import 'package:movies_app/features/profile/ui/screens/update_profile/cubit/update_profile_cubit.dart';
 import 'package:random_avatar/random_avatar.dart';
 
@@ -87,6 +88,12 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 isPassword: false,
                 fieldKey: _phoneKey,
                 controller: _phoneController),
+            InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, ResetPassword.routeName);
+              },
+              child: Text("Reset Password",style: theme.textTheme.displayMedium,),
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .24,
             ),

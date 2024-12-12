@@ -15,6 +15,8 @@ abstract class ProfileRepo {
 
 
   Future<void> logout();
+
+  Future<void> updatePassword(String password);
   Future<UserEntity> get currentUserData;
 }
 
