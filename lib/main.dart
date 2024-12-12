@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,20 @@ import 'package:movies_app/features/profile/ui/screens/update_profile/view/updat
 import 'core/di/di.dart';
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   configureDependencies();
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,15 +37,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       theme: AppTheme.theme,
       routes: {
-        RegisterScreen.routeName:(_)=>RegisterScreen(),
-        LoginScreen.routeName:(_)=>LoginScreen(),
-        LayOut.routeName:(_)=>LayOut(),
-        DetailsScreen.routeName:(_)=>DetailsScreen(),
-        ForgotPassword.routeName:(_)=>ForgotPassword(),
-        UpdateProfileScreen.routeName:(_)=>UpdateProfileScreen(),
-        ResetPassword.routeName:(_)=>ResetPassword()
+        RegisterScreen.routeName: (_) => RegisterScreen(),
+        LoginScreen.routeName: (_) => LoginScreen(),
+        LayOut.routeName: (_) => LayOut(),
+        DetailsScreen.routeName: (_) => DetailsScreen(),
+        ForgotPassword.routeName: (_) => ForgotPassword(),
+        UpdateProfileScreen.routeName: (_) => UpdateProfileScreen(),
+        ResetPassword.routeName: (_) => ResetPassword()
       },
       initialRoute: (FirebaseAuth.instance.currentUser != null &&
           FirebaseAuth.instance.currentUser!.emailVerified)

@@ -1,0 +1,105 @@
+{
+  "onboarding": {
+    "titles": {
+      "findMovie": "Find Your Next Favorite Movie Here",
+      "discover": "Discover Movies",
+      "exploreGenres": "Explore All Genres",
+      "createWatchlist": "Create Watchlist",
+      "rateReviewLearn": "Rate, Review, and Learn",
+      "startWatching": "Start Watching Now"
+    },
+    "descriptions": {
+      "findMovie": "Get access to a huge library of movies to suit all tastes. You will surely like it.",
+      "discover": "Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.",
+      "exploreGenres": "Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.",
+      "createWatchlist": "Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.",
+      "rateReviewLearn": "Share your thoughts on the movies you've watched. Dive deep into film details and help others discover great movies with your reviews.",
+      "startWatching": ""
+    },
+    "buttons": {
+      "exploreNow": "Explore Now",
+      "next": "Next",
+      "back": "Back",
+      "finish": "Finish"
+    }
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "checkYourEmail": "Please check your email",
+    "hintEmail": "Email",
+    "buttonVerifyEmail": "Verify Email",
+    "errorEmptyEmail": "Please enter your email address.",
+    "errorInvalidEmail": "Please enter a valid email address."
+  },
+  "register": {
+    "title": "Register",
+    "nameHint": "Name",
+    "emailHint": "Email",
+    "passwordHint": "Password",
+    "confirmPasswordHint": "Confirm Password",
+    "phoneHint": "Phone Number",
+    "createAccountButton": "Create Account",
+    "alreadyHaveAccount": "Already Have Account?",
+    "login": "Login",
+    "validationName": "At least 4 characters",
+    "validationPassword": "Password should be at least 8 characters",
+    "validationPasswordConfirm": "Password and Password Confirm not match",
+    "validationPhone": "Invalid Phone number",
+    "validationEmail": "Enter a valid email address",
+    "signupSuccess": "Signed up successfully, please check your email to verify before logging in"
+  },
+  "login": {
+    "title": "Login",
+    "emailHint": "Email",
+    "passwordHint": "Password",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Login",
+    "createAccount": "Don’t Have Account ?",
+    "createAccountButton": "Create One",
+    "googleLoginButton": "Login with Google",
+    "or": "OR"
+  },
+  "detailsScreen":{
+    "watch": "Watch",
+    "screenShots": "Screen Shots",
+    "similar": "Similar",
+    "summary": "Summary",
+    "cast":"Cast",
+    "genres": "Genres",
+    "name": "Name",
+    "character": "Character",
+    "movieSavedSuccessfully":"Movie saved successfully"
+  },
+  "searchScreen": {
+    "anErrorOccurred": "An error occurred...",
+    "search": "search"
+  },
+  "profileScreen": {
+    "editProfile": "Edit Profile",
+    "exit": "Exit",
+    "watchList": "Watch List",
+    "history": "History"
+  },
+  "updateProfile": {
+    "resetPassword": "resetPassword",
+    "pickAvatar": "Pick Avatar",
+    "username": "Username",
+    "phone": "Phone",
+    "deleteAccount": "Delete Account",
+    "updateData": "Update Data"
+  },
+  "resetPassword": {
+    "resetPassword": "Reset Password",
+    "enterNewPassword": "Enter New Password",
+    "reEnterNewPassword": "Re-enter New Password",
+    "resetPasswordButton": "Reset Password",
+    "passwordUpdatedSuccess": "Password updated successfully",
+    "passwordUpdateFailed": "Failed to update password"
+  },
+  "home": {
+    "action": "Action",
+    "seeMore":"See More"
+  }
+}
+
+

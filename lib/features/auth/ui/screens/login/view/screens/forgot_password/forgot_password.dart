@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -46,7 +47,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             },
             success: () {
               Navigator.pop(context);
-              showToast(msg: "Please check your email", color: Colors.green);
+              showToast(msg: tr('forgotPassword.checkYourEmail'), color: Colors.green);
             },
             failure: (message) {
               Navigator.pop(context);
@@ -71,7 +72,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         validator: (String value) {
                           return null;
                         },
-                        hintText: "Email",
+                        hintText: tr('forgotPassword.hintEmail'),
                         isPassword: false,
                         fieldKey: _emailKey),
                     Padding(
@@ -80,9 +81,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           onPressed: () {
                             _loginCubit.resetPassword(_emailController.text);
                           },
-                          child: const Text("Verify Email")),
+                          child:  Text(tr('forgotPassword.buttonVerifyEmail')),
                     )
-                  ],
+                    )],
                 ),
               ),
             ],
@@ -95,8 +96,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   _buildAppBar() {
     return AppBar(
       iconTheme: const IconThemeData(color: AppColors.iconYellow),
-      title: const Center(
-        child: Text("Forgot password "),
+      title:  Center(
+        child: Text(tr('forgotPassword.title')),
       ),
     );
   }

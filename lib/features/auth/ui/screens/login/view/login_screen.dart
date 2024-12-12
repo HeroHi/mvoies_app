@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -76,7 +77,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     validator: (String value) {
                       return _validateEmail(value);
                     },
-                    hintText: "Email",
+                    hintText: tr('login.emailHint'),
+                    
                     isPassword: false,
                     fieldKey: _emailKey),
                 MyTextField(
@@ -84,11 +86,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     preIcon: FontAwesomeIcons.lock,
                     validator: (value) {
                       if (value.length < 8) {
-                        return "Password should be at least 8 characters";
+                        return tr('register.validationPassword');
                       }
                       return null;
                     },
-                    hintText: "password",
+                    hintText: tr('login.passwordHint'),
                     isPassword: true,
                     fieldKey: _passwordKey),
                 buildForgotPassword(),
@@ -102,11 +104,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       _loginCubit.loginWithGoogle();
                     },
-                    child: const Row(
+                    child:  Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.g_mobiledata_outlined),
-                        Text("login with google")
+                        const Icon(Icons.g_mobiledata_outlined),
+                        Text(tr('login.googleLoginButton'))
                       ],
                     ),
                   ),
@@ -133,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   _emailController.text, _passwordController.text);
             }
           },
-          child: const Text("login")),
+          child:  Text(tr('login.title'))),
     );
   }
 
@@ -149,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 28),
           child: Text(
-            "OR",
+            tr('login.or'),
             style: theme.textTheme.labelSmall
                 ?.copyWith(color: AppColors.textYellow),
           ),
@@ -168,14 +170,14 @@ class _LoginScreenState extends State<LoginScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          " Don’t Have Account ?",
+          tr('login.createAccount'),
           style: theme.textTheme.labelSmall,
         ),
         InkWell(
           onTap: () {
             Navigator.pushNamed(context, RegisterScreen.routeName);
           },
-          child: Text(" Create One ",
+          child: Text(tr('login.createAccountButton'),
               style: theme.textTheme.labelSmall
                   ?.copyWith(color: AppColors.textYellow)),
         )
@@ -192,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Navigator.pushNamed(context, ForgotPassword.routeName);
           },
           child: Text(
-            "Forgot password ?",
+            tr('login.forgotPassword'),
             style: theme.textTheme.labelSmall
                 ?.copyWith(color: AppColors.textYellow),
           ),
@@ -208,7 +210,7 @@ class _LoginScreenState extends State<LoginScreen> {
     String emailPattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
     RegExp regExp = RegExp(emailPattern);
     if (!regExp.hasMatch(value)) {
-      return 'Enter a valid email address';
+      return tr('register.validationEmail');
     }
     return null;
   }
