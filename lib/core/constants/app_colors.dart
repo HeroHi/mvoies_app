@@ -33,6 +33,7 @@ abstract class AppColors {
   static const Color updateProfileBg = Color(0xff212121);
   //Avatar container color
   static const Color avatarBg = Color(0x8FF6BD00); // Yellow Border
-
+  //bottomSheetColor
+  static const Color sheetBlack=Color(0xff121312);
 
 }
