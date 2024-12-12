@@ -26,6 +26,14 @@ class _CountrySwitchState extends State<CountrySwitch> {
   int _currentCountry = 0;
   List<String> langCodes=['en','ar'];
   @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      String langCode = context.locale.languageCode;
+      _currentCountry = (langCode == 'en')?0:1;
+    },);
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return AnimatedToggleSwitch<int>.rolling(
         current: _currentCountry,
