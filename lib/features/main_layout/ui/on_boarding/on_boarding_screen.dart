@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../generated/assets.dart';
@@ -147,41 +148,38 @@ class OnBoardingScreenWidget extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(20),
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
                     color: AppColors.sheetBlack,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
+                        topLeft: Radius.circular(40.r),
+                        topRight: Radius.circular(40.r))),
                 child: Column(
                   children: [
                     Text(
                       textAlign: TextAlign.center,
                       page.title,
                       style: theme.textTheme.displayMedium!.copyWith(
-                        fontSize: 28,
+                        fontSize: 28.sp,
                       ),
                     ),
-                    const SizedBox(
-                      height: 15,
+                     SizedBox(
+                      height: 15.h,
                     ),
                     Text(
                       textAlign: TextAlign.center,
                       page.description,
                       style: theme.textTheme.displayMedium,
                     ),
-                    const SizedBox(
-                      height: 15,
+                     SizedBox(
+                      height: 15.h,
                     ),
                     _buildUpperElevatedButton(context),
-                    const SizedBox(
-                      height: 15,
+                     SizedBox(
+                      height: 15.h,
                     ),
                     index > 1
                         ? _buildLowerElevatedButton()
-                        : const SizedBox(
-                            height: 0,
-                            width: 0,
-                          ),
+                        : const SizedBox.shrink(),
                   ],
                 ),
               )

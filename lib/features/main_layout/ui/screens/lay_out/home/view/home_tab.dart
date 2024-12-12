@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
@@ -51,8 +52,8 @@ class _HomeTabState extends State<HomeTab> {
                     _buildCarouselSlider(),
                     Spacer(),
                     Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 81, vertical: 8),
+                        padding:  EdgeInsets.symmetric(
+                            horizontal: 81.w, vertical: 8.h),
                         child: Image.asset(Assets.imagesWatcNow))
                   ],
                 )),
@@ -72,7 +73,7 @@ class _HomeTabState extends State<HomeTab> {
 
   Padding _buildAvailableNow() {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 81, vertical: 8),
+        padding:  EdgeInsets.symmetric(horizontal: 81.w, vertical: 8.h),
         child: Image.asset(Assets.imagesAvailableNow));
   }
 

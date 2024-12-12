@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/features/main_layout/ui/screens/details/view/details_screen.dart';
 import 'package:movies_app/generated/assets.dart';
@@ -25,7 +26,7 @@ class MovieCard extends StatelessWidget {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(16.r),
               child: CachedNetworkImage(
                 imageUrl: posterPath,
                 placeholder: (context, url) => Skeletonizer(
@@ -44,7 +45,7 @@ class MovieCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-      width: 62,
+      width: 62.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.black.withOpacity(0.4),

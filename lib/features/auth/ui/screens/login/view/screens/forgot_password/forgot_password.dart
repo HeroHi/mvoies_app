@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -63,8 +64,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 child: ListView(
                   children: [
                     Image.asset(Assets.imagesForgot2),
-                    const SizedBox(
-                      height: 20,
+                     SizedBox(
+                      height: 20.h,
                     ),
                     MyTextField(
                         controller: _emailController,
@@ -76,7 +77,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         isPassword: false,
                         fieldKey: _emailKey),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding:  EdgeInsets.all(10.0.r),
                       child: ElevatedButton(
                           onPressed: () {
                             _loginCubit.resetPassword(_emailController.text);

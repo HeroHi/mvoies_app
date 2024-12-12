@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTextField extends StatefulWidget {
   final GlobalKey<FormState> fieldKey;
@@ -34,11 +35,11 @@ class _MyTextFieldState extends State<MyTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 56,
-      margin: EdgeInsets.all(14),
+      height: 56.h,
+      margin: const EdgeInsets.all(14),
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        color: Color(0xff282A28),
+        color: const Color(0xff282A28),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
@@ -56,7 +57,7 @@ class _MyTextFieldState extends State<MyTextField> {
               child: TextFormField(
 
                 controller: widget.controller,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -81,7 +82,7 @@ class _MyTextFieldState extends State<MyTextField> {
                               color: Colors.white,
                             ),
                           )
-                        : Text("")),
+                        : const Text("")),
                 obscureText: isHidden,
               ),
             ),

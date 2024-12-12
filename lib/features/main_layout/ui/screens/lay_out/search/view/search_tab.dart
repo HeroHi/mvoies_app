@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
@@ -12,7 +13,7 @@ import '../../../../../../../generated/assets.dart';
 import '../../../../widgets/movie_card.dart';
 
 class SearchTab extends StatefulWidget {
-  SearchTab({super.key});
+  const SearchTab({super.key});
 
   @override
   State<SearchTab> createState() => _SearchTabState();
@@ -29,8 +30,8 @@ class _SearchTabState extends State<SearchTab> {
       create: (context) => _searchCubit,
       child: Column(
         children: [
-          const SizedBox(
-            height: 22,
+           SizedBox(
+            height: 22.h,
           ),
           _buildSearchField(),
           _isSearching
@@ -75,27 +76,27 @@ class _SearchTabState extends State<SearchTab> {
   }
 
   SliverGridDelegateWithFixedCrossAxisCount _gridDelegate() {
-    return const SliverGridDelegateWithFixedCrossAxisCount(
+    return  SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.7,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10);
+        mainAxisSpacing: 10.r,
+        crossAxisSpacing: 10.r);
   }
 
   Widget _buildSearchField() {
     return Container(
-      height: 56,
-      margin: const EdgeInsets.all(14),
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      height: 56.h,
+      margin:  EdgeInsets.all(14.r),
+      padding:  EdgeInsets.symmetric(horizontal: 10.w),
       decoration: BoxDecoration(
         color: const Color(0xff282A28),
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(15.r),
       ),
       child: Row(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 10.0, right: 8),
-            child: Icon(
+           Padding(
+            padding: EdgeInsets.only(left: 10.0.r, right: 8.r),
+            child: const Icon(
               FontAwesomeIcons.searchengin,
               color: Colors.white,
             ),

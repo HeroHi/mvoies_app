@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
 import 'package:movies_app/features/main_layout/data/model/genre_response.dart';
@@ -37,7 +38,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(height: 40, child: _buildGenresBloc()),
+            SizedBox(height: 40.h, child: _buildGenresBloc()),
             _buildMoviesBloc()
           ],
         ),
@@ -82,11 +83,11 @@ class _BrowseScreenState extends State<BrowseScreen> {
   }
 
   SliverGridDelegateWithFixedCrossAxisCount _gridDelegate() {
-    return const SliverGridDelegateWithFixedCrossAxisCount(
+    return  SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 0.7,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10);
+        mainAxisSpacing: 10.r,
+        crossAxisSpacing: 10.r);
   }
 
   Widget _buildGenresBloc() {

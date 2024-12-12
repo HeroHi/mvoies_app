@@ -18,7 +18,7 @@ class LayOut extends StatefulWidget {
 class _LayOutState extends State<LayOut> {
   int currentIndex = 0;
 
-  List<Widget> tabs = [HomeTab(),SearchTab(),BrowseScreen(),ProfileTab()];
+  List<Widget> tabs = [const HomeTab(),const SearchTab(),const BrowseScreen(),const ProfileTab()];
 
   @override
   Widget build(BuildContext context) {

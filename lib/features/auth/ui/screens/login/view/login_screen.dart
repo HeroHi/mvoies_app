@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -68,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .3,
+                  height: 0.3.sh,
                   child: Image.asset(Assets.imagesLogo),
                 ),
                 MyTextField(
@@ -113,9 +114,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 18, horizontal: 140),
-                    child: CountrySwitch())
+                 Padding(
+                    padding: EdgeInsets.symmetric(vertical: 18.h, horizontal: 140.w),
+                    child: const CountrySwitch())
               ],
             ),
           ),
@@ -144,12 +145,12 @@ class _LoginScreenState extends State<LoginScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 92,
-          height: 1.12,
+          width: 92.w,
+          height: 1.12.h,
           color: AppColors.textYellow,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 28),
+          padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 28.h),
           child: Text(
             tr('login.or'),
             style: theme.textTheme.labelSmall
@@ -157,8 +158,8 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         Container(
-          width: 92,
-          height: 1.12,
+          width: 92.w,
+          height: 1.12.h,
           color: AppColors.textYellow,
         ),
       ],
