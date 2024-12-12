@@ -215,7 +215,7 @@ class _ProfileTabState extends State<ProfileTab> {
               indicatorSize: TabBarIndicatorSize.tab,
               tabs: [
                 Tab(
-                  icon: const Icon(
+                  icon:  Icon(
                     Icons.list,
                     color: AppColors.iconYellow,
                     size: 30.r,
@@ -223,7 +223,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   text: tr('profileScreen.watchList'),
                 ),
                  Tab(
-                  icon: const Icon(
+                  icon:  Icon(
                     Icons.folder,
                     color: AppColors.iconYellow,
                     size: 30.r,

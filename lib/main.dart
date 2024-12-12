@@ -39,28 +39,29 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) 
+  Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(393 , 851),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return  MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.theme,
-          routes: {
-            RegisterScreen.routeName:(_)=>RegisterScreen(),
-            LoginScreen.routeName:(_)=>LoginScreen(),
-            LayOut.routeName:(_)=>LayOut(),
-            DetailsScreen.routeName:(_)=>DetailsScreen(),
-            ForgotPassword.routeName:(_)=>ForgotPassword(),
-            UpdateProfileScreen.routeName:(_)=>UpdateProfileScreen(),
-            ResetPassword.routeName:(_)=>ResetPassword()
-          },
-          initialRoute: (FirebaseAuth.instance.currentUser != null &&
-              FirebaseAuth.instance.currentUser!.emailVerified)
-              ? LayOut.routeName
-              : LoginScreen.routeName,
-        );
+        designSize: const Size(393, 851),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.theme,
+            routes: {
+              RegisterScreen.routeName: (_) => RegisterScreen(),
+              LoginScreen.routeName: (_) => LoginScreen(),
+              LayOut.routeName: (_) => LayOut(),
+              DetailsScreen.routeName: (_) => DetailsScreen(),
+              ForgotPassword.routeName: (_) => ForgotPassword(),
+              UpdateProfileScreen.routeName: (_) => UpdateProfileScreen(),
+              ResetPassword.routeName: (_) => ResetPassword()
+            },
+            initialRoute: (FirebaseAuth.instance.currentUser != null &&
+                    FirebaseAuth.instance.currentUser!.emailVerified)
+                ? LayOut.routeName
+                : LoginScreen.routeName,
+          );
+        });
   }
 }

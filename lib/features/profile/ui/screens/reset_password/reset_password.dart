@@ -38,7 +38,7 @@ class ResetPassword extends StatelessWidget {
                     color: AppColors.primaryYellow,
                   ),
 
-                );
+                ));
               },success: () {
                 Navigator.pop(context);
                 showToast(msg: tr('resetPassword.passwordUpdatedSuccess'), color: Colors.green);
