@@ -26,13 +26,16 @@ dependencies:
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   pretty_dio_logger: ^1.4.0
-  supabase_flutter: ^2.8.1
   fluttertoast: ^8.2.8
   lottie: ^3.1.3
   injectable: ^2.5.0
   get_it: ^8.0.2
   cached_network_image: ^3.4.1
   skeletonizer: ^1.4.2
+  firebase_core: ^3.8.1
+  cloud_firestore: ^5.5.1
+  firebase_auth: ^5.3.1
+  google_sign_in: ^6.2.2
 
 
 
@@ -52,5 +55,6 @@ flutter:
     - assets/images/
     - assets/images/actor.png
     - assets/images/teeest.jpg
+    - assets/animation/forgotPassword.json
   uses-material-design: true
 

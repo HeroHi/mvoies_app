@@ -27,6 +27,11 @@ class DetailsState<T> with _$DetailsState<T>{
   const factory DetailsState.castLoading() = CastLoading;
   const factory DetailsState.castSuccess(T data) = CastSuccess<T>;
   const factory DetailsState.castFailure(ApiErrorModel error) = CastFailure;
+
+  //Save Movie
+  const factory DetailsState.saveMovieLoading() = SaveMovieLoading;
+  const factory DetailsState.saveMovieSuccess() = SaveMovieSuccess<T>;
+  const factory DetailsState.saveMovieFailure(String errorMsg) = SaveMovieFailure;
 }
 extension DetailsStateExtensions<T> on DetailsState<T> {
   /// Checks if the current state is related to cast operations
@@ -44,6 +49,9 @@ extension DetailsStateExtensions<T> on DetailsState<T> {
   /// Checks if the current state is related to movie operations
   bool get isMovieState =>
       this is MovieLoading || this is MovieSuccess<T> || this is MovieFailure;
+
+  bool get isSaveMovieState =>
+      this is SaveMovieLoading || this is SaveMovieSuccess<T> || this is SaveMovieFailure;
 }
 
 

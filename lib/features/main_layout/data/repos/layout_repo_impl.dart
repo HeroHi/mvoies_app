@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:movies_app/core/networking/api_error_handler.dart';
 import 'package:movies_app/core/networking/api_result.dart';
+import 'package:movies_app/core/services/database_service.dart';
 import 'package:movies_app/features/main_layout/data/ds/api_services.dart';
 import 'package:movies_app/features/main_layout/domain/entities/backdrop_entity.dart';
 import 'package:movies_app/features/main_layout/domain/entities/cast_entity.dart';
@@ -12,7 +13,8 @@ import '../model/genre_response.dart';
 @Singleton(as: LayoutRepo)
 class LayoutRepoImpl extends LayoutRepo{
   final ApiServices _apiServices;
-  LayoutRepoImpl(this._apiServices);
+  final DatabaseService _databaseService;
+  LayoutRepoImpl(this._apiServices,this._databaseService);
   @override
   Future<ApiResult<List<MovieEntity>>> getMoviesByCategory(String categoryId) async{
     try {
@@ -91,5 +93,23 @@ class LayoutRepoImpl extends LayoutRepo{
     }catch (error) {
       return ApiResult.failure(ApiErrorHandler.handleError(error));
     }
+  }
+  @override
+  Future<void> addToWatchList(
+      {required MovieEntity movie})async{
+       Map<String,dynamic> json = {
+         'id':movie.id,
+         'posterPath':movie.posterPath,
+         'rating':movie.rating
+       };
+    await _databaseService.insertData(path: 'watchList', data: json, documentId: movie.id.toString());
+  } Future<void> addToHistory(
+      {required MovieEntity movie})async{
+       Map<String,dynamic> json = {
+         'id':movie.id,
+         'posterPath':movie.posterPath,
+         'rating':movie.rating
+       };
+    await _databaseService.insertData(path: 'history', data: json, documentId: movie.id.toString());
   }
 }

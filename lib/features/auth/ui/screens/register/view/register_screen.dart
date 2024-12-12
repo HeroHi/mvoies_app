@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
-import 'package:movies_app/features/auth/ui/model/user_data.dart';
+import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/screens/register/cubit/register_cubit.dart';
 import 'package:movies_app/features/auth/ui/screens/register/cubit/register_state.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
+import 'package:movies_app/features/profile/domain/entities/user_entity.dart';
 import 'package:random_avatar/random_avatar.dart';
 
+import '../../../../data/model/user_data.dart';
 import '../../../widgets/country_switch.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -45,14 +47,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   late ThemeData theme;
 
-  RegisterCubit myCubit = RegisterCubit();
+  final RegisterCubit _registerCubit = getIt();
 
   @override
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
     return BlocProvider(
-      create: (context) => myCubit,
+      create: (context) => _registerCubit,
       child: BlocListener<RegisterCubit, RegisterState>(
         listener: (context, state) {
           state.when(initial: () {
@@ -151,8 +153,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               _passwordKey.currentState!.validate() &&
               _passwordConfirmKey.currentState!.validate() &&
               _phoneKey.currentState!.validate()) {
-            UserData user = UserData(name: _nameController.text, phoneNumber: _phoneController.text, email: _emailController.text, avatarCode: "saytoonz");
-            await myCubit.register(user, _passwordController.text);
+            UserEntity user = UserEntity(name: _nameController.text, phone: _phoneController.text, email: _emailController.text, avatarCode: "saytoonz");
+            await _registerCubit.register(user, _passwordController.text);
+
           }
         },
         child: const Text("Create Account"),

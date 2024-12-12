@@ -1,24 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/core/networking/supabase_helper.dart';
+import 'package:injectable/injectable.dart';
+import 'package:movies_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:movies_app/features/auth/ui/screens/register/cubit/register_state.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-
-import '../../../model/user_data.dart';
-
-
-
+import 'package:movies_app/features/profile/domain/entities/user_entity.dart';
+@injectable
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(const RegisterState.initial());
-  Future<void> register( UserData user, String password) async {
+  final AuthRepo _authRepo;
+  RegisterCubit(this._authRepo) : super(const RegisterState.initial());
+  Future<void> register( UserEntity user, String password) async {
     emit(const RegisterState.loading());
     try {
 
-      await SupabaseHelper.register(password:password, user: user,);
+      await _authRepo.register(user: user, password: password);
       emit(const RegisterState.success());
 
     }
-    on AuthException  catch(error){
-      emit( RegisterState.failure((error).message));
+    on FirebaseAuthException  catch(error){
+      emit( RegisterState.failure(error.message!));
     }
     catch(e){
       emit( RegisterState.failure(e.toString()));
