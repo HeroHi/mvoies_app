@@ -82,13 +82,13 @@ class _HomeTabState extends State<HomeTab> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "  $tr('home.action')",
+          "  ${tr('home.action')}",
           style: theme.textTheme.displayMedium,
         ),
         InkWell(
           onTap: () {},
           child: Text(
-            "$tr('home.seeMore') ->   ",
+            "${tr('home.seeMore')} ->   ",
             style: theme.textTheme.displayMedium!
                 .copyWith(color: AppColors.textYellow),
           ),

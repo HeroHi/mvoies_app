@@ -404,13 +404,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 child: Column(
                   children: [
                     Text(
-                      "tr('detailsScreen.name'): $name",
+                      "${tr('detailsScreen.name')}: $name",
                       style: theme.textTheme.labelSmall,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 12.0),
                       child: Text(
-                        " tr('detailsScreen.character'): $role",
+                        " ${tr('detailsScreen.character')}: $role",
                         style: theme.textTheme.labelSmall,
                       ),
                     )

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,7 +60,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
         return _buildMovies(movies);
       }, moviesFailure: (error) {
         showToast(
-            msg: error.message ?? "An error occurred", color: Colors.red);
+            msg: error.message ?? tr('searchScreen.anErrorOccurred'), color: Colors.red);
         return const SizedBox.shrink();
       }, orElse: () {
         return loading();
@@ -109,7 +110,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
           return _buildGenresTabs(genres);
         }, genreFailure: (error) {
           showToast(
-              msg: error.message ?? "An error occurred", color: Colors.red);
+              msg: error.message ?? tr('searchScreen.anErrorOccurred'), color: Colors.red);
           return const SizedBox.shrink();
         }, orElse: () {
           return loading();
