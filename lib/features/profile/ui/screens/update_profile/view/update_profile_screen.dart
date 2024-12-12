@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
@@ -49,12 +50,12 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(
-              height: 40,
+             SizedBox(
+              height: 40.h,
             ),
             SizedBox(
-              width: 150,
-              height: 150,
+              width: 150.w,
+              height: 150.h,
               child: InkWell(
                   onTap: () {
                     showModalBottomSheet(
@@ -67,8 +68,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   },
                   child: RandomAvatar(selectedAvatar)),
             ),
-            const SizedBox(
-              height: 30,
+             SizedBox(
+              height: 30.h,
             ),
             MyTextField(
                 preIcon: Icons.person,
@@ -111,7 +112,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                       .copyWith(color: AppColors.iconWhite),
                 )),
             Padding(
-              padding: const EdgeInsets.only(top: 18.0, bottom: 18),
+              padding:  EdgeInsets.only(top: 18.h, bottom: 18.h),
               child: ElevatedButton(
                 onPressed: () {
                   _updateProfileCubit.updateAcc(
@@ -142,12 +143,12 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   Widget showBottomSheet(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16),
+      margin:  EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-          color: AppColors.bottomNav, borderRadius: BorderRadius.circular(24)),
-      height: 400,
+          color: AppColors.bottomNav, borderRadius: BorderRadius.circular(24.r)),
+      height: 400.h,
       child: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(18.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [Expanded(child: _buildAvatarsGrid())],
@@ -169,13 +170,13 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
       "happy_person"
     ];
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      padding:  EdgeInsets.only(left: 10.w, right: 10.w),
       child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: .8,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10),
+            mainAxisSpacing: 10.h,
+            crossAxisSpacing: 10.w),
         itemCount: avatarNames.length,
         itemBuilder: (context, index) {
           final String avatarName = avatarNames[index];
@@ -198,10 +199,10 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   Widget _buildAvatarContainer(Widget avatar, {required bool isSelected}) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding:  EdgeInsets.all(10.r),
       decoration: BoxDecoration(
         color: isSelected ? AppColors.avatarBg : AppColors.transparent,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: AppColors.textYellow,
           width: isSelected ? 3 : 1,

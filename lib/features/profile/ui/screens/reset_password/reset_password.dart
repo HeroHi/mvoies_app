@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/constants/validators.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -17,7 +18,7 @@ class ResetPassword extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _confirmPasswordKey = GlobalKey();
   final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  TextEditingController();
   final UpdateProfileCubit _updateProfileCubit = getIt();
   ResetPassword({super.key});
 
@@ -28,22 +29,22 @@ class ResetPassword extends StatelessWidget {
       child: BlocListener<UpdateProfileCubit, UpdateProfileState>(
         listener: (context, state) {
           state.when(
-              loading: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => const Center(
-                    child: CircularProgressIndicator(
-                      color: AppColors.primaryYellow,
-                    ),
+            loading: () {
+              showDialog(
+                context: context,
+                builder: (context) => const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryYellow,
                   ),
-                );
-              },success: () {
-                Navigator.pop(context);
-                showToast(msg: "Password updated successfully", color: Colors.green);
-              },failure: (errorMsg) {
-                Navigator.pop(context);
-                showToast(msg: errorMsg, color: Colors.red);
-              }, initial: () { },);
+                ),
+              );
+            },success: () {
+            Navigator.pop(context);
+            showToast(msg: "Password updated successfully", color: Colors.green);
+          },failure: (errorMsg) {
+            Navigator.pop(context);
+            showToast(msg: errorMsg, color: Colors.red);
+          }, initial: () { },);
         },
         child: Scaffold(
           resizeToAvoidBottomInset: true,
@@ -55,7 +56,7 @@ class ResetPassword extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * .25,
+                  height:  0.25.sh,
                 ),
                 MyTextField(
                     preIcon: Icons.password,
@@ -75,7 +76,7 @@ class ResetPassword extends StatelessWidget {
                     fieldKey: _confirmPasswordKey,
                     controller: _confirmPasswordController),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding:  EdgeInsets.all(16.0.r),
                   child: ElevatedButton(
                       onPressed: () {
                         _updateProfileCubit.updatePassword(_passwordController.text);

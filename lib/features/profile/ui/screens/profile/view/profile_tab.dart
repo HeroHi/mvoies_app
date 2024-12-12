@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
@@ -98,7 +99,7 @@ class _ProfileTabState extends State<ProfileTab> {
                         num: "${history.length}", string: "History"),
                   ],
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: 20.h),
                 Row(
                   children: [
                     _buildEditProfileButton(context),
@@ -123,7 +124,7 @@ class _ProfileTabState extends State<ProfileTab> {
   Container _buildExitButton(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(left: 20),
-        width: MediaQuery.of(context).size.width * .3,
+        width: 0.3.sw,
         child: ElevatedButton(
             style: const ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(AppColors.redButton)),
@@ -138,9 +139,9 @@ class _ProfileTabState extends State<ProfileTab> {
                   "Exit",
                   style: theme.textTheme.displayMedium,
                 ),
-                const Icon(
+                 Icon(
                   Icons.exit_to_app,
-                  size: 25,
+                  size: 25.r,
                   color: AppColors.iconWhite,
                 )
               ],
@@ -149,7 +150,7 @@ class _ProfileTabState extends State<ProfileTab> {
 
   Widget _buildEditProfileButton(BuildContext context) {
     return SizedBox(
-        width: MediaQuery.of(context).size.width * .62,
+        width: 0.62.sw,
         child: ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, UpdateProfileScreen.routeName);
@@ -166,8 +167,8 @@ class _ProfileTabState extends State<ProfileTab> {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 56, left: 24, bottom: 14),
-          width: 118,
-          height: 118,
+          width: 118.w,
+          height: 118.h,
           child: RandomAvatar(user.avatarCode),
         ),
         Text(
@@ -186,13 +187,13 @@ class _ProfileTabState extends State<ProfileTab> {
         children: [
           Text(
             num,
-            style: theme.textTheme.displayLarge!.copyWith(fontSize: 25),
+            style: theme.textTheme.displayLarge!.copyWith(fontSize: 25.sp),
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 20.h,
           ),
           Text(string,
-              style: theme.textTheme.displayLarge!.copyWith(fontSize: 25))
+              style: theme.textTheme.displayLarge!.copyWith(fontSize: 25.sp))
         ],
       ),
     );
@@ -205,7 +206,7 @@ class _ProfileTabState extends State<ProfileTab> {
         children: [
           Container(
             color: AppColors.updateProfileBg,
-            child: const TabBar(
+            child:  TabBar(
               dividerColor: AppColors.transparent,
               indicatorColor: AppColors.textYellow,
               labelColor: AppColors.textYellow,
@@ -216,7 +217,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   icon: Icon(
                     Icons.list,
                     color: AppColors.iconYellow,
-                    size: 30,
+                    size: 30.r,
                   ),
                   text: 'Watch List',
                 ),
@@ -224,7 +225,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   icon: Icon(
                     Icons.folder,
                     color: AppColors.iconYellow,
-                    size: 30,
+                    size: 30.r,
                   ),
                   text: 'History',
                 ),

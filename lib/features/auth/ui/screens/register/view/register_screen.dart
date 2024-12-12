@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -129,13 +130,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     isPassword: false,
                     fieldKey: _phoneKey),
                 _buildRegisterButton(),
-                const SizedBox(
-                  height: 15,
+                 SizedBox(
+                  height: 15.h,
                 ),
                 _buildLoginText(),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 140),
-                  child: CountrySwitch(),
+                 Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 140.w),
+                  child: const CountrySwitch(),
                 ),
               ],
             ),
@@ -174,7 +175,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
           style: theme.textTheme.labelSmall,
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: Text(
             " Login",
             style: theme.textTheme.labelSmall!

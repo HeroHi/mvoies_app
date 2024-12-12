@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
 import 'package:movies_app/features/main_layout/data/model/genre_response.dart';
@@ -201,13 +202,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
     Container _buildAllGenres(List<Genre> genres) {
       return Container(
         padding: const EdgeInsets.all(10),
-        height: 150,
+        height: 150.h,
         child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
               childAspectRatio: 2.8,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10),
+              mainAxisSpacing: 10.r,
+              crossAxisSpacing: 10.r),
           itemCount: genres.length,
           itemBuilder: (context, index) =>
               _buildGenresContainer(genres[index].name),
@@ -256,11 +257,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
       return SizedBox(
         height: 600,
         child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 0.7,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10),
+              mainAxisSpacing: 10.r,
+              crossAxisSpacing: 10.r),
           itemCount: 4,
           itemBuilder: (context, index) => MovieCard(
             movieId: movies[index].id,
@@ -297,32 +298,32 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
     Container _buildPlayIcon() {
       return Container(
-          width: 97,
-          height: 97,
+          width: 97.w,
+          height: 97.h,
           decoration: const BoxDecoration(
             color: AppColors.iconYellow,
             shape: BoxShape.circle,
           ),
           child: Center(
             child: Container(
-              width: 84,
-              height: 84,
+              width: 84.w,
+              height: 84.h,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.iconWhite, // Transparent center effect
               ),
               child: Center(
                 child: Container(
-                  width: 67,
-                  height: 67,
+                  width: 67.w,
+                  height: 67.h,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppColors.iconYellow, // Transparent center effect
                   ),
-                  child: const Icon(
+                  child:  Icon(
                     Icons.play_arrow,
                     color: Colors.white,
-                    size: 50, // Play icon size
+                    size: 50.r, // Play icon size
                   ),
                 ),
               ),
@@ -332,10 +333,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
     Widget _buildRectangle({required IconData icon, required num number}) {
       return Container(
-        width: 122,
-        height: 47,
+        width: 122.w,
+        height: 47.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
           color: AppColors.bottomNav,
         ),
         child: Row(
@@ -344,7 +345,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             Icon(
               icon,
               color: AppColors.iconYellow,
-              size: 36,
+              size: 36.r,
             ),
             Text(
               "$number",
@@ -357,10 +358,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
     Widget _buildGenresContainer(String string) {
       return Container(
-        width: 110,
-        height: 36,
+        width: 110.w,
+        height: 36.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           color: AppColors.bottomNav,
         ),
         child: Row(
@@ -377,10 +378,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
     Widget _buildScreenShot({required String image}) {
       return Container(
-        margin: const EdgeInsets.all(16),
-        height: MediaQuery.of(context).size.height * .2,
+        margin:  EdgeInsets.all(16.r),
+        height: 0.2.sh,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
             image: DecorationImage(
                 fit: BoxFit.cover, image: CachedNetworkImageProvider(image))),
       );
@@ -393,7 +394,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         width: double.infinity,
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-            color: AppColors.bottomNav, borderRadius: BorderRadius.circular(16)),
+            color: AppColors.bottomNav, borderRadius: BorderRadius.circular(16.r)),
         child: Center(
           child: Row(
             children: [
@@ -424,10 +425,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
     Widget _buildActorImage(String image) {
       return Container(
         padding: const EdgeInsets.all(10),
-        width: 70,
-        height: 70,
+        width: 70.w,
+        height: 70.h,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             image: DecorationImage(
                 fit: BoxFit.cover, image: CachedNetworkImageProvider(image))),
       );

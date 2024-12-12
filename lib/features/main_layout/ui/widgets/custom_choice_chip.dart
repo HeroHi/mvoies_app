@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/app_colors.dart';
 
@@ -32,7 +33,7 @@ class CustomChoiceChip extends StatelessWidget {
             : theme.textTheme.displayMedium!
             .copyWith(color: AppColors.primaryYellow),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
             side: const BorderSide(color: AppColors.primaryYellow)),
       ),
     );
