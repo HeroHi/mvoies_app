@@ -47,6 +47,9 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
             theme: AppTheme.theme,
             routes: {
               RegisterScreen.routeName: (_) => RegisterScreen(),
