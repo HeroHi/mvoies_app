@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -81,13 +82,13 @@ class _HomeTabState extends State<HomeTab> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "  Action",
+          "  $tr('home.action')",
           style: theme.textTheme.displayMedium,
         ),
         InkWell(
           onTap: () {},
           child: Text(
-            "See More ->   ",
+            "$tr('home.seeMore') ->   ",
             style: theme.textTheme.displayMedium!
                 .copyWith(color: AppColors.textYellow),
           ),
@@ -126,7 +127,7 @@ class _HomeTabState extends State<HomeTab> {
           ),
           popularFailure: (error) => Center(
             child: Text(
-              error.message ?? "An error occurred",
+              error.message ?? tr('searchScreen.anErrorOccurred'),
               style: const TextStyle(color: Colors.red),
             ),
           ),
@@ -164,7 +165,7 @@ class _HomeTabState extends State<HomeTab> {
           ),
           byGenreFailure: (error) => Center(
             child: Text(
-              error.message ?? "An error occurred",
+              error.message ?? tr('searchScreen.anErrorOccurred'),
               style: const TextStyle(color: Colors.red),
             ),
           ),

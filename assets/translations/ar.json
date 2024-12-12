@@ -1,0 +1,104 @@
+{
+  "onboarding": {
+    "titles": {
+      "findMovie": "اكتشف فيلمك المفضل التالي هنا",
+      "discover": "اكتشف الأفلام",
+      "exploreGenres": "استكشف جميع الأنواع",
+      "createWatchlist": "أنشئ قائمة مشاهدة",
+      "rateReviewLearn": "قيم، راجع وتعلم",
+      "startWatching": "ابدأ المشاهدة الآن"
+    },
+    "descriptions": {
+      "findMovie": "احصل على مكتبة ضخمة من الأفلام تناسب جميع الأذواق. ستعجبك بالتأكيد.",
+      "discover": "استكشف مجموعة واسعة من الأفلام بجميع الجودات والأنواع. اعثر بسهولة على فيلمك المفضل التالي.",
+      "exploreGenres": "اكتشف أفلامًا من كل نوع متوفرة بجميع الجودات. اكتشف شيئًا جديدًا ومثيرًا لمشاهدته كل يوم.",
+      "createWatchlist": "احفظ الأفلام في قائمة المشاهدة الخاصة بك لتتبع ما تريد مشاهدته بعد ذلك. استمتع بمشاهدة الأفلام بجودات وأنواع مختلفة.",
+      "rateReviewLearn": "شارك أفكارك حول الأفلام التي شاهدتها. تعمق في تفاصيل الأفلام وساعد الآخرين في اكتشاف أفلام رائعة من خلال تقييماتك.",
+      "start_watching": ""
+    },
+    "buttons": {
+      "exploreNow": "استكشف الآن",
+      "next": "التالي",
+      "back": "رجوع",
+      "finish": "إنهاء"
+    }
+  },
+  "forgotPassword": {
+    "title": "نسيت كلمة المرور",
+    "checkYourEmail": "يرجى التحقق من بريدك الإلكتروني",
+    "hintEmail": "البريد الإلكتروني",
+    "buttonVerifyEmail": "تحقق من البريد الإلكتروني",
+    "errorEmptyEmail": "يرجى إدخال عنوان البريد الإلكتروني الخاص بك.",
+    "errorInvalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح."
+  },
+  "register": {
+    "title": "التسجيل",
+    "nameHint": "الاسم",
+    "emailHint": "البريد الإلكتروني",
+    "passwordHint": "كلمة المرور",
+    "confirmPasswordHint": "تأكيد كلمة المرور",
+    "phoneHint": "رقم الهاتف",
+    "createAccountButton": "إنشاء حساب",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "login": "تسجيل الدخول",
+    "validationName": "يجب أن يكون الاسم مكونًا من 4 أحرف على الأقل",
+    "validationPassword": "يجب أن تكون كلمة المرور مكونة من 8 أحرف على الأقل",
+    "validationPassword_confirm": "كلمة المرور وتأكيد كلمة المرور غير متطابقين",
+    "validationPhone": "رقم الهاتف غير صالح",
+    "validationEmail": "أدخل عنوان بريد إلكتروني صالح",
+    "signupSuccess": "تم التسجيل بنجاح، يرجى التحقق من بريدك الإلكتروني للتفعيل قبل تسجيل الدخول"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "emailHint": "البريد الإلكتروني",
+    "passwordHint": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "createAccount": "لا تمتلك حساب؟",
+    "createAccountButton": "أنشئ حسابًا",
+    "googleLoginButton": "تسجيل الدخول باستخدام جوجل",
+    "or": "أو"
+  },
+  "detailsScreen": {
+    "watch": "مشاهدة",
+    "screenShots": "لقطات الشاشة",
+    "similar": "مشابه",
+    "summary": "الملخص",
+    "cast": "الممثلين",
+    "genres": "الأنواع",
+    "name":"الاسم",
+    "character": "الشخصية",
+    "movieSavedSuccessfully": "تم حفظ الفيلم بنجاح"
+  },
+  "searchScreen": {
+    "anErrorOccurred": "حدث خطأ ما...",
+    "search": "بحث"
+  },
+  "profileScreen": {
+    "editProfile": "تعديل الملف الشخصي",
+    "exit": "خروج",
+    "watchList": "قائمة المشاهدة",
+    "history": "التاريخ"
+  },
+  "updateProfile": {
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "pickAvatar": "اختيار الصورة الرمزية",
+    "username": "اسم المستخدم",
+    "phone": "الهاتف",
+    "deleteAccount": "حذف الحساب",
+    "updateData": "تحديث البيانات"
+  },
+  "resetPassword": {
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "enterNewPassword": "أدخل كلمة مرور جديدة",
+    "reEnterNewPassword": "أعد إدخال كلمة المرور الجديدة",
+    "resetPasswordButton": "إعادة تعيين كلمة المرور",
+    "passwordUpdatedSuccess": "تم تحديث كلمة المرور بنجاح",
+    "passwordUpdateFailed": "فشل في تحديث كلمة المرور"
+  },
+  "home": {
+    "action": "اكشن ",
+    "seeMore": "عرض المزيد"
+  }
+}
+

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,7 +67,7 @@ class _SearchTabState extends State<SearchTab> {
           },
           moviesFailure: (error) {
             showToast(
-                msg: error.message ?? "An error occurred", color: Colors.red);
+                msg: error.message ?? tr('searchScreen.anErrorOccurred'), color: Colors.red);
             return const SizedBox.shrink();
           },
         );
@@ -105,10 +106,10 @@ class _SearchTabState extends State<SearchTab> {
               controller: _searchController,
               style: const TextStyle(color: Colors.white),
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 border: InputBorder.none,
-                hintText: "search",
-                hintStyle: TextStyle(color: Colors.white),
+                hintText: tr('searchScreen.search'),
+                hintStyle: const TextStyle(color: Colors.white),
               ),
               onFieldSubmitted: (q) {
                 _searchFor(q);

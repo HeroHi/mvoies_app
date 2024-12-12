@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,20 +37,20 @@ class ResetPassword extends StatelessWidget {
                   child: CircularProgressIndicator(
                     color: AppColors.primaryYellow,
                   ),
-                ),
-              );
-            },success: () {
-            Navigator.pop(context);
-            showToast(msg: "Password updated successfully", color: Colors.green);
-          },failure: (errorMsg) {
-            Navigator.pop(context);
-            showToast(msg: errorMsg, color: Colors.red);
-          }, initial: () { },);
+
+                );
+              },success: () {
+                Navigator.pop(context);
+                showToast(msg: tr('resetPassword.passwordUpdatedSuccess'), color: Colors.green);
+              },failure: (errorMsg) {
+                Navigator.pop(context);
+                showToast(msg: errorMsg, color: Colors.red);
+              }, initial: () { },);
         },
         child: Scaffold(
           resizeToAvoidBottomInset: true,
           appBar: AppBar(
-            title: const Text("Reset password"),
+            title:  Text(tr('resetPassword.resetPassword')),
           ),
           body: SingleChildScrollView(
             child: Column(
@@ -61,7 +62,7 @@ class ResetPassword extends StatelessWidget {
                 MyTextField(
                     preIcon: Icons.password,
                     validator: Validators.passValidator,
-                    hintText: "Enter New Password",
+                    hintText: tr('resetPassword.enterNewPassword'),
                     isPassword: true,
                     fieldKey: _passwordKey,
                     controller: _passwordController),
@@ -71,7 +72,7 @@ class ResetPassword extends StatelessWidget {
                       return Validators.validatePassConfirm(
                           value, _passwordController);
                     },
-                    hintText: "Re-enter New Password",
+                    hintText: tr('resetPassword.reEnterNewPassword'),
                     isPassword: true,
                     fieldKey: _confirmPasswordKey,
                     controller: _confirmPasswordController),
@@ -81,7 +82,7 @@ class ResetPassword extends StatelessWidget {
                       onPressed: () {
                         _updateProfileCubit.updatePassword(_passwordController.text);
                       },
-                      child: const Text("Reset password")),
+                      child:  Text(tr('resetPassword.resetPasswordButton'))),
                 ),
               ],
             ),

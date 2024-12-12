@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,7 +67,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           }, success: () {
             Navigator.pop(context);
             showToast(
-                msg: "signed up successfully, please check your email to verify before logging in",
+                msg: tr('register.signupSuccess'),
                 color: Colors.green);
           }, failure: (message) {
             Navigator.pop(context);
@@ -77,7 +78,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           appBar: AppBar(
             iconTheme: const IconThemeData(color: AppColors.primaryYellow),
             automaticallyImplyLeading: true,
-            title: const Text("Register"),
+            title:  Text(tr('register.title')),
           ),
           body: SingleChildScrollView(
             child: Column(
@@ -89,18 +90,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     preIcon: FontAwesomeIcons.idCard,
                     validator: (value) {
                       if (value.length < 4) {
-                        return "At least 4 characters";
+                        return tr('register.validationName');
                       }
                       return null;
                     },
-                    hintText: "Name",
+                    hintText: tr('register.nameHint'),
                     isPassword: false,
                     fieldKey: _nameKey),
                 MyTextField(
                   controller: _emailController,
                     preIcon: FontAwesomeIcons.envelope,
                     validator: _validateEmail,
-                    hintText: "Email",
+                    hintText: tr('register.emailHint'),
                     isPassword: false,
                     fieldKey: _emailKey),
                 MyTextField(
@@ -108,25 +109,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     preIcon: FontAwesomeIcons.lock,
                     validator: (value) {
                       if (value.length < 8) {
-                        return "Password should be at least 8 characters";
+                        return tr('register.validationPassword');
                       }
                       return null;
                     },
-                    hintText: "Password",
+                    hintText: tr('register.passwordHint'),
                     isPassword: true,
                     fieldKey: _passwordKey),
                 MyTextField(
                   controller: _passwordConfirmController,
                     preIcon: FontAwesomeIcons.lock,
                     validator: _validatePassConfirm,
-                    hintText: "Confirm Password",
+                    hintText: tr('register.confirmPasswordHint'),
                     isPassword: true,
                     fieldKey: _passwordConfirmKey),
                 MyTextField(
                   controller: _phoneController,
                     preIcon: FontAwesomeIcons.phone,
                     validator: _validatePhone,
-                    hintText: "Phone Number",
+                    hintText: tr('register.phoneHint'),
                     isPassword: false,
                     fieldKey: _phoneKey),
                 _buildRegisterButton(),
@@ -161,7 +162,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
           }
         },
-        child: const Text("Create Account"),
+        child:  Text(tr('register.createAccountButton')),
       ),
     );
   }
@@ -171,7 +172,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Already Have Account ?",
+          tr('register.alreadyHaveAccount'),
           style: theme.textTheme.labelSmall,
         ),
         InkWell(
@@ -179,7 +180,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Navigator.pop(context);
           },
           child: Text(
-            " Login",
+            tr('login.title'),
             style: theme.textTheme.labelSmall!
                 .copyWith(color: AppColors.primaryYellow),
           ),
@@ -220,7 +221,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     String emailPattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
     RegExp regExp = RegExp(emailPattern);
     if (!regExp.hasMatch(value)) {
-      return 'Enter a valid email address';
+      return tr('register.validationEmail');
     }
     return null;
   }
@@ -228,14 +229,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String? _validatePassConfirm(String value) {
     String password = _passwordController.text;
     if (value != password) {
-      return "Password and Password Confirm not match";
+      return tr('register.validationPasswordConfirm');
     }
     return null;
   }
 
   String? _validatePhone(String value) {
     if (!value.startsWith("01") || value.length != 11) {
-      return "Invalid Phone number";
+      return tr('register.validationPhone');
     }
     return null;
   }

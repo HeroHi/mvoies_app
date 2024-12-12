@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
@@ -10,34 +11,29 @@ class OnboardingScreen extends StatelessWidget {
 
   List<OnBoardingPage> pages = [
     OnBoardingPage(
-        title: "Find Your Next Favorite Movie Here",
-        description:
-            "Get access to a huge library of movies to suit all tastes. You will surely like it.",
+        title: tr('onboarding.titles.findMovie'),
+        description: tr('onboarding.descriptions.findMovie'),
         image: Assets.imagesMoviesPosters),
     OnBoardingPage(
-        title: 'Discover Movies',
-        description:
-            'Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.',
+        title: tr('onboarding.titles.discover'),
+        description: tr('onboarding.descriptions.discover'),
         image: Assets.imagesBoarding1),
     OnBoardingPage(
-        title: 'Explore All Genres',
-        description:
-            'Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.',
+        title: tr('onboarding.titles.exploreGenres'),
+        description: tr('onboarding.descriptions.exploreGenres'),
         image: Assets.imagesBoarding2),
     OnBoardingPage(
-        title: 'Create Watchlist',
-        description:
-            'Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.',
+        title: tr('onboarding.titles.createWatchlist'),
+        description: tr('onboarding.descriptions.createWatchlist'),
         image: Assets.imagesBoarding3),
     OnBoardingPage(
-        title: 'Rate, Review, and Learn',
-        description:
-            "Share your thoughts on the movies you've watched. Dive deep into film details and help others discover great movies with your reviews.",
-        image: Assets.assetsImagesBoarding4),
+        title: tr('onboarding.titles.rateReviewLearn'),
+        description: tr('onboarding.descriptions.rateReviewLearn'),
+        image: Assets.imagesBoarding4),
     OnBoardingPage(
-        title: 'Start Watching Now',
+        title: tr('onboarding.titles.startWatching'),
         description: '',
-        image: Assets.assetsImagesBoarding5)
+        image: Assets.imagesBoarding5)
   ];
   OnboardingScreen({super.key});
 
@@ -206,7 +202,7 @@ class OnBoardingScreenWidget extends StatelessWidget {
           }
         },
         child: Text(
-          "back",
+          tr('onboarding.buttons.back'),
           style: theme.textTheme.displayMedium,
         ));
   }
@@ -224,10 +220,10 @@ class OnBoardingScreenWidget extends StatelessWidget {
         },
         child: Text(
           index == 0
-              ? "Explore Now"
+              ? tr('onboarding.buttons.exploreNow')
               : index == 5
-                  ? "Finish"
-                  : "Next",
+                  ? tr('onboarding.buttons.finish')
+                  : tr('onboarding.buttons.next'),
           style: theme.textTheme.displayMedium!
               .copyWith(color: AppColors.backgroundDark),
         ));

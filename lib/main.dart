@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +14,24 @@ import 'package:movies_app/features/profile/ui/screens/update_profile/view/updat
 import 'core/di/di.dart';
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await ScreenUtil.ensureScreenSize();
+
+  await EasyLocalization.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   configureDependencies();
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('en'),
+        child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +39,7 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
     return ScreenUtilInit(
       designSize: const Size(393 , 851),
       minTextAdapt: true,
@@ -51,7 +62,5 @@ class MyApp extends StatelessWidget {
               ? LayOut.routeName
               : LoginScreen.routeName,
         );
-      },
-    );
   }
 }

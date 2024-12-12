@@ -2,14 +2,11 @@
 class Assets {
   Assets._();
 
+  static const String animationForgotPassword = 'assets/animation/forgotPassword.json';
+  static const String assetsAnimationForgotPassword = 'assets/animation/forgotPassword.json';
   static const String assetsImagesActor = 'assets/images/actor.png';
-  static const String assetsImagesBoarding1 = 'assets/images/boarding1.png';
-  static const String assetsImagesBoarding2 = 'assets/images/boarding2.png';
-  static const String assetsImagesBoarding3 = 'assets/images/boarding3.png';
-  static const String assetsImagesBoarding4 = 'assets/images/boarding4.png';
-  static const String assetsImagesBoarding5 = 'assets/images/boarding5.png';
-  static const String assetsImagesMoviesPosters = 'assets/images/MoviesPosters.png';
   static const String assetsImagesTeeest = 'assets/images/teeest.jpg';
+  static const String assetsTranslationsAr = 'assets/translations/ar.json';
   static const String imagesActor = 'assets/images/actor.png';
   static const String imagesAvailableNow = 'assets/images/AvailableNow.png';
   static const String imagesBoarding1 = 'assets/images/boarding1.png';
@@ -24,5 +21,7 @@ class Assets {
   static const String imagesTeeest = 'assets/images/teeest.jpg';
   static const String imagesTest = 'assets/images/test.png';
   static const String imagesWatcNow = 'assets/images/WatcNow.png';
+  static const String translationsAr = 'assets/translations/ar.json';
+  static const String translationsEn = 'assets/translations/en.json';
 
 }

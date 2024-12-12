@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,9 +95,9 @@ class _ProfileTabState extends State<ProfileTab> {
                   children: [
                     _buildAvatarAndName(),
                     _buildWishListAndHistory(
-                        num: "${watchList.length}", string: "Watch List"),
+                        num: "${watchList.length}", string: tr('profileScreen.watchList')),
                     _buildWishListAndHistory(
-                        num: "${history.length}", string: "History"),
+                        num: "${history.length}", string: tr('profileScreen.history')),
                   ],
                 ),
                  SizedBox(height: 20.h),
@@ -136,7 +137,7 @@ class _ProfileTabState extends State<ProfileTab> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Exit",
+                  tr('profileScreen.exit'),
                   style: theme.textTheme.displayMedium,
                 ),
                  Icon(
@@ -156,7 +157,7 @@ class _ProfileTabState extends State<ProfileTab> {
               Navigator.pushNamed(context, UpdateProfileScreen.routeName);
             },
             child: Text(
-              "Edit profile",
+              tr('profileScreen.editProfile'),
               style: theme.textTheme.displayMedium!
                   .copyWith(color: AppColors.backgroundDark),
             )));
@@ -214,20 +215,20 @@ class _ProfileTabState extends State<ProfileTab> {
               indicatorSize: TabBarIndicatorSize.tab,
               tabs: [
                 Tab(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.list,
                     color: AppColors.iconYellow,
                     size: 30.r,
                   ),
-                  text: 'Watch List',
+                  text: tr('profileScreen.watchList'),
                 ),
-                Tab(
-                  icon: Icon(
+                 Tab(
+                  icon: const Icon(
                     Icons.folder,
                     color: AppColors.iconYellow,
                     size: 30.r,
                   ),
-                  text: 'History',
+                  text: tr('profileScreen.history'),
                 ),
               ],
             ),
