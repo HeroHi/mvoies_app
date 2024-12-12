@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -92,7 +93,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
               onTap: (){
                 Navigator.pushNamed(context, ResetPassword.routeName);
               },
-              child: Text("Reset Password",style: theme.textTheme.displayMedium,),
+              child: Text(tr('updateProfile.resetPassword'),style: theme.textTheme.displayMedium,),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * .24,
@@ -106,7 +107,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   Navigator.pushReplacementNamed(context, LoginScreen.routeName);
                 },
                 child: Text(
-                  "Delete Account",
+                  tr('updateProfile.deleteAccount'),
                   style: theme.textTheme.displayMedium!
                       .copyWith(color: AppColors.iconWhite),
                 )),
@@ -120,7 +121,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                       avatarCode: selectedAvatar);
                 },
                 child: Text(
-                  "Update data",
+                  tr('updateProfile.updateData'),
                   style: theme.textTheme.displayMedium!
                       .copyWith(color: AppColors.iconWhite),
                 ),
@@ -134,8 +135,8 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title: const Text(
-        "Pick Avatar",
+      title:  Text(
+        tr('updateProfile.pickAvatar'),
       ),
     );
   }

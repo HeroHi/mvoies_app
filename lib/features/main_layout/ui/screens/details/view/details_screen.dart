@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -77,7 +78,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         year: movie.releaseDate.substring(0, 4)),
                     _buildWatchButton(),
                     _buildMovieRatings(movie),
-                    _buildTitles("Screen Shots"),
+                    _buildTitles(tr('detailsScreen.screenShots')),
                     BlocBuilder<DetailsCubit, DetailsState>(
                       buildWhen: (previous, current) => current.isImagesState,
                       builder: (context, state) {
@@ -95,7 +96,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         );
                       },
                     ),
-                    _buildTitles("Similar"),
+                    _buildTitles(tr('detailsScreen.similar')),
                     BlocBuilder<DetailsCubit, DetailsState>(
                       buildWhen: (previous, current) =>
                           current.isSimilarState,
@@ -114,9 +115,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         );
                       },
                     ),
-                    _buildTitles("Summary"),
+                    _buildTitles(tr('detailsScreen.summary')),
                     _buildSummary(movie.overview),
-                    _buildTitles("Cast"),
+                    _buildTitles(tr('detailsScreen.cast')),
                     BlocBuilder<DetailsCubit, DetailsState>(
                       buildWhen: (previous, current) => current.isCastState,
                       builder: (context, state) {
@@ -134,7 +135,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         );
                       },
                     ),
-                    _buildTitles("Genres"),
+                    _buildTitles(tr('detailsScreen.genres')),
                     _buildAllGenres(movie.genres)
                   ],
                 ),
@@ -145,7 +146,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           state.maybeWhen(orElse: (){},saveMovieFailure: (errorMsg) {
             showToast(msg: errorMsg, color: Colors.red);
           },saveMovieSuccess: () {
-            showToast(msg: "Movie saved successfully", color: Colors.green);
+            showToast(msg: tr('detailsScreen.movieSavedSuccessfully'), color: Colors.green);
           },);
       },
       ),
@@ -289,7 +290,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 backgroundColor: WidgetStatePropertyAll(AppColors.redButton)),
             onPressed: () {},
             child: Text(
-              "watch",
+              tr('detailsScreen.watch'),
               style: theme.textTheme.displayLarge,
             )),
       );
@@ -402,13 +403,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 child: Column(
                   children: [
                     Text(
-                      "Name: $name",
+                      "tr('detailsScreen.name'): $name",
                       style: theme.textTheme.labelSmall,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 12.0),
                       child: Text(
-                        " Character: $role",
+                        " tr('detailsScreen.character'): $role",
                         style: theme.textTheme.labelSmall,
                       ),
                     )

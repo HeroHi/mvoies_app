@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/di/di.dart';
@@ -93,9 +94,9 @@ class _ProfileTabState extends State<ProfileTab> {
                   children: [
                     _buildAvatarAndName(),
                     _buildWishListAndHistory(
-                        num: "${watchList.length}", string: "Watch List"),
+                        num: "${watchList.length}", string: tr('profileScreen.watchList')),
                     _buildWishListAndHistory(
-                        num: "${history.length}", string: "History"),
+                        num: "${history.length}", string: tr('profileScreen.history')),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -135,7 +136,7 @@ class _ProfileTabState extends State<ProfileTab> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Exit",
+                  tr('profileScreen.exit'),
                   style: theme.textTheme.displayMedium,
                 ),
                 const Icon(
@@ -155,7 +156,7 @@ class _ProfileTabState extends State<ProfileTab> {
               Navigator.pushNamed(context, UpdateProfileScreen.routeName);
             },
             child: Text(
-              "Edit profile",
+              tr('profileScreen.editProfile'),
               style: theme.textTheme.displayMedium!
                   .copyWith(color: AppColors.backgroundDark),
             )));
@@ -205,7 +206,7 @@ class _ProfileTabState extends State<ProfileTab> {
         children: [
           Container(
             color: AppColors.updateProfileBg,
-            child: const TabBar(
+            child:  TabBar(
               dividerColor: AppColors.transparent,
               indicatorColor: AppColors.textYellow,
               labelColor: AppColors.textYellow,
@@ -213,20 +214,20 @@ class _ProfileTabState extends State<ProfileTab> {
               indicatorSize: TabBarIndicatorSize.tab,
               tabs: [
                 Tab(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.list,
                     color: AppColors.iconYellow,
                     size: 30,
                   ),
-                  text: 'Watch List',
+                  text: tr('profileScreen.watchList'),
                 ),
-                Tab(
-                  icon: Icon(
+                 Tab(
+                  icon: const Icon(
                     Icons.folder,
                     color: AppColors.iconYellow,
                     size: 30,
                   ),
-                  text: 'History',
+                  text: tr('profileScreen.history'),
                 ),
               ],
             ),
