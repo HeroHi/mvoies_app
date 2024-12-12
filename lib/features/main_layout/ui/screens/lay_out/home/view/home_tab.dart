@@ -23,6 +23,7 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   late ThemeData theme;
   final HomeCubit _homeCubit = getIt();
+  String currentMoviePoster = "https://cdn.photoroom.com/v1/assets-cached.jpg?path=backgrounds_v3/black/Photoroom_black_background_extremely_fine_texture_only_black_co_b99c8103-0e9c-41eb-a7f8-4f121d0a28cb.jpg";
   @override
   void initState() {
     _homeCubit.getPopMovies();
@@ -41,16 +42,16 @@ class _HomeTabState extends State<HomeTab> {
             flex: 6,
             child: Container(
                 height: MediaQuery.of(context).size.height,
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
                     image: DecorationImage(
                       opacity: 0.4,
                         fit: BoxFit.cover,
-                        image: AssetImage(Assets.imagesTest))),
+                        image: CachedNetworkImageProvider(currentMoviePoster))),
                 child: Column(
                   children: [
                     _buildAvailableNow(),
                     _buildCarouselSlider(),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                         padding:  EdgeInsets.symmetric(
                             horizontal: 81.w, vertical: 8.h),
@@ -77,12 +78,12 @@ class _HomeTabState extends State<HomeTab> {
         child: Image.asset(Assets.imagesAvailableNow));
   }
 
-  Row _buildCategoryAndSeeMoreRow() {
+  Widget _buildCategoryAndSeeMoreRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "  ${tr('home.action')}",
+          tr('home.action'),
           style: theme.textTheme.displayMedium,
         ),
         InkWell(
@@ -113,11 +114,19 @@ class _HomeTabState extends State<HomeTab> {
             itemCount: movies.length,
             itemBuilder: (context, index, realIndex) {
               final MovieEntity movie = movies[index];
+              if(index == 0){
+                currentMoviePoster = movie.posterPath!;
+              }
               return MovieCard(
                 movieId: movie.id,
                   rating: movie.rating, posterPath: movie.posterPath!);
             },
             options: CarouselOptions(
+              onPageChanged: (index, reason) {
+                final MovieEntity movie = movies[index];
+                currentMoviePoster = movie.posterPath!;
+                setState(() {});
+              },
               aspectRatio: 1.4,
               viewportFraction: 0.5,
               enlargeFactor: 0.5,
