@@ -14,11 +14,12 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
   void updateAcc(
       {required String name,
       required String phoneNumber,
-      required String avatarCode}) {
+      required String avatarCode}) async {
     emit(const UpdateProfileState.loading());
     try {
-      _profileRepo.update(
+       _profileRepo.update(
           name: name, avatarCode: avatarCode, phoneNumber: phoneNumber);
+      emit(const UpdateProfileState.success());
     } on FirebaseAuthException catch (e) {
       emit(UpdateProfileState.failure(e.message!));
     } catch (e) {
@@ -26,7 +27,6 @@ class UpdateProfileCubit extends Cubit<UpdateProfileState> {
     }
   }
   void deleteAcc(){
-    emit(const UpdateProfileState.loading());
     try {
       _profileRepo.delete();
     } on FirebaseAuthException catch (e) {

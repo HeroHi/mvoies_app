@@ -1,13 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/constants/app_colors.dart';
+import 'package:movies_app/core/constants/validators.dart';
 import 'package:movies_app/core/di/di.dart';
 import 'package:movies_app/features/auth/ui/screens/login/view/login_screen.dart';
 import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
+import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
+import 'package:movies_app/features/main_layout/ui/widgets/loading.dart';
 import 'package:movies_app/features/profile/ui/screens/reset_password/reset_password.dart';
 import 'package:movies_app/features/profile/ui/screens/update_profile/cubit/update_profile_cubit.dart';
 import 'package:random_avatar/random_avatar.dart';
+
+import '../cubit/update_profile_state.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   static const String routeName = "updateProfile";
@@ -22,113 +28,137 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   final UpdateProfileCubit _updateProfileCubit = getIt();
   final GlobalKey<FormState> _userNameKey = GlobalKey();
   final GlobalKey<FormState> _phoneKey = GlobalKey();
-   TextEditingController _userNameController = TextEditingController();
-   TextEditingController _phoneController = TextEditingController();
+  TextEditingController _userNameController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
 
   late ThemeData theme;
   bool isSelected = false;
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
-      var userData = await _updateProfileCubit.currentUserData;
-       _phoneController = TextEditingController(text: userData.phone);
-       _userNameController = TextEditingController(text: userData.name);
-       selectedAvatar = userData.avatarCode;
-       setState(() {
-
-       });
-    },);
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) async {
+        var userData = await _updateProfileCubit.currentUserData;
+        _phoneController = TextEditingController(text: userData.phone);
+        _userNameController = TextEditingController(text: userData.name);
+        selectedAvatar = userData.avatarCode;
+        setState(() {});
+      },
+    );
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-
     theme = Theme.of(context);
-    return Scaffold(
-      resizeToAvoidBottomInset: true,
-      appBar: _buildAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-             SizedBox(
-              height: 40.h,
+    return BlocProvider(
+      create: (context) => _updateProfileCubit,
+      child: BlocListener<UpdateProfileCubit, UpdateProfileState>(
+        listener: (context, state) {
+          state.when(
+            initial: () {},
+            loading: () => showDialog(
+              context: context,
+              builder: (context) => loading(),
             ),
-            SizedBox(
-              width: 150.w,
-              height: 150.h,
-              child: InkWell(
-                  onTap: () {
-                    showModalBottomSheet(
-                        backgroundColor: AppColors.backgroundDark,
-                        isScrollControlled: true,
-                        context: context,
-                        builder: (context) {
-                          return showBottomSheet(context);
-                        });
-                  },
-                  child: RandomAvatar(selectedAvatar)),
-            ),
-             SizedBox(
-              height: 30.h,
-            ),
-            MyTextField(
-                preIcon: Icons.person,
-                validator: (string) {
-                  return null;
-                },
-                hintText: "",
-                isPassword: false,
-                fieldKey: _userNameKey,
-                controller: _userNameController),
-            MyTextField(
-                preIcon: Icons.phone,
-                validator: (string) {
-                  return null;
-                },
-                hintText: "",
-                isPassword: false,
-                fieldKey: _phoneKey,
-                controller: _phoneController),
-            InkWell(
-              onTap: (){
-                Navigator.pushNamed(context, ResetPassword.routeName);
-              },
-              child: Text(tr('updateProfile.resetPassword'),style: theme.textTheme.displayMedium,),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * .24,
-            ),
-            ElevatedButton(
-                style: const ButtonStyle(
-                    backgroundColor:
-                        WidgetStatePropertyAll(AppColors.redButton)),
-                onPressed: () {
-                  _updateProfileCubit.deleteAcc();
-                  Navigator.pushReplacementNamed(context, LoginScreen.routeName);
-                },
-                child: Text(
-                  tr('updateProfile.deleteAccount'),
-                  style: theme.textTheme.displayMedium!
-                      .copyWith(color: AppColors.iconWhite),
-                )),
-            Padding(
-              padding:  EdgeInsets.only(top: 18.h, bottom: 18.h),
-              child: ElevatedButton(
-                onPressed: () {
-                  _updateProfileCubit.updateAcc(
-                      name: _userNameController.text,
-                      phoneNumber: _phoneController.text,
-                      avatarCode: selectedAvatar);
-                },
-                child: Text(
-                  tr('updateProfile.updateData'),
-                  style: theme.textTheme.displayMedium!
-                      .copyWith(color: AppColors.iconWhite),
+            success: () {
+              Navigator.pop(context);
+              showToast(msg: "Updated Successfully", color: Colors.green);
+            },
+            failure: (errorMsg) {
+              Navigator.pop(context);
+              showToast(msg: errorMsg, color: Colors.red);
+            },
+          );
+        },
+        child: Scaffold(
+          resizeToAvoidBottomInset: true,
+          appBar: _buildAppBar(),
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: 40.h,
                 ),
-              ),
+                SizedBox(
+                  width: 150.w,
+                  height: 150.h,
+                  child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                            backgroundColor: AppColors.backgroundDark,
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return showBottomSheet(context);
+                            });
+                      },
+                      child: RandomAvatar(selectedAvatar)),
+                ),
+                SizedBox(
+                  height: 30.h,
+                ),
+                MyTextField(
+                    preIcon: Icons.person,
+                    validator: (string) {
+                      return null;
+                    },
+                    hintText: "",
+                    isPassword: false,
+                    fieldKey: _userNameKey,
+                    controller: _userNameController),
+                MyTextField(
+                    preIcon: Icons.phone,
+                    validator: Validators.validatePhone,
+                    hintText: "",
+                    isPassword: false,
+                    fieldKey: _phoneKey,
+                    controller: _phoneController),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, ResetPassword.routeName);
+                  },
+                  child: Text(
+                    tr('updateProfile.resetPassword'),
+                    style: theme.textTheme.displayMedium,
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .24,
+                ),
+                ElevatedButton(
+                    style: const ButtonStyle(
+                        backgroundColor:
+                            WidgetStatePropertyAll(AppColors.redButton)),
+                    onPressed: () {
+                      _updateProfileCubit.deleteAcc();
+                      Navigator.pushReplacementNamed(
+                          context, LoginScreen.routeName);
+                    },
+                    child: Text(
+                      tr('updateProfile.deleteAccount'),
+                      style: theme.textTheme.displayMedium!
+                          .copyWith(color: AppColors.iconWhite),
+                    )),
+                Padding(
+                  padding: EdgeInsets.only(top: 18.h, bottom: 18.h),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _updateProfileCubit.updateAcc(
+                          name: _userNameController.text,
+                          phoneNumber: _phoneController.text,
+                          avatarCode: selectedAvatar);
+                    },
+                    child: Text(
+                      tr('updateProfile.updateData'),
+                      style: theme.textTheme.displayMedium!
+                          .copyWith(color: AppColors.iconWhite),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -136,7 +166,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title:  Text(
+      title: Text(
         tr('updateProfile.pickAvatar'),
       ),
     );
@@ -144,9 +174,10 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   Widget showBottomSheet(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.all(16.r),
+      margin: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
-          color: AppColors.bottomNav, borderRadius: BorderRadius.circular(24.r)),
+          color: AppColors.bottomNav,
+          borderRadius: BorderRadius.circular(24.r)),
       height: 400.h,
       child: Padding(
         padding: EdgeInsets.all(18.0.r),
@@ -171,9 +202,9 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
       "happy_person"
     ];
     return Padding(
-      padding:  EdgeInsets.only(left: 10.w, right: 10.w),
+      padding: EdgeInsets.only(left: 10.w, right: 10.w),
       child: GridView.builder(
-        gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: .8,
             mainAxisSpacing: 10.h,
@@ -200,7 +231,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 
   Widget _buildAvatarContainer(Widget avatar, {required bool isSelected}) {
     return Container(
-      padding:  EdgeInsets.all(10.r),
+      padding: EdgeInsets.all(10.r),
       decoration: BoxDecoration(
         color: isSelected ? AppColors.avatarBg : AppColors.transparent,
         borderRadius: BorderRadius.circular(20.r),

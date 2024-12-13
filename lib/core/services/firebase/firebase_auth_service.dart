@@ -50,6 +50,8 @@ class FirebaseAuthService extends AuthService {
       await currentUser.updateProfile(
           displayName: user.name, photoURL: user.avatarCode);
       await _databaseService.updatePhone(user.phoneNumber);
+      await currentUser.reload();
+
     }
   }
 
@@ -63,7 +65,7 @@ class FirebaseAuthService extends AuthService {
 
   @override
   User get currentUser {
-    final user = _firebaseAuth.currentUser;
+    final user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       throw Exception("No user is currently signed in.");
     }
@@ -95,8 +97,11 @@ class FirebaseAuthService extends AuthService {
       idToken: googleAuth?.idToken,
     );
 
-    await FirebaseAuth.instance.signInWithCredential(credential);
-    currentUser.updateDisplayName(displayName);
+
+    await _firebaseAuth.signInWithCredential(credential);
+    await FirebaseAuth.instance.currentUser!.updateDisplayName(displayName??"Name");
+    print(currentUser.displayName);
+    await FirebaseAuth.instance.currentUser!.reload();
   }
 
   @override

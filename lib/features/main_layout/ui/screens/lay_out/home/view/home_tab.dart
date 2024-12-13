@@ -10,6 +10,7 @@ import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
 import 'package:movies_app/features/main_layout/domain/entities/movie_entity.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/home/cubit/home_cubit.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/home/cubit/home_state.dart';
+import 'package:movies_app/features/main_layout/ui/widgets/loading.dart';
 import 'package:movies_app/features/main_layout/ui/widgets/movie_card.dart';
 import '../../../../../../../generated/assets.dart';
 
@@ -36,28 +37,43 @@ class _HomeTabState extends State<HomeTab> {
     theme = Theme.of(context);
     return BlocProvider(
       create: (context) => _homeCubit,
-      child: Column(
+      child:Column(
         children: [
           Expanded(
             flex: 6,
-            child: Container(
-                height: MediaQuery.of(context).size.height,
-                decoration:  BoxDecoration(
-                    image: DecorationImage(
-                      opacity: 0.4,
-                        fit: BoxFit.cover,
-                        image: CachedNetworkImageProvider(currentMoviePoster))),
-                child: Column(
+            child: Stack(
+              children: [
+                Container(
+                  foregroundDecoration:const BoxDecoration(gradient: LinearGradient(end: Alignment.bottomCenter, colors: [
+                    Color(0xCC121312),
+                    Color(0x99121312),
+                    Color(0xcc121312)
+                  ])) ,
+                  height: MediaQuery.of(context).size.height,
+                  decoration:  BoxDecoration(
+                      image: DecorationImage(
+                          opacity: 0.4,
+                          fit: BoxFit.cover,
+                          image: CachedNetworkImageProvider(currentMoviePoster))),
+                ),
+                Column(
                   children: [
                     _buildAvailableNow(),
                     _buildCarouselSlider(),
-                    const Spacer(),
-                    Padding(
-                        padding:  EdgeInsets.symmetric(
-                            horizontal: 81.w, vertical: 8.h),
-                        child: Image.asset(Assets.imagesWatcNow))
                   ],
-                )),
+                ),
+                Positioned(
+                  top: 350.h,
+                  child: Padding(
+                      padding:  EdgeInsets.symmetric(
+                          horizontal: 81.w),
+                      child: SizedBox(
+                          width: 250.w,
+                          height: 200.h,
+                          child: Image.asset(Assets.imagesWatcNow))),
+                )
+              ],
+            ),
           ),
           Expanded(
               flex: 4,
@@ -107,9 +123,9 @@ class _HomeTabState extends State<HomeTab> {
       },
       builder: (context, state) {
         return state.maybeWhen(
-          initial: () => const Center(child: CircularProgressIndicator()),
+          initial: () => loading(),
           popularLoading: () =>
-              const Center(child: CircularProgressIndicator()),
+              loading(),
           popularSuccess: (movies) => CarouselSlider.builder(
             itemCount: movies.length,
             itemBuilder: (context, index, realIndex) {
@@ -140,7 +156,7 @@ class _HomeTabState extends State<HomeTab> {
               style: const TextStyle(color: Colors.red),
             ),
           ),
-          orElse: () => const Center(child: CircularProgressIndicator()),
+          orElse: () => loading(),
         );
       },
     );
@@ -153,9 +169,9 @@ class _HomeTabState extends State<HomeTab> {
       },
       builder: (context, state) {
         return state.maybeWhen(
-          initial: () => const Center(child: CircularProgressIndicator()),
+          initial: () => loading(),
           byGenreLoading: () =>
-              const Center(child: CircularProgressIndicator()),
+              loading(),
           byGenreSuccess: (movies) => SingleChildScrollView(
             child: CarouselSlider.builder(
               itemCount: movies.length,
@@ -178,7 +194,7 @@ class _HomeTabState extends State<HomeTab> {
               style: const TextStyle(color: Colors.red),
             ),
           ),
-          orElse: () => const Center(child: CircularProgressIndicator()),
+          orElse: () => loading(),
         );
       },
     );

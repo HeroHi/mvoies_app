@@ -14,6 +14,7 @@ import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/lay_out.dart';
 import '../../../../../../generated/assets.dart';
 import '../../../widgets/show_toast.dart';
+import 'package:movies_app/features/main_layout/ui/widgets/loading.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "login";
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               showDialog(
                 context: context,
                 builder: (context) =>
-                    const Center(child: CircularProgressIndicator()),
+                    loading(),
               );
             },
             success: () {

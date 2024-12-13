@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/features/main_layout/ui/on_boarding/on_boarding_screen.dart';
 import 'package:movies_app/features/main_layout/ui/screens/lay_out/lay_out.dart';
 import '../../../../../generated/assets.dart';
 
@@ -11,7 +12,7 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(
       const Duration(seconds: 3),
           () {
-        Navigator.pushReplacementNamed(context, LayOut.routeName);
+        Navigator.pushReplacementNamed(context, OnboardingScreen.routeName);
       },
     );
     return Scaffold(

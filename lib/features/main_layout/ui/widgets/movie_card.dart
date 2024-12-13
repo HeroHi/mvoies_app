@@ -10,19 +10,24 @@ class MovieCard extends StatelessWidget {
   final String posterPath;
   final double rating;
   final int movieId;
-  const MovieCard({super.key,required this.movieId, required this.rating, required this.posterPath});
+  const MovieCard(
+      {super.key,
+      required this.movieId,
+      required this.rating,
+      required this.posterPath});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        if(rating == 0.0){
+        if (rating == 0.0) {
           return;
         }
-        Navigator.pushNamed(context, DetailsScreen.routeName,arguments: movieId);
+        Navigator.pushNamed(context, DetailsScreen.routeName,
+            arguments: movieId);
       },
       child: SizedBox(
-        height: 350,
+        height: 350.h,
         child: Stack(
           children: [
             ClipRRect(
@@ -30,8 +35,7 @@ class MovieCard extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: posterPath,
                 placeholder: (context, url) => Skeletonizer(
-                  enabled: true,
-                    child: Image.asset(Assets.imagesTeeest)),
+                    enabled: true, child: Image.asset(Assets.imagesTeeest)),
               ),
             ),
             _buildRating(context),
@@ -53,7 +57,7 @@ class MovieCard extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            rating.toStringAsFixed(1),
+            rating == 10.0 ? "10" : rating.toStringAsFixed(1),
             style: Theme.of(context).textTheme.displayMedium,
           ),
           const Spacer(),
@@ -66,7 +70,9 @@ class MovieCard extends StatelessWidget {
       ),
     );
   }
-  static Widget get skeleton{
-    return const MovieCard(movieId:22,rating: 7.7, posterPath: Assets.imagesTeeest);
+
+  static Widget get skeleton {
+    return const MovieCard(
+        movieId: 22, rating: 7.7, posterPath: Assets.imagesTeeest);
   }
 }

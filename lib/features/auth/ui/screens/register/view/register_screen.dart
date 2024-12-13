@@ -12,7 +12,7 @@ import 'package:movies_app/features/auth/ui/widgets/my_text_field.dart';
 import 'package:movies_app/features/auth/ui/widgets/show_toast.dart';
 import 'package:movies_app/features/profile/domain/entities/user_entity.dart';
 import 'package:random_avatar/random_avatar.dart';
-
+import 'package:movies_app/features/main_layout/ui/widgets/loading.dart';
 import '../../../../data/model/user_data.dart';
 import '../../../widgets/country_switch.dart';
 
@@ -48,10 +48,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _phoneController = TextEditingController();
 
   late ThemeData theme;
+  late List<String> avatars;
+  String selectedAvatar = "saytoonz";
 
   final RegisterCubit _registerCubit = getIt();
 
-  @override
   @override
   Widget build(BuildContext context) {
     theme = Theme.of(context);
@@ -63,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           }, loading: () {
 
              showDialog(context: context,
-              builder: (context) => const Center(child: CircularProgressIndicator()),);
+              builder: (context) => loading(),);
           }, success: () {
             Navigator.pop(context);
             showToast(
@@ -157,7 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               _passwordKey.currentState!.validate() &&
               _passwordConfirmKey.currentState!.validate() &&
               _phoneKey.currentState!.validate()) {
-            UserEntity user = UserEntity(name: _nameController.text, phone: _phoneController.text, email: _emailController.text, avatarCode: "saytoonz");
+            UserEntity user = UserEntity(name: _nameController.text, phone: _phoneController.text, email: _emailController.text, avatarCode: selectedAvatar);
             await _registerCubit.register(user, _passwordController.text);
 
           }
@@ -195,6 +196,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: CarouselSlider(
           items: _buildAvatars(),
           options: CarouselOptions(
+            onPageChanged: (index, reason) {
+              selectedAvatar = avatars[index];
+            },
             enlargeCenterPage: true,
             enlargeFactor: 0.5,
             aspectRatio: 2.5,
@@ -204,17 +208,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   List<Widget> _buildAvatars() {
-    return [
-      RandomAvatar("saytoonz"),
-      RandomAvatar("john_doe"),
-      RandomAvatar("user-123"),
-      RandomAvatar("flutter_dev"),
-      RandomAvatar("tech_guy"),
-      RandomAvatar("superstar123"),
-      RandomAvatar("user42"),
-      RandomAvatar("cool_user"),
-      RandomAvatar("happy_person"),
-    ];
+    avatars = ["saytoonz","john_doe","user-123","flutter_dev","tech_guy","superstar123","user42","cool_user","happy_person"];
+    return List.generate(avatars.length, (index) => RandomAvatar(avatars[index]),);
   }
 
   String? _validateEmail(String value) {

@@ -37,7 +37,7 @@ import '../../features/profile/ui/screens/update_profile/cubit/update_profile_cu
 import '../services/auth_service.dart' as _i745;
 import '../services/database_service.dart' as _i665;
 import '../services/firebase/firestore_service.dart' as _i939;
-import '../services/supabase/firebase_auth_service.dart' as _i281;
+import '../services/firebase/firebase_auth_service.dart' as _i281;
 import 'dio_module.dart' as _i1045;
 
 extension GetItInjectableX on _i174.GetIt {

@@ -28,7 +28,7 @@ class DetailsScreen extends StatefulWidget {
 class _DetailsScreenState extends State<DetailsScreen> {
   late ThemeData theme;
   late final int movieId;
-  late final MovieEntity currentMovie;
+  late MovieEntity currentMovie;
   final DetailsCubit _detailsCubit = getIt();
   @override
   void initState() {
@@ -179,9 +179,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
     }
 
     Column _buildScreenShotsList(List<BackdropEntity> screenshots) {
+    int length = screenshots.isEmpty?0:screenshots.length<3?screenshots.length:3;
       return Column(
         children: List.generate(
-          3,
+          length,
               (index) => _buildScreenShot(image: screenshots[index].filePath!),
         ),
       );
@@ -217,12 +218,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
       );
     }
 
-    Container _buildMovie(
-        {required String posterPath,
-          required String title,
-          required String year}) {
-      return Container(
-          height: MediaQuery.sizeOf(context).height * .52,
+  Widget _buildMovie(
+      {required String posterPath,
+        required String title,
+        required String year}) {
+    return Stack(
+      children: [
+        Container(
+          foregroundDecoration:const BoxDecoration(gradient: LinearGradient(end: Alignment.bottomLeft, colors: [
+            Color(0x66121312),
+            Color(0xff121312)
+          ])),
+          height: MediaQuery.sizeOf(context).height * .6,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -231,18 +238,31 @@ class _DetailsScreenState extends State<DetailsScreen> {
               image: CachedNetworkImageProvider(posterPath),
             ),
           ),
+        ),
+        Center(
           child: Column(
             children: [
-              const SizedBox(
-                height: 248,
+              SizedBox(
+                height: 248.h,
               ),
               GestureDetector(onTap: () {}, child: _buildPlayIcon()),
-              const Spacer(),
+              SizedBox(
+                height: 80.h,
+              ),
               _buildTitles(title),
-              _buildTitles(year)
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  year,
+                  style: theme.textTheme.displayLarge!.copyWith(color:const Color(0xffADADAD) ),
+                ),
+              )
             ],
-          ));
-    }
+          ),
+        )
+      ],
+    );
+  }
 
     Container _buildSummary(String summery) {
       return Container(
